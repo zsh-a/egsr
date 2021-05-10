@@ -227,10 +227,41 @@ DataPacketHeader::GetInstanceTypeId (void) const
   return GetTypeId ();
 }
 
+// uint32_t
+// DataPacketHeader::GetSerializedSize (void) const
+// {
+//   return GRP_DATA_PKT_HEADER_SIZE;
+// }
+
+// void
+// DataPacketHeader::Print (std::ostream &os) const
+// {
+// }
+
+// void
+// DataPacketHeader::Serialize (Buffer::Iterator start) const
+// {
+//   Buffer::Iterator i = start;
+//   i.WriteU8 (nextjid);
+//   i.WriteU16 (sender);
+// }
+
+// uint32_t
+// DataPacketHeader::Deserialize (Buffer::Iterator start)
+// {
+//   Buffer::Iterator i = start;
+//   nextjid  = i.ReadU8 ();
+//   sender = i.ReadU16 ();
+//   return GetSerializedSize ();
+// }
+
+
 uint32_t
 DataPacketHeader::GetSerializedSize (void) const
 {
-  return GRP_DATA_PKT_HEADER_SIZE;
+  uint32_t size = 4;
+  size += path.size()* 2;
+  return size;
 }
 
 void
@@ -242,16 +273,21 @@ void
 DataPacketHeader::Serialize (Buffer::Iterator start) const
 {
   Buffer::Iterator i = start;
-  i.WriteU8 (nextjid);
-  i.WriteU16 (sender);
+  i.WriteU16(next_jid_idx);
+  i.WriteU16(path.size());
+  for(auto x : path)
+    i.WriteU16(x);
 }
 
 uint32_t
 DataPacketHeader::Deserialize (Buffer::Iterator start)
 {
   Buffer::Iterator i = start;
-  nextjid  = i.ReadU8 ();
-  sender = i.ReadU16 ();
+  next_jid_idx = i.ReadU16();
+  int size = i.ReadU16();
+  path = std::vector<uint16_t>(size);
+  for(int j = 0;j < size;j++)
+    path[j] = i.ReadU16();
   return GetSerializedSize ();
 }
 
@@ -291,8 +327,15 @@ MessageHeader::GetSerializedSize (void) const
   switch (m_messageType)
     {
     case HELLO_MESSAGE:
-      NS_LOG_DEBUG ("Hello Message Size: " << size << " + " << m_message.hello.GetSerializedSize ());
+      // NS_LOG_DEBUG ("Hello Message Size: " << size << " + " << m_message.hello.GetSerializedSize ());
       size += m_message.hello.GetSerializedSize ();
+      break;
+    case ANT_MESSAGE:
+      // NS_LOG_DEBUG ("ant Message Size: " << size << " + " << m_message.ant.GetSerializedSize ());
+      size += 4;
+      size += m_message.hello.GetSerializedSize();
+      size += m_message.ant.GetSerializedSize ();
+      // NS_LOG_DEBUG ("ant Message Size: " << size );
       break;
     default:
       NS_ASSERT (false);
@@ -323,6 +366,12 @@ MessageHeader::Serialize (Buffer::Iterator start) const
     case HELLO_MESSAGE:
       m_message.hello.Serialize (i);
       break;
+    case ANT_MESSAGE:
+      i.WriteU32(m_message.hello.GetSerializedSize());
+      NS_LOG_DEBUG("send ant hello size " << m_message.hello.GetSerializedSize());
+      m_message.hello.Serialize(i);
+      m_message.ant.Serialize(i);
+      break;
     default:
       NS_ASSERT (false);
     }
@@ -335,7 +384,7 @@ MessageHeader::Deserialize (Buffer::Iterator start)
   uint32_t size;
   Buffer::Iterator i = start;
   m_messageType  = (MessageType) i.ReadU8 ();
-  NS_ASSERT (m_messageType >= HELLO_MESSAGE && m_messageType <= CPACK_MESSAGE);
+  NS_ASSERT (m_messageType >= HELLO_MESSAGE && m_messageType <= ANT_MESSAGE);
   m_vTime  = i.ReadU8 ();
   m_messageSize  = i.ReadU16 ();
   m_originatorAddress = Ipv4Address (i.ReadU32 ());
@@ -346,8 +395,17 @@ MessageHeader::Deserialize (Buffer::Iterator start)
   switch (m_messageType)
     {
     case HELLO_MESSAGE:
+      // NS_LOG_DEBUG("hello message size " << m_messageSize);
       size += m_message.hello.Deserialize (i, m_messageSize - GRP_MSG_HEADER_SIZE);
       break;
+    case ANT_MESSAGE:{
+      uint32_t hello_size = i.ReadU32();
+      NS_LOG_DEBUG("recv ant message hello size " << hello_size);
+      size += 4;
+      size += m_message.hello.Deserialize(i,hello_size);
+      size += m_message.ant.Deserialize (i, m_messageSize - GRP_MSG_HEADER_SIZE - hello_size - 4);
+      break;
+    }
     default:
       NS_ASSERT (false);
     }
@@ -359,14 +417,14 @@ MessageHeader::Deserialize (Buffer::Iterator start)
 uint32_t
 MessageHeader::Hello::GetSerializedSize (void) const
 {
-    uint32_t size = 28;
+    uint32_t size = 26;
     size += this->neighborInterfaceAddresses.size () * IPV4_ADDRESS_SIZE;
-    size += this->conlist.size();
+    // size += this->conlist.size();
 
-    for(std::vector<JunInfo>::const_iterator itr = this->conlist.begin(); itr != this->conlist.end(); itr++)
-    {
-        size += 6 + itr->list.size();
-    }
+    // for(std::vector<JunInfo>::const_iterator itr = this->conlist.begin(); itr != this->conlist.end(); itr++)
+    // {
+    //     size += 6 + itr->list.size();
+    // }
     
     return size;
 }
@@ -387,14 +445,14 @@ MessageHeader::Hello::Serialize (Buffer::Iterator start) const
     i.WriteU32 (this->direction);
     i.WriteU16 (this->turn);
 
-    i.WriteU8 ((uint8_t)this->conlist.size());
+    // i.WriteU8 ((uint8_t)this->conlist.size());
 
-    int lsize = 0;
-    for(std::vector<JunInfo>::const_iterator itr = this->conlist.begin(); itr != this->conlist.end(); itr++)
-    {
-        lsize += 6 + itr->list.size();
-    }
-    i.WriteU8 (lsize);
+    // int lsize = 0;
+    // for(std::vector<JunInfo>::const_iterator itr = this->conlist.begin(); itr != this->conlist.end(); itr++)
+    // {
+    //     lsize += 6 + itr->list.size();
+    // }
+    // i.WriteU8 (lsize);
 
     for (std::vector<Ipv4Address>::const_iterator iter = this->neighborInterfaceAddresses.begin ();
        iter != this->neighborInterfaceAddresses.end (); iter++)
@@ -402,23 +460,23 @@ MessageHeader::Hello::Serialize (Buffer::Iterator start) const
         i.WriteU32 (iter->Get ());
     }
 
-    for(std::vector<JunInfo>::const_iterator itr = this->conlist.begin(); itr != this->conlist.end(); itr++)
-    {
-        i.WriteU8 (itr->jid);
-        i.WriteU32 ((uint32_t)(itr->version));
-        i.WriteU8 ((uint8_t)itr->list.size());
-        for(std::vector<int>::const_iterator li = itr->list.begin(); li != itr->list.end(); li ++)
-        {
-            i.WriteU8 (*li);
-        }
-    }
+    // for(std::vector<JunInfo>::const_iterator itr = this->conlist.begin(); itr != this->conlist.end(); itr++)
+    // {
+    //     i.WriteU8 (itr->jid);
+    //     i.WriteU32 ((uint32_t)(itr->version));
+    //     i.WriteU8 ((uint8_t)itr->list.size());
+    //     for(std::vector<int>::const_iterator li = itr->list.begin(); li != itr->list.end(); li ++)
+    //     {
+    //         i.WriteU8 (*li);
+    //     }
+    // }
 }
 
 uint32_t
 MessageHeader::Hello::Deserialize (Buffer::Iterator start, uint32_t messageSize)
 {
     Buffer::Iterator i = start;
-    int basesize = 28;
+    int basesize = 26;
 
     this->neighborInterfaceAddresses.clear ();
     this->locationX = i.ReadU64 ();
@@ -427,10 +485,10 @@ MessageHeader::Hello::Deserialize (Buffer::Iterator start, uint32_t messageSize)
     this->direction = i.ReadU32 ();
     this->turn = i.ReadU16 ();
     
-    int num = i.ReadU8 ();
-    int listsize = i.ReadU8 ();
-
-    int numAddresses = (messageSize - basesize - listsize) / IPV4_ADDRESS_SIZE;
+    // int num = i.ReadU8 ();
+    // int listsize = i.ReadU8 ();
+    int numAddresses = (messageSize - basesize) / IPV4_ADDRESS_SIZE;
+    // NS_LOG_DEBUG("numAddresses " << numAddresses);
     this->neighborInterfaceAddresses.erase (this->neighborInterfaceAddresses.begin (),
                                     this->neighborInterfaceAddresses.end ());
     for (int n = 0; n < numAddresses; ++n)
@@ -438,24 +496,80 @@ MessageHeader::Hello::Deserialize (Buffer::Iterator start, uint32_t messageSize)
         this->neighborInterfaceAddresses.push_back (Ipv4Address (i.ReadU32 ()));
     }
 
-    this->conlist.erase(this->conlist.begin(), this->conlist.end());
-    for(int n = 0; n < num; ++n)
-    {
-        JunInfo info;
-        info.jid = i.ReadU8();
-        info.version = (int)i.ReadU32();
-        int size = i.ReadU8();
-        for(int k = 0; k < size; k++)
-        {
-            info.list.push_back(i.ReadU8());
-        }
-        this->conlist.push_back(info);
-    }
+    // this->conlist.erase(this->conlist.begin(), this->conlist.end());
+    // for(int n = 0; n < num; ++n)
+    // {
+    //     JunInfo info;
+    //     info.jid = i.ReadU8();
+    //     info.version = (int)i.ReadU32();
+    //     int size = i.ReadU8();
+    //     for(int k = 0; k < size; k++)
+    //     {
+    //         info.list.push_back(i.ReadU8());
+    //     }
+    //     this->conlist.push_back(info);
+    // }
 
-    this->bsize = messageSize;
-    this->asize = messageSize - basesize - this->neighborInterfaceAddresses.size() * IPV4_ADDRESS_SIZE;
+    // this->bsize = messageSize;
+    // this->asize = messageSize - basesize - this->neighborInterfaceAddresses.size() * IPV4_ADDRESS_SIZE;
 
     return GetSerializedSize ();
+}
+
+uint32_t MessageHeader::Ant::GetSerializedSize (void) const{
+    size_t sum = 12;
+    sum += sequence_of_junctions.size() * 2 + 2;
+    sum += s_delay.size()* 8;
+    sum += 16;
+    return sum;
+}
+void MessageHeader::Ant::Serialize (Buffer::Iterator start) const{
+    start.WriteU32(sender_addr.Get());
+    start.WriteU16(seq_num);
+    start.WriteU16(version);
+    start.WriteU16(jun_from);
+    start.WriteU16(next_junction_id);
+    size_t len = sequence_of_junctions.size();
+
+    start.WriteU16(len);
+    for(auto x : sequence_of_junctions){
+        start.WriteU16(x);
+    }
+
+    for(auto& time : s_delay){
+        start.WriteU64(time.GetNanoSeconds());
+    }
+    start.WriteU32(next_forwarder.Get());
+    start.WriteU32(last_sender.Get());
+    start.WriteU32(last_sender_position_x);
+    start.WriteU32(last_sender_position_y);
+
+}
+
+uint32_t MessageHeader::Ant::Deserialize (Buffer::Iterator start, uint32_t messageSize){
+    auto i = start;
+
+    sender_addr.Set(i.ReadU32());
+    seq_num = i.ReadU16();
+    version = i.ReadU16();
+    jun_from = i.ReadU16();
+    next_junction_id = i.ReadU16();
+    size_t len = i.ReadU16();
+
+    sequence_of_junctions.clear();
+    
+    for(int j = 0;j < len;j++){
+        sequence_of_junctions.push_back(i.ReadU16());
+    }
+
+    for(int j = 0;j < len;j++){
+        s_delay.push_back(Time{i.ReadU64()});
+    }
+    next_forwarder.Set(i.ReadU32());
+    last_sender.Set(i.ReadU32());
+    last_sender_position_x = i.ReadU32();
+    last_sender_position_y = i.ReadU32();
+    return GetSerializedSize();
 }
 
 }

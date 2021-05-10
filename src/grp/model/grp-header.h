@@ -115,35 +115,53 @@ public:
 };
 
 
+// class DataPacketHeader : public Header
+// {
+// public:
+//   DataPacketHeader ();
+//   virtual ~DataPacketHeader ();
+
+//   void SetNextJID(uint8_t jid)
+//   {
+//       nextjid = jid;
+//   }
+
+//   uint8_t GetNextJID() const
+//   {
+//       return nextjid;
+//   }
+
+//   void SetSenderID(int id)
+//   {
+//       sender = id;
+//   }
+
+//   int GetSenderID() const
+//   {
+//       return sender;
+//   }
+
+// private:
+//   uint8_t nextjid;
+//   uint16_t sender;
+
+
+// public:
+//   static TypeId GetTypeId (void);
+//   virtual TypeId GetInstanceTypeId (void) const;
+//   virtual void Print (std::ostream &os) const;
+//   virtual uint32_t GetSerializedSize (void) const;
+//   virtual void Serialize (Buffer::Iterator start) const;
+//   virtual uint32_t Deserialize (Buffer::Iterator start);
+// };
+
 class DataPacketHeader : public Header
 {
 public:
   DataPacketHeader ();
   virtual ~DataPacketHeader ();
-
-  void SetNextJID(uint8_t jid)
-  {
-      nextjid = jid;
-  }
-
-  uint8_t GetNextJID() const
-  {
-      return nextjid;
-  }
-
-  void SetSenderID(int id)
-  {
-      sender = id;
-  }
-
-  int GetSenderID() const
-  {
-      return sender;
-  }
-
-private:
-  uint8_t nextjid;
-  uint16_t sender;
+  uint16_t next_jid_idx = 0;
+  std::vector<uint16_t> path;
 
 
 public:
@@ -154,7 +172,6 @@ public:
   virtual void Serialize (Buffer::Iterator start) const;
   virtual uint32_t Deserialize (Buffer::Iterator start);
 };
-
 //	  0                   1                   2                   3
 //    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 //   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -176,6 +193,7 @@ public:
   {
 	HELLO_MESSAGE = 1,
   CPACK_MESSAGE = 2,
+    ANT_MESSAGE,
   };
 
   MessageHeader ();
@@ -289,20 +307,20 @@ public:
         uint32_t direction;
         uint16_t turn;
 
-        int bsize = 0;
-        int asize = 0;
+        // int bsize = 0;
+        // int asize = 0;
 
-        int GetBeaconSize() const
-        {
-            return bsize;
-        }
+        // int GetBeaconSize() const
+        // {
+        //     return bsize;
+        // }
 
-        int GetBeaconAppendSize() const
-        {
-            return asize;
-        }
+        // int GetBeaconAppendSize() const
+        // {
+        //     return asize;
+        // }
 
-        std::vector<JunInfo> conlist;
+        // std::vector<JunInfo> conlist;
 
         void SetTurn(int njid)
         {
@@ -358,29 +376,70 @@ public:
         
     };
 
+    struct Ant{
+        Ipv4Address sender_addr;
+        uint16_t seq_num;
+        uint16_t version;
+        uint16_t jun_from;
+        uint16_t next_junction_id;
+        std::vector<uint16_t> sequence_of_junctions;
+        std::vector<Time> s_delay;
+        Ipv4Address next_forwarder;
+        Ipv4Address last_sender;
+        float last_sender_position_x;
+        
+        float last_sender_position_y;
+        uint32_t GetSerializedSize (void) const;
+        void Serialize (Buffer::Iterator start) const;
+        uint32_t Deserialize (Buffer::Iterator start, uint32_t messageSize);
+
+
+    };
+
 private:
   struct
   {
     Hello hello;
+    Ant ant;
   } m_message;
 
 public:
+  MessageHeader(MessageType type):m_messageType(type){
+
+  }
   Hello& GetHello ()
   {
     if (m_messageType == 0)
       {
         m_messageType = HELLO_MESSAGE;
       }
-    else
-      {
-        NS_ASSERT (m_messageType == HELLO_MESSAGE);
-      }
+    // else
+    //   {
+    //     NS_ASSERT (m_messageType == HELLO_MESSAGE);
+    //   }
     return m_message.hello;
   }
 
+  Ant& GetAnt()
+  {
+    if (m_messageType == 0)
+      {
+        m_messageType = ANT_MESSAGE;
+      }
+    // else
+    //   {
+    //     NS_ASSERT (m_messageType == ANT_MESSAGE);
+    //   }
+    return m_message.ant;
+  }
+
+  const Ant& GetAnt() const{
+      return m_message.ant;
+  }
+                
   const Hello& GetHello () const
   {
-    NS_ASSERT (m_messageType == HELLO_MESSAGE);
+    // NS_ASSERT (m_messageType == HELLO_MESSAGE);
     return m_message.hello;
   }
 };

@@ -38,6 +38,8 @@ NS_LOG_COMPONENT_DEFINE ("GrpRoutingProtocol");
 
 namespace grp
 {
+
+    double RoutingProtocol::A = 0.3;
 NS_OBJECT_ENSURE_REGISTERED (RoutingProtocol);
 
 TypeId
@@ -66,7 +68,8 @@ RoutingProtocol::RoutingProtocol ()
   m_helloTimer (Timer::CANCEL_ON_DESTROY),
   m_positionCheckTimer (Timer::CANCEL_ON_DESTROY),
   m_queuedMessagesTimer (Timer::CANCEL_ON_DESTROY),
-  m_speedTimer(Timer::CANCEL_ON_DESTROY)
+  m_speedTimer(Timer::CANCEL_ON_DESTROY),
+  m_antTimer(Timer::CANCEL_ON_DESTROY)
 {
   m_uniformRandomVariable = CreateObject<UniformRandomVariable> ();
 }
@@ -85,7 +88,8 @@ RoutingProtocol::SetIpv4 (Ptr<Ipv4> ipv4)
   m_positionCheckTimer.SetFunction(&RoutingProtocol::CheckPositionExpire, this);
   m_speedTimer.SetFunction(&RoutingProtocol::SpeedCheckExpire, this);
   m_queuedMessagesTimer.SetFunction (&RoutingProtocol::SendQueuedMessages, this);
-
+  m_antTimer.SetFunction(&RoutingProtocol::AntTimerExpire,this);
+  m_evaporateTimer.SetFunction(&RoutingProtocol::EvaporateExpire,this);
   m_packetSequenceNumber = GRP_MAX_SEQ_NUM;
   m_messageSequenceNumber = GRP_MAX_SEQ_NUM;
 
@@ -127,9 +131,7 @@ void RoutingProtocol::DoDispose ()
     m_delayqueue.clear();
     m_map.clear();
 
-    delete[] Graph;
-
-
+    Graph.clear();
 
   Ipv4RoutingProtocol::DoDispose ();
 }
@@ -256,23 +258,24 @@ void RoutingProtocol::DoInitialize ()
         m_jqueuetag[i] = false;
     }
 
-    Graph = new float *[m_JuncNum];
-    for(int i = 0;i < m_JuncNum; ++i)
-    {
-        Graph[i] = new float[m_JuncNum];
-        for(int j = 0; j<m_JuncNum; j++)
-        {
-            Graph[i][j] = INF;
-        }
-    }
+    Graph = std::vector<std::vector<double>>(m_JuncNum + 2,std::vector<double>(m_JuncNum + 2,INF));
+	m_min_delay = std::vector<std::vector<Time>>(m_JuncNum,std::vector<Time>(m_JuncNum,Time::Max()));
+    P = std::vector<std::vector<double>>(m_JuncNum,std::vector<double>(m_JuncNum,1));
 
-	DigitalMap map;
+    DigitalMap map;
 	std::string mapfile = "TestScenaries/" + std::to_string(vnum) + "/6x6_map.csv";
     std::string tracefile = "TestScenaries/" + std::to_string(vnum) + "/6x6_vtrace.csv";
 	map.setMapFilePath(mapfile);
 	map.readMapFromCsv(m_map);
 	map.readTraceCsv(tracefile, m_tracelist);
 
+    length = std::vector<std::vector<double>>(m_JuncNum,std::vector<double>(m_JuncNum,INF));
+    
+    for(int i = 0;i < m_map.size();i++){
+        for(auto& [v,info] : m_map[i].outedge){
+            length[i][v] = info[1];
+        }
+    }
 
   if (m_mainAddress == Ipv4Address ())
     {
@@ -385,8 +388,8 @@ RoutingProtocol::RecvGrp (Ptr<Socket> socket)
 
   Ipv4Address receiverIfaceAddr = m_ipv4->GetAddress (recvInterfaceIndex, 0).GetLocal ();
   NS_ASSERT (receiverIfaceAddr != Ipv4Address ());
-  NS_LOG_DEBUG ("GRP node " << m_mainAddress << " received a GRP packet from "
-                             << senderIfaceAddr << " to " << receiverIfaceAddr);
+//   NS_LOG_DEBUG ("GRP node " << m_mainAddress << " received a GRP packet from "
+//                              << senderIfaceAddr << " to " << receiverIfaceAddr);
 
   // All routing messages are sent from and to port RT_PORT,
   // so we check it.
@@ -411,10 +414,10 @@ RoutingProtocol::RecvGrp (Ptr<Socket> socket)
 
       sizeLeft -= messageHeader.GetSerializedSize ();
 
-      NS_LOG_DEBUG ("Grp Msg received with type "
-                    << std::dec << int (messageHeader.GetMessageType ())
-                    << " TTL=" << int (messageHeader.GetTimeToLive ())
-                    << " origAddr=" << messageHeader.GetOriginatorAddress ());
+    //   NS_LOG_DEBUG ("Grp Msg received with type "
+    //                 << std::dec << int (messageHeader.GetMessageType ())
+    //                 << " TTL=" << int (messageHeader.GetTimeToLive ())
+    //                 << " origAddr=" << messageHeader.GetOriginatorAddress ());
       messages.push_back (messageHeader);
     }
 
@@ -433,11 +436,17 @@ RoutingProtocol::RecvGrp (Ptr<Socket> socket)
       switch (messageHeader.GetMessageType ())
 	  {
 		case grp::MessageHeader::HELLO_MESSAGE:
-			NS_LOG_DEBUG (Simulator::Now ().GetSeconds ()
-							<< "s GRP node " << m_mainAddress
-							<< " received HELLO message of size " << messageHeader.GetSerializedSize ());
+			// NS_LOG_DEBUG (Simulator::Now ().GetSeconds ()
+			// 				<< "s EGSR node " << m_mainAddress
+			// 				<< " received HELLO message of size " << messageHeader.GetSerializedSize ());
 			ProcessHello (messageHeader, receiverIfaceAddr, senderIfaceAddr);
 			break;
+        case grp::MessageHeader::ANT_MESSAGE:
+            NS_LOG_DEBUG (Simulator::Now ().GetSeconds ()
+                            << "s EGSR node " << m_mainAddress
+							<< " received Ant message of size " << messageHeader.GetSerializedSize () <<" from " << senderIfaceAddr);
+            ProcessAnt(messageHeader,receiverIfaceAddr,senderIfaceAddr);
+            break;
 		default:
 		NS_LOG_DEBUG ("GRP message type " <<
 						int (messageHeader.GetMessageType ()) <<
@@ -491,25 +500,60 @@ RoutingProtocol::CheckPacketQueue()
 
   		grp::DataPacketHeader DataPacketHeader;
  		qentry.m_packet->RemoveHeader (DataPacketHeader);
- 		int nextjid = (int)DataPacketHeader.GetNextJID();
+
+        // NS_LOG_DEBUG("path size " << DataPacketHeader.path.size());
+        if(DataPacketHeader.path.size() == 0){
+
+            Ptr<MobilityModel> MM = m_ipv4->GetObject<MobilityModel> ();
+            double cx = MM->GetPosition ().x;
+            double cy = MM->GetPosition ().y;
+            double cjx = m_map[m_currentJID].x;
+            double cjy = m_map[m_currentJID].y;
+            double njx = m_map[m_nextJID].x;
+            double njy = m_map[m_nextJID].y;
+
+            if(m_JunAreaTag){
+                DataPacketHeader.path = DijkstraAlgorithm(m_currentJID,m_rsujid);
+            }else{
+                Graph[m_JuncNum][m_currentJID] = Graph[m_currentJID][m_JuncNum] = sqrt((cx - cjx)*(cx - cjx) + (cy - cjy)*(cy - cjy));
+                Graph[m_JuncNum][m_nextJID] = Graph[m_nextJID][m_JuncNum] = sqrt((cx - njx)*(cx - njx) + (cy - njy)*(cy - njy));
+                DataPacketHeader.path = DijkstraAlgorithm(m_JuncNum,m_rsujid);
+                Graph[m_JuncNum][m_currentJID] = Graph[m_currentJID][m_JuncNum] = INF;
+                Graph[m_JuncNum][m_nextJID] = Graph[m_nextJID][m_JuncNum] = INF;
+            }
+            DataPacketHeader.next_jid_idx = 0;
+
+            if(DataPacketHeader.path.size() == 0){
+                qentry.m_packet->AddHeader(DataPacketHeader);
+                m_pwaitqueue.push_back(qentry);
+                continue;
+            }
+        }
+
+ 		int nextjid = DataPacketHeader.path[DataPacketHeader.next_jid_idx];
  		
   		Ipv4Address loopback ("127.0.0.1");
         Ipv4Address nextHop("127.0.0.1");
 
         if(m_JunAreaTag == true)
         {
-            nextjid = GetPacketNextJID(true);
-        }
-        else
-        {
-            if(nextjid != m_currentJID && nextjid != m_nextJID)
-            {
-                nextjid = GetNearestJID();
+            if(nextjid == m_currentJID ){
+                if(DataPacketHeader.next_jid_idx < DataPacketHeader.path.size() - 1)
+                    DataPacketHeader.next_jid_idx++;
+                else{
+                    for(auto& [addr,entry] : m_neiTable){
+                        if(addr == dest){
+                            nextHop = dest;
+                            break;
+                        }
+                    }
+                }
             }
         }
-        nextHop = IntraPathRouting(dest, nextjid);
 
-        DataPacketHeader.SetNextJID(nextjid);
+        if(nextHop.IsLocalhost())
+            nextHop = GetNextForwarderInSegment(DataPacketHeader.path[DataPacketHeader.next_jid_idx]);
+
         qentry.m_packet->AddHeader (DataPacketHeader);
 
   		if(nextHop == loopback)
@@ -608,6 +652,7 @@ RoutingProtocol::ProcessHello (const grp::MessageHeader &msg,
 	for (std::vector<Ipv4Address>::const_iterator i = hello.neighborInterfaceAddresses.begin ();
 			i != hello.neighborInterfaceAddresses.end (); i++)
 	{
+        
 		if(m_mainAddress == *i)
 		{
 			neiTableTuple.N_status = NeighborTableEntry::STATUS_SYM;
@@ -623,6 +668,214 @@ RoutingProtocol::ProcessHello (const grp::MessageHeader &msg,
  	}
 
 }
+void
+RoutingProtocol::ProcessAnt (const grp::MessageHeader &msg,
+							   const Ipv4Address receiverIfaceAddr,
+                               const Ipv4Address senderIface){
+
+    auto now = Simulator::Now();
+
+    // update hello info
+
+    //Restrict the communication between the vehicles with different direction.
+    int cjid = GetNearestJID();
+    
+	Ipv4Address originatorAddress = msg.GetOriginatorAddress();
+
+    const grp::MessageHeader::Hello& hello = msg.GetHello();
+	std::map<Ipv4Address, NeighborTableEntry>::const_iterator itr = m_neiTable.find (originatorAddress);
+	if(itr != m_neiTable.end() && itr->second.N_sequenceNum >= msg.GetMessageSequenceNumber())
+		return;
+	if(itr != m_neiTable.end())
+	{
+		m_neiTable.erase(originatorAddress);
+	}
+
+	NeighborTableEntry &neiTableTuple = m_neiTable[originatorAddress];
+	neiTableTuple.N_neighbor_address = msg.GetOriginatorAddress();
+	neiTableTuple.N_speed = hello.GetSpeed();
+	neiTableTuple.N_direction = hello.GetDirection();
+	neiTableTuple.N_location_x = hello.GetLocationX();
+	neiTableTuple.N_location_y = hello.GetLocationY();
+	neiTableTuple.receiverIfaceAddr = receiverIfaceAddr;
+	neiTableTuple.N_sequenceNum = msg.GetMessageSequenceNumber();
+	neiTableTuple.N_time = Simulator::Now () + msg.GetVTime();
+
+	neiTableTuple.N_turn = hello.GetTurn();
+
+    neiTableTuple.N_status = NeighborTableEntry::STATUS_NOT_SYM;
+	for (std::vector<Ipv4Address>::const_iterator i = hello.neighborInterfaceAddresses.begin ();
+			i != hello.neighborInterfaceAddresses.end (); i++)
+	{
+		if(m_mainAddress == *i)
+		{
+			neiTableTuple.N_status = NeighborTableEntry::STATUS_SYM;
+			break;
+		}
+	}
+
+    if(m_JunAreaTag){
+        if(msg.GetAnt().sequence_of_junctions.size() == 1){
+            m_antTimer.Cancel();
+            m_antTimer.Schedule(m_antInterval);
+        }
+    }
+    grp::MessageHeader::Ant ant = msg.GetAnt();
+    NS_LOG_DEBUG("receive a ant to " << ant.next_junction_id<< " juns " << ant.sequence_of_junctions.size());
+
+    auto it = m_received_last_ant.find({ant.sender_addr,ant.seq_num});
+
+    if(it == m_received_last_ant.end() || it->second < ant.version)  {
+        // first received
+        if(m_mainAddress == ant.next_forwarder){
+            if(m_JunAreaTag){
+                auto jun = std::find(ant.sequence_of_junctions.begin(),ant.sequence_of_junctions.end(),m_currentJID);              
+                if(jun == ant.sequence_of_junctions.end()){
+                    ant.sequence_of_junctions.push_back(m_currentJID);
+                    if(ant.sequence_of_junctions.size() < max_path_length){
+
+                        ant.s_delay.push_back(now);
+
+                        auto forwarder = GetNextForwarderInAnchor(ant.jun_from,ant.next_junction_id);
+                        NS_LOG_DEBUG( m_mainAddress << " next forward in jun" << forwarder.second);
+                        ant.version++;
+                        ant.jun_from = m_currentJID;
+                        ant.next_junction_id = forwarder.first;
+                        ant.next_forwarder = forwarder.second;
+                    }
+                }
+            }else{
+                auto forwarder = GetNextForwarderInSegment(ant.next_junction_id);
+
+                NS_LOG_DEBUG( m_mainAddress << " next forward" << forwarder);
+                ant.next_forwarder = forwarder;
+            }
+
+            update_matrix(msg);
+            ant.last_sender = m_mainAddress;
+            ant.last_sender_position_x = m_last_x;
+            ant.last_sender_position_y = m_last_y;
+
+        }else
+            update_matrix(msg);
+    }
+
+	Simulator::Schedule(GRP_NEIGHB_HOLD_TIME, &RoutingProtocol::NeiTableCheckExpire, this, originatorAddress);
+    // if(m_helloTimer.IsRunning()) m_helloTimer.Cancel();
+
+    // m_helloTimer.Schedule(m_helloInterval);
+
+    if(msg.GetAnt().next_forwarder == m_mainAddress){
+        
+        MessageHeader dup{MessageHeader::ANT_MESSAGE};
+        Time now = Simulator::Now ();
+
+        auto& hello = dup.GetHello();
+        Ptr<MobilityModel> MM = m_ipv4->GetObject<MobilityModel> ();
+        double positionX = MM->GetPosition ().x;
+        double positionY = MM->GetPosition ().y;
+
+        hello.SetLocation(positionX, positionY);
+
+        hello.SetSpeedAndDirection(m_speed, m_direction);
+
+        for (std::map<Ipv4Address, NeighborTableEntry>::const_iterator iter = m_neiTable.begin ();
+                iter != m_neiTable.end (); iter++)
+        {
+            hello.neighborInterfaceAddresses.push_back(iter->first);
+        }
+
+        hello.SetSpeedAndDirection(m_speed, m_direction);
+
+        for (std::map<Ipv4Address, NeighborTableEntry>::const_iterator iter = m_neiTable.begin ();
+                iter != m_neiTable.end (); iter++)
+        {
+            hello.neighborInterfaceAddresses.push_back(iter->first);
+        }
+
+        dup.SetVTime (GRP_NEIGHB_HOLD_TIME);
+        dup.SetOriginatorAddress (m_mainAddress);
+        dup.SetTimeToLive (1);
+        dup.SetHopCount (0);
+        dup.SetMessageSequenceNumber (GetMessageSequenceNumber());
+        dup.GetAnt() = ant;
+
+        QueueMessage(dup,JITTER);
+
+        if(m_helloTimer.IsRunning()){
+            m_helloTimer.Cancel();
+            m_helloTimer.Schedule(m_helloInterval);
+        }
+
+    }
+
+    if(m_pwaitqueue.empty() == false)
+ 	{
+ 		CheckPacketQueue();
+ 	}
+}
+
+
+void RoutingProtocol::update_matrix(const grp::MessageHeader& msg){
+    auto& ant = msg.GetAnt();
+    int len = ant.sequence_of_junctions.size();
+    NS_ASSERT(ant.sequence_of_junctions.size() == ant.s_delay.size());
+
+    auto ip_seq = std::pair<Ipv4Address,uint16_t>(ant.sender_addr,ant.seq_num);
+    auto sender = m_received_last_ant.find(ip_seq);
+    int num = 0;
+    if(sender != m_received_last_ant.end() && sender->second < ant.version){
+        num = ant.version - sender->second;
+        sender->second = ant.version;
+    }else {
+        num = ant.version;
+        m_received_last_ant[ip_seq] = ant.version;
+    }
+
+    NS_LOG_DEBUG("update matrix delay " << ant.s_delay.size()<< " " << num << " items " );
+    // if(len > 1){
+    //     for(auto x : ant.sequence_of_junctions){
+    //         std::cerr << x <<" ";
+    //     }
+    //     std::cerr <<"\n";   
+    //     NS_LOG_DEBUG("max delay " << TimeWithUnit(ant.s_delay[len - 1] - ant.s_delay[0],Time::Unit::MS));
+    // }
+
+    // if(num > 1){
+    //     std::cerr << "===========\n";
+    //     for(int i = 0;i < m_JuncNum;i++){
+    //         for(int j = 0;j < m_JuncNum;j++){
+    //             std::cerr << Graph[i][j] << " ";
+    //         }
+    //         std::cerr << "\n";
+    //     }
+    // }
+
+    for(int i = len - 1;i >= len - num;i--){
+
+        auto x = ant.sequence_of_junctions[i],y = ant.sequence_of_junctions[i - 1];
+        m_min_delay[x][y] = std::min(m_min_delay[x][y],ant.s_delay[i] - ant.s_delay[i - 1]);
+
+        double delta = A + 2/PI * atan( m_min_delay[x][y].GetMilliSeconds() * 1.0/(ant.s_delay[i] - ant.s_delay[i - 1]).GetMilliSeconds());
+        P[x][y] = P[y][x] = (P[x][y] + delta) / (1 + P[x][y]);
+
+        Graph[x][y] = Graph[y][x] = length[x][y] / P[x][y];
+    }
+
+}
+
+void RoutingProtocol::EvaporateExpire(){
+    for(int i = 0;i < m_JuncNum;i++){
+        for(int j = i + 1;j <m_JuncNum;j++){
+            if(length[i][j] != INF){
+                P[i][j] = P[j][i] = std::max(0.1,m_evaporateAlpha*P[i][j]);
+                Graph[i][j] = Graph[j][i] = length[i][j] / P[i][j];
+            }
+        }
+    }
+    m_evaporateTimer.Schedule(m_evaporateInterval);
+}
+
 
 int 
 RoutingProtocol::AddrToID(Ipv4Address addr)
@@ -718,7 +971,7 @@ RoutingProtocol::SendHello ()
 {
 	NS_LOG_FUNCTION (this);
 
-	grp::MessageHeader msg;
+	grp::MessageHeader msg{MessageHeader::HELLO_MESSAGE};
 	Time now = Simulator::Now ();
 
 	msg.SetVTime (GRP_NEIGHB_HOLD_TIME);
@@ -763,6 +1016,132 @@ RoutingProtocol::HelloTimerExpire ()
   m_helloTimer.Schedule (m_helloInterval);
 }
 
+// return id of junction and next forward address
+std::pair<int,Ipv4Address>
+RoutingProtocol::GetNextForwarderInAnchor(int from,int to){
+
+    std::unordered_map<int,std::priority_queue<std::pair<double,Ipv4Address>>> num_of_nei; // 计算每条路邻居的数量
+    for(auto& [e,_]:m_map[m_currentJID].outedge){
+        num_of_nei[e] = {};
+    }
+    int neis = m_neiTable.size();
+    if(neis == 0) return {-1,Ipv4Address::GetLoopback()};
+
+    for(auto& [addr,entry]:m_neiTable){
+        // exclude current street
+        if(from != -1 && to != -1 && isBetweenSegment(entry.N_location_x,entry.N_location_y,from,to))
+            continue;
+        
+        for(auto& [e,q]:num_of_nei){
+            if(isBetweenSegment(entry.N_location_x,entry.N_location_y,m_currentJID,e)){
+                q.push({(m_last_x - entry.N_location_x)*(m_last_x - entry.N_location_x) + (m_last_y - entry.N_location_y)*(m_last_y - entry.N_location_y),addr});
+                
+            }
+        }
+    }
+
+    srand(time(0));
+    // lottery schedule 
+    int R = rand() % neis;
+    int sum = 0;
+    
+    int selected = -1;
+    for(auto& [e,q]:num_of_nei){
+        sum += q.size();
+        if(sum > R){
+            selected = e;
+            break;
+        }
+    }
+    // int selected = -1, m = 0;
+    // for(auto& [e,q]:num_of_nei){
+    //     if(selected == -1 || q.size() > num_of_nei[selected].size()) selected = e,m = q.size();
+    // }
+    if(num_of_nei[selected].size() < 1) return {-1,Ipv4Address::GetLoopback()};
+    return {selected,num_of_nei[selected].top().second};
+}
+
+Ipv4Address RoutingProtocol::GetNextForwarderInSegment(int next_jid){
+    auto x = m_map[next_jid].x, y = m_map[next_jid].y;
+    using Dist = std::pair<double,Ipv4Address>;
+    std::priority_queue<Dist,std::vector<Dist>,std::greater<Dist>> q;
+
+    double cur_dist = (m_last_x - x)*(m_last_x - x) + (m_last_y - y) *(m_last_y - y);
+    for(auto& [addr,entry]:m_neiTable){
+        auto dist = (x - entry.N_location_x)*(x - entry.N_location_x) + (y - entry.N_location_y)*(y - entry.N_location_y);
+        if(dist < cur_dist){
+            q.push({dist,addr});
+        }
+    }
+    if(q.size()) return q.top().second;
+    return Ipv4Address::GetLoopback();
+}
+
+
+uint16_t RoutingProtocol::GetAntSeqNum(){
+    return m_antSeqNum = (m_antSeqNum + 1) % (1 << 16);
+}
+
+void
+RoutingProtocol::AntTimerExpire()
+{
+    NS_LOG_FUNCTION (this);
+
+    NS_LOG_DEBUG("Ant Timer expired");
+	grp::MessageHeader msg(MessageHeader::ANT_MESSAGE);
+	Time now = Simulator::Now ();
+
+	msg.SetVTime (GRP_NEIGHB_HOLD_TIME);
+	msg.SetOriginatorAddress (m_mainAddress);
+	msg.SetTimeToLive (1);
+
+	msg.SetHopCount (0);
+	msg.SetMessageSequenceNumber (GetMessageSequenceNumber ());
+
+    // carry hello message
+    auto& hello = msg.GetHello();
+
+	Ptr<MobilityModel> MM = m_ipv4->GetObject<MobilityModel> ();
+	double positionX = MM->GetPosition ().x;
+	double positionY = MM->GetPosition ().y;
+
+
+	hello.SetSpeedAndDirection(m_speed, m_direction);
+
+    for (std::map<Ipv4Address, NeighborTableEntry>::const_iterator iter = m_neiTable.begin ();
+			iter != m_neiTable.end (); iter++)
+	{
+		hello.neighborInterfaceAddresses.push_back(iter->first);
+	}
+
+
+	grp::MessageHeader::Ant& ant = msg.GetAnt();
+    ant.version = 0;
+    ant.sender_addr = m_mainAddress;
+     
+    auto [next_jid,addr] = GetNextForwarderInAnchor(-1,-1);
+    
+    // have forwarders
+    if(next_jid != -1){
+        NS_LOG_DEBUG(m_mainAddress <<" " << m_currentJID << " to " << next_jid <<" next forward " << addr);
+        ant.seq_num = GetAntSeqNum();
+        ant.next_junction_id = next_jid;
+        ant.next_forwarder = addr;
+        ant.last_sender = m_mainAddress;
+        ant.s_delay.push_back(now);
+        ant.jun_from = m_currentJID;
+        ant.sequence_of_junctions.push_back(m_currentJID);
+        ant.last_sender_position_x = m_last_x;
+        ant.last_sender_position_y = m_last_y;
+        QueueMessage (msg, JITTER);
+        if(m_helloTimer.IsRunning()){
+            m_helloTimer.Cancel();
+            m_helloTimer.Schedule(m_helloInterval);
+        }
+    }
+    m_antTimer.Schedule(m_antInterval);
+}
+
 void
 RoutingProtocol::CheckPositionExpire()
 {
@@ -776,7 +1155,7 @@ RoutingProtocol::CheckPositionExpire()
 	
 	double disToNextJun = sqrt(pow(cvx-njx, 2) + pow(cvy-njy, 2));
 	double disToCurrJun = sqrt(pow(cvx-cjx, 2) + pow(cvy-cjy, 2));
-	if(disToNextJun <= PositionCheckThreshold)
+	if(disToNextJun <= JunAreaRadius)
 	{
 		m_turn = -1;
 		m_currentJID = m_nextJID; 
@@ -797,6 +1176,8 @@ RoutingProtocol::CheckPositionExpire()
         if(disToNextJun < JunAreaRadius)
         {
             m_JunAreaTag = true;
+            // enter juncition
+            m_antTimer.Schedule(m_antInterval);
         }
     }
     else
@@ -804,9 +1185,12 @@ RoutingProtocol::CheckPositionExpire()
         if(disToNextJun > JunAreaRadius && disToCurrJun > JunAreaRadius)
         {
             m_JunAreaTag = false;
+            // left junction
+            if(m_antTimer.IsRunning())
+                m_antTimer.Cancel();
         }
     }
-    
+
     m_positionCheckTimer.Schedule(Seconds(0.1));
 }
 
@@ -882,19 +1266,20 @@ RoutingProtocol::AddHeader (Ptr<Packet> p, Ipv4Address source, Ipv4Address desti
         double njx = m_map[m_nextJID].x;
         double njy = m_map[m_nextJID].y;
 
-        int nextjid;
-        if(pow(cx-cjx, 2) + pow(cy-cjy, 2) < pow(cx-njx, 2) + pow(cy-njy, 2))
-        {
-            nextjid = m_currentJID;
-        } 
-        else
-        {
-            nextjid = m_nextJID;
+        grp::DataPacketHeader Dheader;
+        std::vector<uint16_t> path;
+        if(m_JunAreaTag){
+            path = DijkstraAlgorithm(m_currentJID,m_rsujid);
+        }else{
+            Graph[m_JuncNum][m_currentJID] = Graph[m_currentJID][m_JuncNum] = sqrt((cx - cjx)*(cx - cjx) + (cy - cjy)*(cy - cjy));
+            Graph[m_JuncNum][m_nextJID] = Graph[m_nextJID][m_JuncNum] = sqrt((cx - njx)*(cx - njx) + (cy - njy)*(cy - njy));
+            path = DijkstraAlgorithm(m_JuncNum,m_rsujid);
+            Graph[m_JuncNum][m_currentJID] = Graph[m_currentJID][m_JuncNum] = INF;
+            Graph[m_JuncNum][m_nextJID] = Graph[m_nextJID][m_JuncNum] = INF;
         }
 
-        grp::DataPacketHeader Dheader;
-        Time lut = Simulator::Now();
-        Dheader.SetNextJID(nextjid);
+        Dheader.next_jid_idx = 0;
+        Dheader.path = path;
         p->AddHeader (Dheader);
 
 	}
@@ -1005,19 +1390,44 @@ RoutingProtocol::RouteOutput (Ptr<Packet> p, const Ipv4Header &header, Ptr<NetDe
     double njx = m_map[m_nextJID].x;
     double njy = m_map[m_nextJID].y;
 
-    int dstjid;
-    if(m_JunAreaTag == false)
-    {
-        dstjid = pow(cx-cjx, 2) + pow(cy-cjy, 2) < pow(cx-njx, 2) + pow(cy-njy, 2)? m_currentJID:m_nextJID;
+    DataPacketHeader dheader;
+
+
+    std::vector<uint16_t> path;
+    if(m_JunAreaTag){
+        path = DijkstraAlgorithm(m_currentJID,m_rsujid);
+    }else{
+        Graph[m_JuncNum][m_currentJID] = Graph[m_currentJID][m_JuncNum] = sqrt((cx - cjx)*(cx - cjx) + (cy - cjy)*(cy - cjy));
+        Graph[m_JuncNum][m_nextJID] = Graph[m_nextJID][m_JuncNum] = sqrt((cx - njx)*(cx - njx) + (cy - njy)*(cy - njy));
+        path = DijkstraAlgorithm(m_JuncNum,m_rsujid);
+        Graph[m_JuncNum][m_currentJID] = Graph[m_currentJID][m_JuncNum] = INF;
+        Graph[m_JuncNum][m_nextJID] = Graph[m_nextJID][m_JuncNum] = INF;
+
     }
-    else
-    {
-        dstjid = GetPacketNextJID(true);
+    
+    Ipv4Address loopback ("127.0.0.1");
+
+    if(path.size() == 0) {
+        rtentry = Create<Ipv4Route> ();
+        rtentry->SetDestination (header.GetDestination ());
+        rtentry->SetSource (m_ipv4->GetAddress (1, 0).GetLocal ());
+        rtentry->SetGateway (loopback);
+        rtentry->SetOutputDevice (m_ipv4->GetNetDevice (0));
+        sockerr = Socket::ERROR_NOTERROR;
+        return rtentry;
     }
 
-    Ipv4Address loopback ("127.0.0.1");
-    nextHop = IntraPathRouting(dest, dstjid);
-    if(nextHop == loopback || nextHop == dest || m_JunAreaTag == true)
+    for(auto& [addr,entry]:m_neiTable){
+        if(addr == dest){
+            nextHop = addr;
+            break;
+        }
+    }
+
+    dheader.next_jid_idx = 0;
+    dheader.path = path;
+
+    if(nextHop == loopback || nextHop == dest)
     {
         rtentry = Create<Ipv4Route> ();
         rtentry->SetDestination (header.GetDestination ());
@@ -1028,6 +1438,12 @@ RoutingProtocol::RouteOutput (Ptr<Packet> p, const Ipv4Header &header, Ptr<NetDe
     }
     else
     {
+        // std::cerr << "send path ";
+        // for(int i = 0;i < dheader.path.size();i++){
+        //     std::cerr << dheader.path[i] <<" ";
+        // }
+        // std::cerr << "\n";
+
         rtentry = Create<Ipv4Route> ();
         rtentry->SetDestination (header.GetDestination ());
         Ipv4Address receiverIfaceAddr = m_neiTable.find(nextHop)->second.receiverIfaceAddr;
@@ -1052,88 +1468,85 @@ RoutingProtocol::RouteOutput (Ptr<Packet> p, const Ipv4Header &header, Ptr<NetDe
 	return rtentry;
 }
 
-int
+std::vector<uint16_t>
 RoutingProtocol::DijkstraAlgorithm(int srcjid, int dstjid)
 {
+    if(srcjid == dstjid) return std::vector<uint16_t>{(uint16_t)dstjid};
     bool visited[m_JuncNum];
     double distance[m_JuncNum];
     int parent[m_JuncNum];
-
-    for(int i = 0; i<m_JuncNum; i++)
+    for(int i = 0; i<= m_JuncNum; i++)
     {
         visited[i] = false;
         distance[i] = INF;
         parent[i] = -1;
     }
 
-    visited[srcjid] = true;
+    // visited[srcjid] = true;
     distance[srcjid] = 0;
 
-    int curr = srcjid;
-    int next = -1;
-    for(int count = 1; curr >= 0 && count <= m_JuncNum; count++)
-    {
-        double min = INF;
-        for(int n = 0; n < m_JuncNum; n++)
-        {
-            if(visited[n] == false)
-            {
-                if(distance[curr] + Graph[curr][n] < distance[n])
-                {
-                    distance[n] = distance[curr] + Graph[curr][n];
-                    parent[n] = curr;
-                }
-
-                if(distance[n] < min)
-                {
-                    min = distance[n];
-                    next = n;
+    for(int i = 0;i <= m_JuncNum;i++){
+        int t = -1;
+        for(int j = 0;j <= m_JuncNum;j++){
+            if(!visited[j] && (t == -1 || distance[j] < distance[t]))
+                t = j;
+        }
+        
+        if(t == -1 || t == dstjid) break;
+        visited[t] = true;
+        
+        for(int j = 0;j <= m_JuncNum;j++){
+            if(Graph[t][j] != INF){
+                if(distance[t] + Graph[t][j] < distance[j]){
+                    distance[j] = distance[t] + Graph[t][j];
+                    parent[j] = t;
                 }
             }
         }
-        curr = next;
-        visited[curr] = true;
     }
-
+    std::vector<uint16_t> path;
+    // NS_LOG_DEBUG("dijstra dest " << distance[dstjid]);
+    if(distance[dstjid] == INF) return path;
+    
     int jid = dstjid;
-    while(jid > 0)
-    {
-        if(parent[jid] == srcjid)
-            break;
+    while(jid != srcjid){
+        path.push_back(jid);
         jid = parent[jid];
     }
-
-    return jid; 
+    std::reverse(path.begin(),path.end());
+    return path; 
 }
+
+
 
 int
 RoutingProtocol::GetPacketNextJID(bool tag)
 {
-    int cjid = GetNearestJID();
+    // int cjid = GetNearestJID();
 
-    if(cjid == m_rsujid)
-        return cjid;
+    // if(cjid == m_rsujid)
+    //     return cjid;
 
-    int nextjid = -1;
+    // int nextjid = -1;
 
-    for(int i = 0; i < m_JuncNum; i++)
-    {
-        for(int j = i + 1; j < m_JuncNum; j++)
-        {
-            if(isAdjacentVex(i, j) == false)
-            {
-                Graph[i][j] = Graph[j][i] = INF;
-            }
-            else
-            {
-                Graph[i][j] = Graph[j][i] = 1;
-            }
-        }
-    }
+    // for(int i = 0; i < m_JuncNum; i++)
+    // {
+    //     for(int j = i + 1; j < m_JuncNum; j++)
+    //     {
+    //         if(isAdjacentVex(i, j) == false)
+    //         {
+    //             Graph[i][j] = Graph[j][i] = INF;
+    //         }
+    //         else
+    //         {
+    //             Graph[i][j] = Graph[j][i] = 1;
+    //         }
+    //     }
+    // }
 
-    nextjid = DijkstraAlgorithm(cjid, m_rsujid);
+    // nextjid = DijkstraAlgorithm(cjid, m_rsujid);
 
-    return nextjid;
+    // return nextjid;
 }
 
 bool RoutingProtocol::RouteInput  (Ptr<const Packet> p,
@@ -1145,7 +1558,7 @@ bool RoutingProtocol::RouteInput  (Ptr<const Packet> p,
 
 	Ipv4Address dest = header.GetDestination ();
     Ipv4Address origin = header.GetSource ();
-
+    // NS_LOG_DEBUG("input to " << header.GetDestination());
 	NS_ASSERT (m_ipv4->GetInterfaceForDevice (idev) >= 0);
 	uint32_t iif = m_ipv4->GetInterfaceForDevice (idev);
 	if (m_ipv4->IsDestinationAddress (dest, iif))
@@ -1175,79 +1588,124 @@ bool RoutingProtocol::RouteInput  (Ptr<const Packet> p,
 	Ptr<Packet> packet = p->Copy ();
 	grp::DataPacketHeader DataPacketHeader;
 	packet->RemoveHeader (DataPacketHeader);
-	int nextjid = (int)DataPacketHeader.GetNextJID();
-    int senderID = DataPacketHeader.GetSenderID();
+    
+
+    if(DataPacketHeader.path.size() == 0){
+
+        Ptr<MobilityModel> MM = m_ipv4->GetObject<MobilityModel> ();
+        double cx = MM->GetPosition ().x;
+        double cy = MM->GetPosition ().y;
+        double cjx = m_map[m_currentJID].x;
+        double cjy = m_map[m_currentJID].y;
+        double njx = m_map[m_nextJID].x;
+        double njy = m_map[m_nextJID].y;
+
+        if(m_JunAreaTag){
+            DataPacketHeader.path = DijkstraAlgorithm(m_currentJID,m_rsujid);
+        }else{
+            Graph[m_JuncNum][m_currentJID] = Graph[m_currentJID][m_JuncNum] = sqrt((cx - cjx)*(cx - cjx) + (cy - cjy)*(cy - cjy));
+            Graph[m_JuncNum][m_nextJID] = Graph[m_nextJID][m_JuncNum] = sqrt((cx - njx)*(cx - njx) + (cy - njy)*(cy - njy));
+            DataPacketHeader.path = DijkstraAlgorithm(m_JuncNum,m_rsujid);
+            Graph[m_JuncNum][m_currentJID] = Graph[m_currentJID][m_JuncNum] = INF;
+            Graph[m_JuncNum][m_nextJID] = Graph[m_nextJID][m_JuncNum] = INF;
+        }
+        DataPacketHeader.next_jid_idx = 0;
+    }
+
+
+    if(DataPacketHeader.path.size() == 0){
+
+  		packet->AddHeader(DataPacketHeader);		
+
+    	QPacketInfo pInfo(origin, dest);		
+  		QMap::const_iterator pItr = m_wTimeCache.find(pInfo);		
+  		if(pItr == m_wTimeCache.end())		
+  		{		
+  			Time &pTime = m_wTimeCache[pInfo];		
+  			pTime = Simulator::Now();		
+  		}		
+
+    	PacketQueueEntry qentry(packet, header, ucb);		
+  		m_pwaitqueue.push_back(qentry);		
+  		m_StorePacketTrace(header);
+        return true;
+    }
+
+    std::cerr << "path ";
+    for(int i = 0;i < DataPacketHeader.path.size();i++){
+        std::cerr << DataPacketHeader.path[i] <<" ";
+    }
+    std::cerr << " idx " << DataPacketHeader.next_jid_idx << '\n';
+
+    int nextjid_idx = DataPacketHeader.next_jid_idx;
+	int nextjid = DataPacketHeader.path[nextjid_idx];
+    // int senderID = DataPacketHeader.GetSenderID();
 
     //如果接收到数据包的车辆刚好位于路口范围内，则先进行路段间路由为数据包选定下一路由路段
     if(m_JunAreaTag == true)
     {
-        nextjid = GetPacketNextJID(true);
-        NS_LOG_UNCOND("JID: " << (int)DataPacketHeader.GetNextJID() << "->" << nextjid);
-        NS_LOG_UNCOND("");
+        if(nextjid == m_currentJID && nextjid_idx < DataPacketHeader.path.size())
+            nextjid = DataPacketHeader.path[++nextjid_idx];
+        // NS_LOG_UNCOND("JID: " << (int)DataPacketHeader.GetNextJID() << "->" << nextjid);
+        // NS_LOG_UNCOND("");
     }
 
     //路段内路由，为数据包选定下一跳节点
-	Ipv4Address nextHop = IntraPathRouting(dest, nextjid);
+	Ipv4Address nextHop("127.0.0.1");
+
+    for(auto& [addr,entry] : m_neiTable){
+        if(addr == dest){
+            nextHop = addr;
+            break;
+        }
+    }
+    NS_LOG_DEBUG("next jid " << nextjid);
+    if(nextHop.IsLocalhost())
+        nextHop = GetNextForwarderInSegment(nextjid);
 
 	NS_LOG_UNCOND("" << Simulator::Now().GetSeconds() << " " << m_id << "->" << AddrToID(nextHop));
 
 	if (nextHop != loopback)
 	{
         //若返回了下一跳的地址，则将该数据包转发给该下一跳节点
-        if(senderID != AddrToID(nextHop))
+        rtentry = Create<Ipv4Route> ();
+        rtentry->SetDestination (header.GetDestination ());
+        Ipv4Address receiverIfaceAddr = m_neiTable.find(nextHop)->second.receiverIfaceAddr;
+
+        if(nextHop == dest)
+            receiverIfaceAddr = m_mainAddress;
+
+        rtentry->SetSource (receiverIfaceAddr);
+        rtentry->SetGateway (nextHop);
+
+        for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i++)
         {
-            rtentry = Create<Ipv4Route> ();
-            rtentry->SetDestination (header.GetDestination ());
-            Ipv4Address receiverIfaceAddr = m_neiTable.find(nextHop)->second.receiverIfaceAddr;
-
-            if(nextHop == dest)
-                receiverIfaceAddr = m_mainAddress;
-
-            rtentry->SetSource (receiverIfaceAddr);
-            rtentry->SetGateway (nextHop);
-
-            for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i++)
+            for (uint32_t j = 0; j < m_ipv4->GetNAddresses (i); j++)
             {
-                for (uint32_t j = 0; j < m_ipv4->GetNAddresses (i); j++)
+                if (m_ipv4->GetAddress (i,j).GetLocal () == receiverIfaceAddr)
                 {
-                    if (m_ipv4->GetAddress (i,j).GetLocal () == receiverIfaceAddr)
-                    {
-                        rtentry->SetOutputDevice (m_ipv4->GetNetDevice (i));
-                        break;
-                    }
+                    rtentry->SetOutputDevice (m_ipv4->GetNetDevice (i));
+                    break;
                 }
             }
-
-            if(nextHop != header.GetDestination())
-            {
-                grp::DataPacketHeader DHeader;
-                DHeader.SetNextJID(nextjid);
-                DHeader.SetSenderID(m_id);
-                packet->AddHeader(DHeader);
-            }
-
-            ucb (rtentry, packet, header);
         }
-        else
+
+        if(nextHop != header.GetDestination())
         {
-            //如果下一跳是自己的上一跳，则可能出现了路由回路，可能导致TTL的快速消耗，故暂缓发送数据包
-            grp::DataPacketHeader DHeader;
-            DHeader.SetNextJID(nextjid);
-            DHeader.SetSenderID(m_id);		
-            packet->AddHeader(DHeader);
-            DelayPacketQueueEntry qentry(packet, header, ucb, nextHop);		
-  		    m_delayqueue.push_back(qentry);	
-            Simulator::Schedule(m_helloInterval / 4, &RoutingProtocol::SendFromDelayQueue, this);
-        }	
+            // grp::DataPacketHeader DHeader;
+            DataPacketHeader.next_jid_idx = nextjid_idx;
+            packet->AddHeader(DataPacketHeader);
+        }
+
+        ucb (rtentry, packet, header);
+        
 	}
 	else
 	{
         //如果返回的IPv4地址为127.0.0.1，则说明当前时刻没有合适的下一跳节点
         //节点启用Carry_and_forward机制，将数据包暂时缓存起来，直到有可用下一跳节点或信息过期为止
-        grp::DataPacketHeader DHeader;
-  		DHeader.SetNextJID(nextjid);	
-        DHeader.SetSenderID(m_id);	
-  		packet->AddHeader(DHeader);		
+        // grp::DataPacketHeader DHeader;
+  		packet->AddHeader(DataPacketHeader);		
 
     	QPacketInfo pInfo(origin, dest);		
   		QMap::const_iterator pItr = m_wTimeCache.find(pInfo);		
@@ -1263,7 +1721,6 @@ bool RoutingProtocol::RouteInput  (Ptr<const Packet> p,
 	}
 	return true;
 }
-
 void
 RoutingProtocol::NotifyInterfaceUp (uint32_t i)
 {

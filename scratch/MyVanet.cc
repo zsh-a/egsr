@@ -419,6 +419,8 @@ void ReadConfiguration()
 
 int main (int argc, char *argv[])
 {
+    // LogComponentEnable("GrpRoutingProtocol",LOG_LEVEL_DEBUG);
+    // LogComponentEnable("GrpHeader",LOG_LEVEL_DEBUG);
 	CommandLine cmd;
 	cmd.Parse (argc, argv);
 
@@ -499,16 +501,16 @@ int main (int argc, char *argv[])
 	InternetStackHelper stack;
 	list.Add (grp, 100);
 	stack.SetRoutingHelper (list);
-	stack.Install (Vehicles);
-	grp.Install(Vehicles);
+	stack.Install (Nodes);
+	grp.Install(Nodes);
 
-	MyServerHelper myserver;
-	Ipv4ListRoutingHelper serverlist;
-	InternetStackHelper serverStack;
-	serverlist.Add(myserver, 100);
-	serverStack.SetRoutingHelper(serverlist);
-	serverStack.Install(Server);
-	myserver.Install(Server);
+	// MyServerHelper myserver;
+	// Ipv4ListRoutingHelper serverlist;
+	// InternetStackHelper serverStack;
+	// serverlist.Add(myserver, 100);
+	// serverStack.SetRoutingHelper(serverlist);
+	// serverStack.Install(Server);
+	// myserver.Install(Server);
 
 
 	// IP Addressing
@@ -532,7 +534,7 @@ int main (int argc, char *argv[])
     //设置仿真时间
     SimulationStopTime = 160;
     //在指定时间指定发送节点向指定目标节点发送一个数据包，用以测试算法正确性
-	// Simulator::Schedule(Seconds(27.5), &SendSpecificPacket, 179, nNodes);	
+	// Simulator::Schedule(Seconds(100), &SendSpecificPacket, 20, nNodes);	
     //大规模发包测试，指定传输开始时间，具体的发送方式可以只有指定，当前文件前面定义呢多个测试函数，见上	
     Simulator::Schedule(Seconds(20), &SendTestPacketToLC_DIS);     							
 

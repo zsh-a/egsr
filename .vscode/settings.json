@@ -56,7 +56,14 @@
         "streambuf": "cpp",
         "thread": "cpp",
         "cinttypes": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "queue": "cpp",
+        "bit": "cpp",
+        "condition_variable": "cpp",
+        "random": "cpp",
+        "future": "cpp",
+        "mutex": "cpp",
+        "variant": "cpp"
     },
     "editor.detectIndentation": false
 }

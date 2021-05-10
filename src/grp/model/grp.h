@@ -17,6 +17,7 @@
 #include "ns3/mobility-model.h"
 #include <vector>
 #include <map>
+#include <unordered_map>
 #include <queue>
 #include "ns3/ip-l4-protocol.h"
 #include "ns3/digitalMap.h"
@@ -142,6 +143,9 @@ struct NeighborTableEntry
     }
 };
 
+
+
+
 class RoutingProtocol : public Ipv4RoutingProtocol
 {
 public:
@@ -170,6 +174,8 @@ private:
     Timer m_positionCheckTimer;
     Timer m_queuedMessagesTimer;
     Timer m_speedTimer;
+    Timer m_antTimer;
+    Timer m_evaporateTimer;
 
     grp::MessageList m_queuedMessages;
 
@@ -216,7 +222,25 @@ private:
     int m_currentJID = -1;
     int m_direction = -1;
     bool m_JunAreaTag = false;
-    float ** Graph;
+
+    std::vector<std::vector<double>> Graph; // Adjacency matrix
+    std::vector<std::vector<double>> length;
+    std::vector<std::vector<double>> P;
+
+
+    struct IpHash{
+        size_t operator()(const std::pair<Ipv4Address,uint16_t>& ip)const{
+            return std::hash<uint32_t>{}(ip.first.Get()) ^ std::hash<uint16_t>{}(ip.second);
+        }
+    };
+    
+    // record the seq number and version
+    std::unordered_map<std::pair<Ipv4Address,uint16_t>,uint16_t,IpHash> m_received_last_ant;
+
+    // min delay
+    std::vector<std::vector<Time>> m_min_delay;
+
+    uint16_t m_antSeqNum = 0;
     double m_speed = 1;
     double RSSIDistanceThreshold = 0;
     double m_last_x = 0, m_last_y = 0;
@@ -232,6 +256,14 @@ private:
     std::vector<PacketQueueEntry> m_pwaitqueue;	
     std::vector<DelayPacketQueueEntry> m_delayqueue;	
     std::vector<DigitalMapEntry> m_map;
+
+    // egsr parameters
+    Time m_antInterval = Seconds(1.5);
+    Time m_evaporateInterval = Seconds(5);
+    double m_evaporateAlpha = 0.92;
+
+    size_t max_path_length = 30;
+    static double A;
 
 /*------------------------------------------------------------------------------------------*/
     //从配置文件读取实验运行参数
@@ -265,6 +297,13 @@ private:
     //用以定期清理邻居表中的过期信息
     void NeiTableCheckExpire(Ipv4Address addr);
 
+    void AntTimerExpire();
+
+    void EvaporateExpire();
+    std::pair<int,Ipv4Address> GetNextForwarderInAnchor(int from,int to);
+    Ipv4Address GetNextForwarderInSegment(int next_jid);
+
+    uint16_t GetAntSeqNum();
 /*------------------------------------------------------------------------------------------*/
 //路由方法实现，分为路段间路由和路段内路由
     //路段间路由，为数据包挑选合适的下一个传输路段
@@ -273,7 +312,7 @@ private:
     Ipv4Address IntraPathRouting(Ipv4Address dest, int dstjid);
 
     //路段间路由采用迪杰斯特拉最短路径算法计算最优的下一路由路段
-    int DijkstraAlgorithm(int srcjid, int dstjid);
+    std::vector<uint16_t> DijkstraAlgorithm(int srcjid, int dstjid);
     //用以在迪杰斯特拉算法中确定某两个路口是否是相邻
     bool isAdjacentVex(int sjid, int ejid);
     //用以确认邻居车辆是否位于两个指定路口所形成的矩形区域内
@@ -286,7 +325,9 @@ private:
     //Beacon机制处理逻辑
     void SendHello ();
     void ProcessHello (const grp::MessageHeader &msg, const Ipv4Address receiverIfaceAddr, const Ipv4Address senderIface);
-    
+    void ProcessAnt (const grp::MessageHeader &msg,const Ipv4Address receiverIfaceAddr,const Ipv4Address senderIface);
+    void update_matrix(const grp::MessageHeader& msg);
+
     //Beacon机制的具体发送机制
     void SendPacket (Ptr<Packet> packet);
     void QueueMessage (const grp::MessageHeader &message, Time delay);

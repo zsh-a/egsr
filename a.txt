@@ -1,0 +1,3738 @@
+Waf: Entering directory `/home/zsh/example/build'
+Waf: Leaving directory `/home/zsh/example/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.246s)
+Simulation start
+s 20 /NodeList/125/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.126 > 10.1.0.201 id 0
+s 20.1 /NodeList/125/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.126 > 10.1.0.201 id 1
+s 20.2 /NodeList/125/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.126 > 10.1.0.201 id 2
+s 20.3 /NodeList/125/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.126 > 10.1.0.201 id 3
+s 20.4 /NodeList/125/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.126 > 10.1.0.201 id 4
+s 20.5 /NodeList/125/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.126 > 10.1.0.201 id 5
+s 20.6 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 0
+s 20.7 /NodeList/66/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.67 > 10.1.0.201 id 0
+s 20.8 /NodeList/125/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.126 > 10.1.0.201 id 6
+s 20.9 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 1
+s 21 /NodeList/90/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.91 > 10.1.0.201 id 0
+s 21.1 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.48 > 10.1.0.201 id 0
+s 21.2 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 2
+s 21.3 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 3
+s 21.4 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 4
+s 21.5 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 5
+s 21.6 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 6
+s 21.7 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 7
+s 21.8 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 8
+s 21.9 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 9
+s 22 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 10
+s 22.1 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 11
+s 22.2 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 12
+s 22.3 /NodeList/90/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.91 > 10.1.0.201 id 1
+s 22.4 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 13
+s 22.5 /NodeList/90/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.91 > 10.1.0.201 id 2
+s 22.6 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 0
+s 22.7 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 0
+s 22.8 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 14
+s 22.9 /NodeList/179/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.180 > 10.1.0.201 id 0
+s 23 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 1
+s 23.1 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 2
+s 23.2 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 3
+s 23.3 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 1
+s 23.4 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 4
+s 23.5 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 5
+s 23.6 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 6
+s 23.7 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 7
+s 23.8 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 8
+s 23.9 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 9
+s 24 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 10
+s 24.1 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 11
+s 24.2 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 12
+s 24.3 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 13
+s 24.4 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 2
+s 24.5 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 15
+s 24.6 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 16
+s 24.7 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 17
+s 24.8 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 18
+s 24.9 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 19
+s 25 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 20
+s 25.1 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 21
+s 25.2 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 22
+s 25.3 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 23
+s 25.4 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 3
+s 25.5 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 24
+s 25.6 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 25
+s 25.7 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 26
+s 25.8 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 27
+s 25.9 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 28
+s 26 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 29
+s 26.1 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 30
+s 26.2 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 0
+s 26.3 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 1
+s 26.4 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 2
+s 26.5 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 3
+s 26.6 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 0
+s 26.7 /NodeList/4/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.5 > 10.1.0.201 id 0
+s 26.8 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 4
+s 26.9 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 5
+s 27 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 6
+s 27.1 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 1
+s 27.2 /NodeList/4/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.5 > 10.1.0.201 id 1
+path 45  idx 0
+27.3 15->196
+path 45  idx 0
+27.3021 196->200
+27312329335 200 received one packet from 15
+s 27.4 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 7
+s 27.5 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 8
+s 27.6 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 9
+s 27.7 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 10
+s 27.8 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 11
+s 27.9 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 0
+s 28 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 1
+s 28.1 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 2
+s 28.2 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 3
+s 28.3 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 4
+s 28.4 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 5
+s 28.5 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 6
+s 28.6 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 7
+s 28.7 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 8
+s 28.8 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 0
+path 45  idx 0
+28.9 196->200
+28901496486 200 received one packet from 196
+s 29 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 9
+s 29.1 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 10
+path 45  idx 0
+29.1131 47->112
+path 45  idx 0
+29.1224 112->163
+path 45  idx 0
+29.1248 163->200
+29133970341 200 received one packet from 47
+s 29.2 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 11
+path 45  idx 0
+29.3 112->163
+path 45  idx 0
+29.3015 163->200
+29303324213 200 received one packet from 112
+path 45  idx 0
+29.4 112->163
+path 45  idx 0
+29.4015 163->200
+29403272217 200 received one packet from 112
+path 45  idx 0
+29.5 112->163
+path 45  idx 0
+29.5015 163->200
+29503272222 200 received one packet from 112
+path 45  idx 0
+29.6 112->163
+path 45  idx 0
+29.6015 163->200
+29603285226 200 received one packet from 112
+path 45  idx 0
+29.7 112->163
+path 45  idx 0
+29.7015 163->200
+29703298231 200 received one packet from 112
+s 29.8 /NodeList/158/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.159 > 10.1.0.201 id 0
+path 45  idx 0
+29.9 112->163
+path 45  idx 0
+29.9015 163->200
+29903337239 200 received one packet from 112
+path 45  idx 0
+30 112->163
+path 45  idx 0
+30.0015 163->200
+30003155244 200 received one packet from 112
+path 45  idx 0
+30.1 112->163
+path 45  idx 0
+30.1015 163->200
+30103194248 200 received one packet from 112
+path 45  idx 0
+30.2 112->163
+path 45  idx 0
+30.2015 163->200
+30203272252 200 received one packet from 112
+s 30.3 /NodeList/158/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.159 > 10.1.0.201 id 1
+s 30.4 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 2
+path 45  idx 0
+30.5 112->163
+path 45  idx 0
+30.6 112->163
+s 30.7 /NodeList/158/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.159 > 10.1.0.201 id 2
+s 30.8 /NodeList/45/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.46 > 10.1.0.201 id 0
+s 30.9 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 0
+s 31 /NodeList/45/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.46 > 10.1.0.201 id 1
+s 31.1 /NodeList/45/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.46 > 10.1.0.201 id 2
+s 31.2 /NodeList/45/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.46 > 10.1.0.201 id 3
+s 31.3 /NodeList/45/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.46 > 10.1.0.201 id 4
+s 31.4 /NodeList/45/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.46 > 10.1.0.201 id 5
+s 31.5 /NodeList/45/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.46 > 10.1.0.201 id 6
+s 31.6 /NodeList/45/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.46 > 10.1.0.201 id 7
+s 31.7 /NodeList/45/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.46 > 10.1.0.201 id 8
+s 31.8 /NodeList/45/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.46 > 10.1.0.201 id 9
+s 31.9 /NodeList/45/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.46 > 10.1.0.201 id 10
+s 32 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 1
+s 32.1 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 0
+s 32.2 /NodeList/45/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.46 > 10.1.0.201 id 11
+s 32.3 /NodeList/45/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.46 > 10.1.0.201 id 12
+s 32.4 /NodeList/4/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.5 > 10.1.0.201 id 2
+s 32.5 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 31
+s 32.6 /NodeList/4/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.5 > 10.1.0.201 id 3
+s 32.7 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 32
+s 32.8 /NodeList/4/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.5 > 10.1.0.201 id 4
+s 32.9 /NodeList/4/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.5 > 10.1.0.201 id 5
+s 33 /NodeList/4/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.5 > 10.1.0.201 id 6
+s 33.1 /NodeList/4/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.5 > 10.1.0.201 id 7
+s 33.2 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 33
+s 33.3 /NodeList/4/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.5 > 10.1.0.201 id 8
+s 33.4 /NodeList/4/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.5 > 10.1.0.201 id 9
+s 33.5 /NodeList/4/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.5 > 10.1.0.201 id 10
+s 33.6 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 34
+s 33.7 /NodeList/4/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.5 > 10.1.0.201 id 11
+s 33.8 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 35
+s 33.9 /NodeList/4/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.5 > 10.1.0.201 id 12
+s 34 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 36
+s 34.1 /NodeList/4/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.5 > 10.1.0.201 id 13
+s 34.2 /NodeList/198/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.199 > 10.1.0.201 id 37
+path 45  idx 0
+34.3 15->0
+s 34.3 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 1
+path 45  idx 0
+34.339 128->15
+path 45  idx 0
+34.3432 15->0
+s 34.3432 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 1
+path 45  idx 0
+34.349 128->15
+path 45  idx 0
+34.3505 15->0
+s 34.3505 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 0
+path 45  idx 0
+34.359 128->15
+path 45  idx 0
+34.3605 15->0
+s 34.3605 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 2
+path 45  idx 0
+34.369 128->15
+path 45  idx 0
+34.3705 15->0
+s 34.3705 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 3
+path 45  idx 0
+34.4 15->0
+s 34.4 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 2
+path 45  idx 0
+34.5 15->0
+s 34.5 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 3
+path 45  idx 0
+34.6 15->0
+s 34.6 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 4
+path 45  idx 0
+34.7 15->0
+s 34.7 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 5
+s 34.8 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 0
+s 34.9 /NodeList/84/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.85 > 10.1.0.201 id 0
+path 45  idx 0
+35 15->0
+s 35 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 6
+path 45  idx 0
+35.1 15->0
+s 35.1 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 7
+s 35.2 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 1
+s 35.3 /NodeList/84/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.85 > 10.1.0.201 id 1
+path 45  idx 0
+35.3165 15->128
+path 45  idx 0
+35.3265 15->128
+path 45  idx 0
+35.3278 128->0
+s 35.3278 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 7
+path 45  idx 0
+35.3295 128->0
+s 35.3295 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 6
+path 45  idx 0
+35.3365 15->128
+path 45  idx 0
+35.3381 128->0
+s 35.3381 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 5
+path 45  idx 0
+35.3465 15->128
+path 45  idx 0
+35.3481 128->0
+s 35.3481 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 4
+path 45  idx 0
+35.3565 15->128
+path 45  idx 0
+35.3581 128->0
+s 35.3581 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 3
+path 45  idx 0
+35.3665 15->128
+path 45  idx 0
+35.3681 128->0
+s 35.3681 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 2
+path 45  idx 0
+35.3765 15->128
+path 45  idx 0
+35.3781 128->0
+s 35.3781 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 3
+path 45  idx 0
+35.3865 15->128
+path 45  idx 0
+35.3881 128->0
+s 35.3881 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 2
+path 45  idx 0
+35.3965 15->128
+path 45  idx 0
+35.3981 128->0
+s 35.3981 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 0
+path 45  idx 0
+35.4 15->128
+path 45  idx 0
+35.4015 128->0
+s 35.4015 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 8
+path 45  idx 0
+35.4065 15->128
+path 45  idx 0
+35.4081 128->0
+s 35.4081 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 1
+path 45  idx 0
+35.4165 15->128
+path 45  idx 0
+35.4181 128->0
+s 35.4181 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 1
+s 35.5 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 2
+path 45  idx 0
+35.6 15->128
+path 45  idx 0
+35.6015 128->0
+s 35.6015 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 9
+s 35.7 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 3
+s 35.8 /NodeList/84/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.85 > 10.1.0.201 id 2
+s 35.9 /NodeList/90/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.91 > 10.1.0.201 id 3
+s 36 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 12
+s 36.1 /NodeList/24/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.25 > 10.1.0.201 id 0
+s 36.2 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 13
+s 36.3 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 14
+s 36.4 /NodeList/24/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.25 > 10.1.0.201 id 1
+s 36.5 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 15
+s 36.6 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 16
+s 36.7 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 17
+s 36.8 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 18
+s 36.9 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 19
+s 37 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 20
+s 37.1 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 21
+s 37.2 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 22
+s 37.3 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 23
+s 37.4 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 4
+s 37.5 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 5
+s 37.6 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 6
+s 37.7 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 7
+s 37.8 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 8
+s 37.9 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 9
+s 38 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 10
+s 38.1 /NodeList/158/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.159 > 10.1.0.201 id 3
+s 38.2 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 11
+path 45  idx 0
+38.2447 27->47
+path 45  idx 0
+38.254 47->0
+s 38.254 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 0
+path 45  idx 0
+38.2547 27->47
+path 45  idx 0
+38.2562 47->0
+s 38.2562 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 1
+s 38.3 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 12
+s 38.4 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 13
+s 38.5 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 14
+s 38.6 /NodeList/158/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.159 > 10.1.0.201 id 4
+s 38.7 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 15
+s 38.8 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 16
+s 38.9 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 17
+s 39 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 0
+s 39.1 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 1
+s 39.2 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 2
+s 39.3 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 3
+s 39.4 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 4
+s 39.5 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 5
+s 39.6 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 6
+path 45  idx 0
+39.7 27->0
+s 39.7 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 2
+s 39.8 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 7
+path 45  idx 0
+39.8159 27->47
+path 45  idx 0
+39.8175 47->0
+s 39.8175 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 2
+s 39.9 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 8
+s 40 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 9
+path 45  idx 0
+40.1 27->47
+path 45  idx 0
+40.1015 47->0
+s 40.1015 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 3
+s 40.2 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 10
+s 40.3 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 11
+s 40.4 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 12
+path 45  idx 0
+40.5 27->0
+s 40.5 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 4
+Store time more than: 20s.
+d 40.5717 /NodeList/125/$ns3::grp::RoutingProtocol/DropPacket 125 > 200 id 6
+path 45  idx 0
+40.6 27->0
+s 40.6 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 5
+path 45  idx 0
+40.7 27->0
+s 40.7 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 6
+path 45  idx 0
+40.8 27->0
+s 40.8 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 7
+path 45  idx 0
+40.9 27->0
+s 40.9 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 8
+path 45  idx 0
+41 27->0
+s 41 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 9
+path 45  idx 0
+41.1 27->0
+s 41.1 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 10
+path 45  idx 0
+41.2 27->0
+s 41.2 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 11
+s 41.3 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 0
+Store time more than: 20s.
+d 41.3618 /NodeList/198/$ns3::grp::RoutingProtocol/DropPacket 198 > 200 id 33
+path 45  idx 0
+41.4 27->0
+s 41.4 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 12
+path 45  idx 0
+41.4236 27->47
+path 45  idx 0
+41.4253 47->0
+s 41.4253 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 4
+Store time more than: 20s.
+d 41.4329 /NodeList/66/$ns3::grp::RoutingProtocol/DropPacket 66 > 200 id 0
+path 45  idx 0
+41.4336 27->47
+path 45  idx 0
+41.4351 47->0
+s 41.4351 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 5
+path 45  idx 0
+41.4436 27->47
+path 45  idx 0
+41.4451 47->0
+s 41.4451 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 6
+path 45  idx 0
+41.4536 27->47
+path 45  idx 0
+41.4551 47->0
+s 41.4551 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 7
+path 45  idx 0
+41.4636 27->47
+path 45  idx 0
+41.4651 47->0
+s 41.4651 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 8
+path 45  idx 0
+41.4736 27->47
+path 45  idx 0
+41.4751 47->0
+s 41.4751 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 9
+path 45  idx 0
+41.4836 27->47
+path 45  idx 0
+41.4851 47->0
+s 41.4851 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 10
+path 45  idx 0
+41.4936 27->47
+path 45  idx 0
+41.4951 47->0
+s 41.4951 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 11
+path 45  idx 0
+41.5 27->47
+path 45  idx 0
+41.5015 47->0
+s 41.5015 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 13
+path 45  idx 0
+41.5036 27->47
+path 45  idx 0
+41.5051 47->0
+s 41.5051 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 12
+Store time more than: 20s.
+d 41.5304 /NodeList/90/$ns3::grp::RoutingProtocol/DropPacket 90 > 200 id 3
+path 45  idx 0
+41.6 27->47
+path 45  idx 0
+41.6015 47->0
+s 41.6015 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 14
+path 45  idx 0
+41.663 47->196
+path 45  idx 0
+41.6693 196->47
+path 45  idx 0
+41.673 47->196
+path 45  idx 0
+41.6745 196->163
+path 45  idx 1
+41.6785 47->0
+s 41.6785 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 1
+path 45  idx 1
+41.681 163->0
+s 41.681 /NodeList/163/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 0
+path 45  idx 0
+41.683 47->196
+path 45  idx 0
+41.6845 196->47
+path 45  idx 1
+41.6864 47->112
+path 45  idx 1
+41.6882 112->0
+s 41.6882 /NodeList/112/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 2
+path 45  idx 0
+41.693 47->196
+path 45  idx 0
+41.6945 196->47
+path 45  idx 1
+41.6964 47->0
+s 41.6964 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 3
+path 45  idx 0
+41.7 27->47
+path 45  idx 0
+41.7015 47->196
+path 45  idx 0
+41.703 47->196
+path 45  idx 0
+41.7033 196->163
+path 45  idx 1
+41.705 163->0
+s 41.705 /NodeList/163/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 15
+path 45  idx 0
+41.7088 196->200
+41710468942 200 received one packet from 27
+path 45  idx 0
+41.713 47->196
+path 45  idx 0
+41.7145 196->200
+41716263302 200 received one packet from 27
+path 45  idx 0
+41.723 47->196
+path 45  idx 0
+41.7245 196->200
+41726276301 200 received one packet from 27
+path 45  idx 0
+41.733 47->196
+path 45  idx 0
+41.7345 196->200
+41736211301 200 received one packet from 27
+path 45  idx 0
+41.743 47->196
+path 45  idx 0
+41.7445 196->200
+41746237301 200 received one packet from 27
+path 45  idx 0
+41.753 47->196
+path 45  idx 0
+41.7545 196->200
+41756263300 200 received one packet from 27
+path 45  idx 0
+41.763 47->196
+path 45  idx 0
+41.7645 196->200
+41766250300 200 received one packet from 27
+path 45  idx 0
+41.773 47->196
+path 45  idx 0
+41.7745 196->200
+41776224299 200 received one packet from 27
+path 45  idx 0
+41.783 47->196
+path 45  idx 0
+41.7845 196->200
+41786276299 200 received one packet from 27
+path 45  idx 0
+41.793 47->196
+path 45  idx 0
+41.7945 196->200
+41796367298 200 received one packet from 27
+s 41.8 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 0
+path 45  idx 0
+41.803 47->196
+path 45  idx 0
+41.8045 196->200
+41806263298 200 received one packet from 27
+s 41.9 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 1
+s 42 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 2
+s 42.1 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 3
+s 42.2 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 4
+s 42.3 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 5
+s 42.4 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 6
+s 42.5 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 1
+s 42.6 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 7
+s 42.7 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 8
+Store time more than: 20s.
+d 42.7819 /NodeList/106/$ns3::grp::RoutingProtocol/DropPacket 106 > 200 id 13
+s 42.8 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 9
+s 42.9 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 2
+s 43 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 10
+Store time more than: 20s.
+d 43.0875 /NodeList/179/$ns3::grp::RoutingProtocol/DropPacket 179 > 200 id 0
+s 43.1 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 11
+s 43.2 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 1
+s 43.3 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 2
+s 43.4 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 3
+s 43.5 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 4
+s 43.6 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 5
+s 43.7 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 6
+s 43.8 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 7
+s 43.9 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 8
+s 44 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 9
+s 44.1 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 10
+s 44.2 /NodeList/52/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.53 > 10.1.0.201 id 0
+s 44.3 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 13
+s 44.4 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 11
+s 44.5 /NodeList/52/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.53 > 10.1.0.201 id 1
+s 44.6 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 14
+s 44.7 /NodeList/52/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.53 > 10.1.0.201 id 2
+path 45  idx 0
+44.7824 128->163
+path 45  idx 0
+44.7895 163->200
+44791305871 200 received one packet from 15
+path 45  idx 0
+44.7924 128->163
+path 45  idx 0
+44.7939 163->200
+44795589247 200 received one packet from 15
+s 44.8 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 12
+path 45  idx 0
+44.8024 128->163
+path 45  idx 0
+44.8039 163->200
+44805589246 200 received one packet from 128
+path 45  idx 0
+44.8124 128->163
+path 45  idx 0
+44.8139 163->200
+44815654246 200 received one packet from 15
+path 45  idx 0
+44.8224 128->163
+path 45  idx 0
+44.8239 163->200
+44825667245 200 received one packet from 128
+path 45  idx 0
+44.8324 128->163
+path 45  idx 0
+44.8339 163->200
+44835719245 200 received one packet from 128
+path 45  idx 0
+44.8424 128->163
+path 45  idx 0
+44.8439 163->200
+44845771244 200 received one packet from 128
+path 45  idx 0
+44.8524 128->163
+path 45  idx 0
+44.8539 163->200
+44855589244 200 received one packet from 15
+path 45  idx 0
+44.8624 128->163
+path 45  idx 0
+44.8639 163->200
+44865602243 200 received one packet from 15
+path 45  idx 0
+44.8724 128->163
+path 45  idx 0
+44.8739 163->200
+44875758242 200 received one packet from 15
+path 45  idx 0
+44.8824 128->163
+path 45  idx 0
+44.8839 163->200
+44885771242 200 received one packet from 15
+path 45  idx 0
+44.8924 128->163
+path 45  idx 0
+44.8939 163->200
+44895693242 200 received one packet from 15
+s 44.9 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 3
+path 45  idx 0
+44.9024 128->163
+path 45  idx 0
+44.9039 163->200
+44905680242 200 received one packet from 15
+s 45 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 3
+s 45.1 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 4
+s 45.2 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 5
+s 45.3 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 6
+s 45.4 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 7
+path 45  idx 1
+45.4171 163->200
+45418712709 200 received one packet from 27
+path 45  idx 1
+45.4752 163->200
+45476983812 200 received one packet from 27
+s 45.5 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 8
+s 45.6 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 9
+s 45.7 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 10
+s 45.8 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 4
+s 45.9 /NodeList/90/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.91 > 10.1.0.201 id 4
+s 46 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 0
+s 46.1 /NodeList/24/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.25 > 10.1.0.201 id 2
+s 46.2 /NodeList/153/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.154 > 10.1.0.201 id 0
+s 46.3 /NodeList/153/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.154 > 10.1.0.201 id 1
+path 45  idx 1
+46.3385 47->200
+46347624605 200 received one packet from 27
+path 45  idx 1
+46.3485 47->200
+46349960134 200 received one packet from 27
+s 46.4 /NodeList/125/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.126 > 10.1.0.201 id 7
+s 46.5 /NodeList/179/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.180 > 10.1.0.201 id 1
+s 46.6 /NodeList/172/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.173 > 10.1.0.201 id 0
+s 46.7 /NodeList/153/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.154 > 10.1.0.201 id 2
+Store time more than: 20s.
+d 46.755 /NodeList/152/$ns3::grp::RoutingProtocol/DropPacket 152 > 200 id 2
+s 46.8 /NodeList/153/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.154 > 10.1.0.201 id 3
+s 46.9 /NodeList/153/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.154 > 10.1.0.201 id 4
+Store time more than: 20s.
+d 46.9226 /NodeList/39/$ns3::grp::RoutingProtocol/DropPacket 39 > 200 id 11
+s 47 /NodeList/153/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.154 > 10.1.0.201 id 5
+s 47.1 /NodeList/153/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.154 > 10.1.0.201 id 6
+Store time more than: 20s.
+d 47.1565 /NodeList/4/$ns3::grp::RoutingProtocol/DropPacket 4 > 200 id 7
+s 47.2 /NodeList/153/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.154 > 10.1.0.201 id 7
+s 47.3 /NodeList/153/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.154 > 10.1.0.201 id 8
+s 47.4 /NodeList/52/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.53 > 10.1.0.201 id 3
+s 47.5 /NodeList/125/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.126 > 10.1.0.201 id 8
+s 47.6 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 24
+s 47.7 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 12
+path 45  idx 0
+47.8 196->200
+47801496388 200 received one packet from 196
+s 47.9 /NodeList/172/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.173 > 10.1.0.201 id 1
+s 48 /NodeList/112/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.113 > 10.1.0.201 id 11
+Store time more than: 20s.
+d 48.0563 /NodeList/1/$ns3::grp::RoutingProtocol/DropPacket 1 > 200 id 24
+s 48.1 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 0
+s 48.2 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 0
+s 48.3 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 18
+s 48.4 /NodeList/46/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.47 > 10.1.0.201 id 0
+s 48.5 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 0
+s 48.6 /NodeList/151/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.152 > 10.1.0.201 id 0
+s 48.7 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 19
+s 48.8 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 20
+s 48.9 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 21
+s 49 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 22
+s 49.1 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 23
+s 49.2 /NodeList/46/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.47 > 10.1.0.201 id 1
+s 49.3 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 1
+s 49.4 /NodeList/151/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.152 > 10.1.0.201 id 1
+s 49.5 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 13
+s 49.6 /NodeList/90/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.91 > 10.1.0.201 id 5
+s 49.7 /NodeList/153/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.154 > 10.1.0.201 id 9
+s 49.8 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 2
+s 49.9 /NodeList/84/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.85 > 10.1.0.201 id 3
+path 45  idx 0
+50 196->200
+50001496488 200 received one packet from 196
+s 50.1 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 14
+s 50.2 /NodeList/108/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.109 > 10.1.0.201 id 0
+s 50.3 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 15
+path 45  idx 0
+50.4 119->196
+path 45  idx 0
+50.4023 196->0
+s 50.4023 /NodeList/196/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.120 > 10.1.0.201 id 0
+path 45  idx 0
+50.417 196->200
+50418740602 200 received one packet from 119
+path 45  idx 0
+50.5 27->196
+path 45  idx 0
+50.5034 196->200
+50505143728 200 received one packet from 27
+path 45  idx 0
+50.6 119->196
+path 45  idx 0
+50.6015 196->200
+50603181270 200 received one packet from 119
+path 45  idx 0
+50.7 119->196
+path 45  idx 0
+50.7015 196->200
+50703246266 200 received one packet from 119
+path 45  idx 0
+50.8 27->196
+path 45  idx 0
+50.8015 196->200
+50803219903 200 received one packet from 27
+Store time more than: 20s.
+d 50.8956 /NodeList/158/$ns3::grp::RoutingProtocol/DropPacket 158 > 200 id 0
+s 50.9 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 1
+Store time more than: 20s.
+d 50.9412 /NodeList/45/$ns3::grp::RoutingProtocol/DropPacket 45 > 200 id 12
+s 51 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 14
+s 51.1 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 10
+s 51.2 /NodeList/179/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.180 > 10.1.0.201 id 2
+s 51.3 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 13
+s 51.4 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 1
+s 51.5 /NodeList/66/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.67 > 10.1.0.201 id 1
+s 51.6 /NodeList/34/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.35 > 10.1.0.201 id 0
+path 45  idx 0
+51.7 196->200
+51701496561 200 received one packet from 196
+s 51.8 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 15
+s 51.9 /NodeList/52/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.53 > 10.1.0.201 id 4
+s 52 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 2
+s 52.1 /NodeList/112/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.113 > 10.1.0.201 id 12
+s 52.2 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 3
+s 52.3 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 4
+s 52.4 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 11
+s 52.5 /NodeList/151/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.152 > 10.1.0.201 id 2
+s 52.6 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 5
+s 52.7 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 12
+s 52.8 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 6
+s 52.9 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 13
+s 53 /NodeList/151/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.152 > 10.1.0.201 id 3
+s 53.1 /NodeList/90/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.91 > 10.1.0.201 id 6
+s 53.2 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 16
+s 53.3 /NodeList/108/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.109 > 10.1.0.201 id 1
+s 53.4 /NodeList/179/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.180 > 10.1.0.201 id 3
+s 53.5 /NodeList/52/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.53 > 10.1.0.201 id 5
+s 53.6 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 17
+s 53.7 /NodeList/108/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.109 > 10.1.0.201 id 2
+s 53.8 /NodeList/179/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.180 > 10.1.0.201 id 4
+s 53.9 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 18
+s 54 /NodeList/108/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.109 > 10.1.0.201 id 3
+s 54.1 /NodeList/179/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.180 > 10.1.0.201 id 5
+s 54.2 /NodeList/52/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.53 > 10.1.0.201 id 6
+s 54.3 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 11
+s 54.4 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 19
+s 54.5 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 20
+s 54.6 /NodeList/108/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.109 > 10.1.0.201 id 4
+s 54.7 /NodeList/179/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.180 > 10.1.0.201 id 6
+s 54.8 /NodeList/52/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.53 > 10.1.0.201 id 7
+s 54.9 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 21
+s 55 /NodeList/108/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.109 > 10.1.0.201 id 5
+s 55.1 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 14
+s 55.2 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 15
+Store time more than: 20s.
+d 55.2551 /NodeList/193/$ns3::grp::RoutingProtocol/DropPacket 193 > 200 id 23
+Store time more than: 20s.
+d 55.2701 /NodeList/84/$ns3::grp::RoutingProtocol/DropPacket 84 > 200 id 3
+s 55.3 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 0
+s 55.4 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 16
+s 55.5 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 17
+s 55.6 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 1
+s 55.7 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 18
+s 55.8 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 19
+s 55.9 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 2
+s 56 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 20
+s 56.1 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 21
+Store time more than: 20s.
+d 56.1684 /NodeList/24/$ns3::grp::RoutingProtocol/DropPacket 24 > 200 id 1
+s 56.2 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 3
+s 56.3 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 22
+s 56.4 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 23
+s 56.5 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 24
+s 56.6 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 4
+s 56.7 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 25
+s 56.8 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 5
+s 56.9 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 15
+s 57 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 16
+s 57.1 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 17
+s 57.2 /NodeList/172/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.173 > 10.1.0.201 id 2
+s 57.3 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 18
+s 57.4 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 19
+s 57.5 /NodeList/172/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.173 > 10.1.0.201 id 3
+s 57.6 /NodeList/172/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.173 > 10.1.0.201 id 4
+s 57.7 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 20
+s 57.8 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 21
+s 57.9 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 22
+s 58 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 23
+s 58.1 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 24
+s 58.2 /NodeList/172/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.173 > 10.1.0.201 id 5
+s 58.3 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 25
+s 58.4 /NodeList/172/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.173 > 10.1.0.201 id 6
+s 58.5 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 26
+s 58.6 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 27
+path 45  idx 0
+58.7 196->47
+path 45  idx 0
+58.7015 47->200
+58703284869 200 received one packet from 196
+s 58.8 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 3
+path 45  idx 0
+58.9 196->47
+path 45  idx 0
+58.9015 47->200
+58903232877 200 received one packet from 196
+path 45  idx 0
+59 196->47
+path 45  idx 0
+59.0015 47->200
+59003245882 200 received one packet from 196
+s 59.1 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 4
+s 59.2 /NodeList/46/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.47 > 10.1.0.201 id 2
+path 45  idx 0
+59.3 196->47
+path 45  idx 0
+59.3015 47->200
+59303219895 200 received one packet from 196
+path 45  idx 0
+59.4 196->27
+path 45  idx 0
+59.4063 27->200
+59408859700 200 received one packet from 196
+Store time more than: 20s.
+d 59.4781 /NodeList/185/$ns3::grp::RoutingProtocol/DropPacket 185 > 200 id 19
+path 45  idx 0
+59.5 196->27
+path 45  idx 0
+59.5015 27->200
+59503349905 200 received one packet from 196
+Store time more than: 20s.
+d 59.564 /NodeList/14/$ns3::grp::RoutingProtocol/DropPacket 14 > 200 id 13
+path 45  idx 0
+59.6 196->27
+path 45  idx 0
+59.6015 27->200
+59603219910 200 received one packet from 196
+path 45  idx 0
+59.7 196->27
+path 45  idx 0
+59.7015 27->200
+59703154914 200 received one packet from 196
+path 45  idx 0
+59.8 196->27
+path 45  idx 0
+59.8015 27->200
+59803258918 200 received one packet from 196
+s 59.9 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 5
+path 45  idx 0
+60 196->27
+path 45  idx 0
+60.0015 27->200
+60003154928 200 received one packet from 196
+path 45  idx 0
+60.1 196->27
+path 45  idx 0
+60.1015 27->200
+60103284932 200 received one packet from 196
+path 45  idx 0
+60.2 196->27
+path 45  idx 0
+60.2015 27->200
+60203284936 200 received one packet from 196
+s 60.3 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 6
+s 60.4 /NodeList/46/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.47 > 10.1.0.201 id 3
+path 45  idx 0
+60.5 126->200
+60503174184 200 received one packet from 126
+path 45  idx 0
+60.6 126->200
+60601496724 200 received one packet from 126
+path 45  idx 0
+60.7 126->200
+60701496719 200 received one packet from 126
+s 60.8 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 28
+s 60.9 /NodeList/90/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.91 > 10.1.0.201 id 7
+path 45  idx 0
+61 126->200
+61001496705 200 received one packet from 126
+path 45  idx 0
+61.1 126->200
+61101496701 200 received one packet from 126
+path 45  idx 0
+61.2 126->200
+61201496697 200 received one packet from 126
+path 45  idx 0
+61.3 126->200
+61301496692 200 received one packet from 126
+path 45  idx 0
+61.4 126->200
+61401496688 200 received one packet from 126
+path 45  idx 0
+61.5 126->200
+61501496683 200 received one packet from 126
+Store time more than: 20s.
+d 61.5742 /NodeList/192/$ns3::grp::RoutingProtocol/DropPacket 192 > 200 id 6
+path 45  idx 0
+61.6 126->200
+61601496679 200 received one packet from 126
+path 45  idx 0
+61.7 126->200
+61701496675 200 received one packet from 126
+s 61.8 /NodeList/106/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.107 > 10.1.0.201 id 29
+s 61.9 /NodeList/90/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.91 > 10.1.0.201 id 8
+s 62 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 1
+s 62.1 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 1
+s 62.2 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 2
+s 62.3 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 3
+path 45  idx 0
+62.3001 84->163
+path 45  idx 0
+62.3083 163->128
+path 45  idx 0
+62.3101 84->163
+path 45  idx 0
+62.3107 128->200
+path 45  idx 0
+62.3124 163->128
+path 45  idx 0
+62.3141 128->200
+62316821589 200 received one packet from 84
+62318511071 200 received one packet from 84
+path 45  idx 0
+62.3201 84->163
+path 45  idx 0
+62.3216 163->128
+path 45  idx 0
+62.3234 128->200
+62325191587 200 received one packet from 84
+s 62.4 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 4
+s 62.5 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 5
+Store time more than: 20s.
+d 62.5874 /NodeList/173/$ns3::grp::RoutingProtocol/DropPacket 173 > 200 id 10
+s 62.6 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 5
+s 62.7 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 6
+s 62.8 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 7
+s 62.9 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 8
+s 63 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 9
+s 63.1 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 10
+s 63.2 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 11
+s 63.3 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 12
+s 63.4 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 6
+s 63.5 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 13
+s 63.6 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 7
+s 63.7 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 7
+s 63.8 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 8
+s 63.9 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 9
+s 64 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 22
+s 64.1 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 10
+s 64.2 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 11
+Store time more than: 20s.
+d 64.2621 /NodeList/3/$ns3::grp::RoutingProtocol/DropPacket 3 > 200 id 25
+s 64.3 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 12
+Store time more than: 20s.
+d 64.3009 /NodeList/52/$ns3::grp::RoutingProtocol/DropPacket 52 > 200 id 5
+s 64.4 /NodeList/185/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.186 > 10.1.0.201 id 23
+s 64.5 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 13
+s 64.6 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 14
+s 64.7 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 15
+s 64.8 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 16
+s 64.9 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 17
+s 65 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 18
+s 65.1 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 19
+s 65.2 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 20
+s 65.3 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 14
+s 65.4 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 15
+s 65.5 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 16
+s 65.6 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 17
+s 65.7 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 18
+s 65.8 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 19
+s 65.9 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 20
+s 66 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 21
+Store time more than: 20s.
+d 66.0936 /NodeList/110/$ns3::grp::RoutingProtocol/DropPacket 110 > 200 id 0
+path 45  idx 0
+66.1 196->0
+s 66.1 /NodeList/196/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.197 > 10.1.0.201 id 16
+Store time more than: 20s.
+d 66.1636 /NodeList/90/$ns3::grp::RoutingProtocol/DropPacket 90 > 200 id 7
+s 66.2 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 22
+s 66.3 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 23
+Store time more than: 20s.
+d 66.3997 /NodeList/153/$ns3::grp::RoutingProtocol/DropPacket 153 > 200 id 9
+s 66.4 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 24
+s 66.5 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 25
+path 45  idx 0
+66.5313 196->119
+path 45  idx 0
+66.5406 119->200
+66545028867 200 received one packet from 196
+Store time more than: 20s.
+d 66.5626 /NodeList/125/$ns3::grp::RoutingProtocol/DropPacket 125 > 200 id 8
+s 66.6 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 26
+Store time more than: 20s.
+d 66.6002 /NodeList/179/$ns3::grp::RoutingProtocol/DropPacket 179 > 200 id 5
+path 45  idx 0
+66.7 196->119
+path 45  idx 0
+66.7015 119->200
+66703194223 200 received one packet from 196
+Store time more than: 20s.
+d 66.7695 /NodeList/172/$ns3::grp::RoutingProtocol/DropPacket 172 > 200 id 6
+s 66.8 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 24
+s 66.9 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 25
+s 67 /NodeList/66/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.67 > 10.1.0.201 id 2
+s 67.1 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 26
+s 67.2 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 27
+s 67.3 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 28
+s 67.4 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 29
+s 67.5 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 30
+s 67.6 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 31
+s 67.7 /NodeList/66/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.67 > 10.1.0.201 id 3
+s 67.8 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 32
+s 67.9 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 33
+s 68 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 34
+s 68.1 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 35
+Store time more than: 20s.
+d 68.1729 /NodeList/39/$ns3::grp::RoutingProtocol/DropPacket 39 > 200 id 13
+s 68.2 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 36
+path 45  idx 0
+68.3 128->200
+68301496060 200 received one packet from 128
+s 68.4 /NodeList/112/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.113 > 10.1.0.201 id 13
+Store time more than: 20s.
+d 68.4315 /NodeList/31/$ns3::grp::RoutingProtocol/DropPacket 31 > 200 id 0
+path 45  idx 0
+68.5 128->200
+68501496069 200 received one packet from 128
+path 45  idx 0
+68.6 128->200
+68601496074 200 received one packet from 128
+path 45  idx 0
+68.7 128->200
+68701496078 200 received one packet from 128
+Store time more than: 20s.
+d 68.746 /NodeList/46/$ns3::grp::RoutingProtocol/DropPacket 46 > 200 id 3
+Store time more than: 20s.
+d 68.7636 /NodeList/113/$ns3::grp::RoutingProtocol/DropPacket 113 > 200 id 22
+path 45  idx 0
+68.8 128->200
+68801496083 200 received one packet from 128
+Store time more than: 20s.
+d 68.8793 /NodeList/199/$ns3::grp::RoutingProtocol/DropPacket 199 > 200 id 6
+s 68.9 /NodeList/112/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.113 > 10.1.0.201 id 14
+path 45  idx 0
+69 128->200
+69001496092 200 received one packet from 128
+path 45  idx 0
+69.1 128->200
+69101496096 200 received one packet from 128
+path 45  idx 0
+69.2 128->200
+69201496101 200 received one packet from 128
+path 45  idx 0
+69.3 128->200
+69301496105 200 received one packet from 128
+Store time more than: 20s.
+d 69.3865 /NodeList/151/$ns3::grp::RoutingProtocol/DropPacket 151 > 200 id 2
+path 45  idx 0
+69.4 128->200
+69401496109 200 received one packet from 128
+s 69.5 /NodeList/112/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.113 > 10.1.0.201 id 15
+path 45  idx 0
+69.6 128->200
+69601496118 200 received one packet from 128
+path 45  idx 0
+69.7 128->200
+69701496122 200 received one packet from 128
+path 45  idx 0
+69.8 47->200
+69801496284 200 received one packet from 47
+path 45  idx 0
+69.9 47->200
+69901496289 200 received one packet from 47
+path 45  idx 0
+70 47->200
+70001496293 200 received one packet from 47
+s 70.1 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 12
+path 45  idx 0
+70.2 47->200
+70201496302 200 received one packet from 47
+s 70.3 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 13
+path 45  idx 0
+70.4 47->0
+s 70.4 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.48 > 10.1.0.201 id 5
+path 45  idx 0
+70.4015 47->200
+70403121026 200 received one packet from 47
+path 45  idx 0
+70.5 47->200
+70501496316 200 received one packet from 47
+path 45  idx 0
+70.6 47->200
+70601496320 200 received one packet from 47
+path 45  idx 0
+70.7 47->200
+70701496325 200 received one packet from 47
+path 45  idx 0
+70.8 47->200
+70801496329 200 received one packet from 47
+path 45  idx 0
+70.9 47->200
+70901496334 200 received one packet from 47
+path 45  idx 0
+71 47->200
+71001496339 200 received one packet from 47
+s 71.1 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 14
+path 45  idx 0
+71.2 47->200
+71201496347 200 received one packet from 47
+path 45  idx 0
+71.3 47->200
+71301496352 200 received one packet from 47
+s 71.4 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 0
+Store time more than: 20s.
+d 71.4309 /NodeList/15/$ns3::grp::RoutingProtocol/DropPacket 15 > 200 id 11
+s 71.5 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 1
+s 71.6 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 26
+Store time more than: 20s.
+d 71.643 /NodeList/34/$ns3::grp::RoutingProtocol/DropPacket 34 > 200 id 0
+s 71.7 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 8
+s 71.8 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 2
+s 71.9 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 27
+s 72 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 3
+s 72.1 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 4
+s 72.2 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 5
+s 72.3 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 6
+s 72.4 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 7
+s 72.5 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 8
+s 72.6 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 9
+s 72.7 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 28
+s 72.8 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 9
+s 72.9 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 10
+s 73 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 29
+s 73.1 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 27
+Store time more than: 20s.
+d 73.1643 /NodeList/108/$ns3::grp::RoutingProtocol/DropPacket 108 > 200 id 5
+s 73.2 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 2
+s 73.3 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 11
+s 73.4 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 28
+s 73.5 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 3
+Store time more than: 20s.
+d 73.5008 /NodeList/106/$ns3::grp::RoutingProtocol/DropPacket 106 > 200 id 28
+Store time more than: 20s.
+d 73.5902 /NodeList/66/$ns3::grp::RoutingProtocol/DropPacket 66 > 200 id 1
+s 73.6 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 29
+s 73.7 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 30
+s 73.8 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 31
+s 73.9 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 32
+s 74 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 33
+s 74.1 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 34
+Store time more than: 20s.
+d 74.1124 /NodeList/112/$ns3::grp::RoutingProtocol/DropPacket 112 > 200 id 15
+Store time more than: 20s.
+d 74.1124 /NodeList/112/$ns3::grp::RoutingProtocol/DropPacket 27 > 200 id 2
+s 74.2 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 35
+s 74.3 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 36
+s 74.4 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 37
+s 74.5 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 38
+path 44 45  idx 0
+74.5844 106->46
+path 44 45  idx 0
+74.5925 46->84
+path 44 45  idx 0
+74.5944 106->46
+path 44 45  idx 0
+74.5959 46->84
+s 74.6 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 39
+path 44 45  idx 1
+74.6008 84->27
+path 44 45  idx 0
+74.6044 106->46
+path 44 45  idx 0
+74.6064 46->84
+path 44 45  idx 1
+74.6082 84->27
+path 44 45  idx 1
+74.6099 84->27
+path 44 45  idx 1
+74.6142 27->200
+path 44 45  idx 0
+74.6144 106->46
+path 44 45  idx 0
+74.6159 46->84
+74616005287 200 received one packet from 106
+path 44 45  idx 1
+74.6176 27->200
+74619400940 200 received one packet from 106
+path 44 45  idx 1
+74.6214 84->27
+path 44 45  idx 1
+74.6233 27->200
+path 44 45  idx 0
+74.6244 106->46
+74625024464 200 received one packet from 106
+path 44 45  idx 0
+74.6259 46->84
+path 44 45  idx 1
+74.6268 27->200
+74628423116 200 received one packet from 106
+path 44 45  idx 1
+74.6334 84->27
+path 44 45  idx 0
+74.6344 106->46
+path 44 45  idx 1
+74.6352 27->200
+74636958464 200 received one packet from 106
+path 44 45  idx 0
+74.637 46->84
+path 44 45  idx 1
+74.6388 84->27
+path 44 45  idx 1
+74.6407 27->200
+74642389228 200 received one packet from 106
+path 44 45  idx 0
+74.6444 106->46
+path 44 45  idx 0
+74.6459 46->84
+path 44 45  idx 1
+74.6477 84->27
+path 44 45  idx 1
+74.6494 27->200
+74651151811 200 received one packet from 106
+path 44 45  idx 0
+74.6544 106->46
+path 44 45  idx 0
+74.6559 46->84
+path 44 45  idx 1
+74.6576 84->27
+path 44 45  idx 1
+74.6593 27->200
+74661099811 200 received one packet from 106
+path 44 45  idx 0
+74.6644 106->46
+path 44 45  idx 0
+74.6659 46->84
+path 44 45  idx 1
+74.6677 84->27
+path 44 45  idx 1
+74.6693 27->200
+74671164809 200 received one packet from 106
+path 44 45  idx 0
+74.6744 106->46
+path 44 45  idx 0
+74.6759 46->84
+path 44 45  idx 1
+74.6777 84->27
+path 44 45  idx 1
+74.6795 27->200
+74681307809 200 received one packet from 106
+path 44 45  idx 0
+74.6844 106->46
+path 44 45  idx 0
+74.6859 46->84
+path 44 45  idx 1
+74.6876 84->27
+path 44 45  idx 1
+74.6894 27->200
+74691216807 200 received one packet from 106
+path 44 45  idx 0
+74.6944 106->46
+path 44 45  idx 0
+74.6959 46->84
+path 44 45  idx 1
+74.6977 84->27
+path 44 45  idx 1
+74.6994 27->200
+s 74.7 /NodeList/108/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.109 > 10.1.0.201 id 6
+74701164805 200 received one packet from 106
+path 44 45  idx 0
+74.7044 106->46
+path 44 45  idx 0
+74.7059 46->84
+path 44 45  idx 1
+74.7076 84->27
+path 44 45  idx 1
+74.7094 27->200
+74711177805 200 received one packet from 106
+path 44 45  idx 0
+74.7144 106->46
+path 44 45  idx 0
+74.7159 46->84
+path 44 45  idx 1
+74.7177 84->27
+path 44 45  idx 1
+74.7194 27->200
+74721060804 200 received one packet from 106
+path 44 45  idx 0
+74.7244 106->46
+path 44 45  idx 0
+74.7259 46->84
+path 44 45  idx 1
+74.7277 84->27
+path 44 45  idx 1
+74.7295 27->200
+74731138804 200 received one packet from 106
+path 44 45  idx 0
+74.7344 106->46
+path 44 45  idx 0
+74.7359 46->84
+path 44 45  idx 1
+74.7377 84->27
+path 44 45  idx 1
+74.7395 27->200
+74741307802 200 received one packet from 106
+path 44 45  idx 0
+74.7444 106->46
+path 44 45  idx 0
+74.7459 46->84
+path 44 45  idx 1
+74.7477 84->27
+path 44 45  idx 1
+74.7494 27->200
+74751177801 200 received one packet from 106
+path 44 45  idx 0
+74.7544 106->46
+path 44 45  idx 0
+74.7559 46->84
+path 44 45  idx 1
+74.7577 84->27
+path 44 45  idx 1
+74.7595 27->200
+74761333800 200 received one packet from 106
+path 44 45  idx 0
+74.7644 106->46
+path 44 45  idx 0
+74.7659 46->84
+path 44 45  idx 1
+74.7676 84->27
+path 44 45  idx 1
+74.7694 27->200
+74771177798 200 received one packet from 106
+path 44 45  idx 0
+74.7744 106->46
+path 44 45  idx 0
+74.7759 46->84
+path 44 45  idx 1
+74.7777 84->27
+path 44 45  idx 1
+74.7793 27->200
+74781047798 200 received one packet from 106
+path 44 45  idx 0
+74.7844 106->46
+path 44 45  idx 0
+74.7861 46->84
+path 44 45  idx 1
+74.7879 84->27
+path 44 45  idx 1
+74.7896 27->200
+74791350816 200 received one packet from 106
+path 44 45  idx 0
+74.7944 106->46
+path 44 45  idx 0
+74.7959 46->84
+path 44 45  idx 1
+74.7976 84->27
+path 44 45  idx 1
+74.7994 27->200
+s 74.8 /NodeList/108/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.109 > 10.1.0.201 id 7
+74801216796 200 received one packet from 106
+path 44 45  idx 0
+74.8044 106->46
+path 44 45  idx 0
+74.8059 46->84
+path 44 45  idx 1
+74.8076 84->27
+path 44 45  idx 1
+74.8093 27->200
+74811138795 200 received one packet from 106
+path 44 45  idx 0
+74.8144 106->46
+path 44 45  idx 0
+74.8159 46->84
+path 44 45  idx 1
+74.8177 84->27
+path 44 45  idx 1
+74.8194 27->200
+74821294794 200 received one packet from 106
+path 44 45  idx 0
+74.8244 106->46
+path 44 45  idx 0
+74.8259 46->84
+path 44 45  idx 1
+74.8276 84->27
+path 44 45  idx 1
+74.8294 27->200
+74831112793 200 received one packet from 106
+path 44 45  idx 0
+74.8344 106->46
+path 44 45  idx 0
+74.8359 46->84
+path 44 45  idx 1
+74.8376 84->27
+path 44 45  idx 1
+74.8393 27->200
+74841138791 200 received one packet from 106
+path 44 45  idx 0
+74.8444 106->46
+path 44 45  idx 0
+74.8459 46->84
+path 44 45  idx 1
+74.8476 84->27
+path 44 45  idx 1
+74.8495 27->200
+74851307790 200 received one packet from 106
+path 44 45  idx 0
+74.8544 106->46
+path 44 45  idx 0
+74.8559 46->84
+path 44 45  idx 1
+74.8577 84->27
+path 44 45  idx 1
+74.8594 27->200
+74861125789 200 received one packet from 106
+s 74.9 /NodeList/108/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.109 > 10.1.0.201 id 8
+s 75 /NodeList/108/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.109 > 10.1.0.201 id 9
+s 75.1 /NodeList/108/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.109 > 10.1.0.201 id 10
+path 45  idx 0
+75.1781 46->163
+path 45  idx 0
+75.1881 46->163
+path 45  idx 0
+75.1893 163->0
+s 75.1893 /NodeList/163/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.47 > 10.1.0.201 id 2
+path 45  idx 0
+75.1911 163->0
+s 75.1911 /NodeList/163/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.47 > 10.1.0.201 id 0
+path 45  idx 0
+75.1981 46->163
+path 45  idx 0
+75.1996 163->0
+s 75.1996 /NodeList/163/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.47 > 10.1.0.201 id 1
+s 75.2 /NodeList/108/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.109 > 10.1.0.201 id 11
+s 75.3 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 12
+s 75.4 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 13
+s 75.5 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 14
+s 75.6 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 15
+s 75.7 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 16
+Store time more than: 20s.
+d 75.7937 /NodeList/137/$ns3::grp::RoutingProtocol/DropPacket 137 > 200 id 4
+s 75.8 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 17
+s 75.9 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 18
+s 76 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 19
+s 76.1 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 20
+path 45  idx 0
+76.1009 163->84
+path 45  idx 0
+76.1062 84->27
+path 45  idx 0
+76.1079 27->200
+76109737358 200 received one packet from 46
+path 45  idx 0
+76.1109 163->84
+path 45  idx 0
+76.1124 84->27
+path 45  idx 0
+76.1141 27->200
+76115786949 200 received one packet from 46
+path 45  idx 0
+76.1209 163->84
+path 45  idx 0
+76.1224 84->27
+path 45  idx 0
+76.1242 27->200
+76125864949 200 received one packet from 46
+s 76.2 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 21
+s 76.3 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 22
+s 76.4 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 23
+s 76.5 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 24
+s 76.6 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 25
+s 76.7 /NodeList/129/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.130 > 10.1.0.201 id 26
+path 45  idx 0
+76.8 128->200
+76801496437 200 received one packet from 128
+path 45  idx 0
+76.9 128->200
+76901496441 200 received one packet from 128
+path 45  idx 0
+77 128->200
+77001496445 200 received one packet from 128
+path 45  idx 0
+77.1 128->200
+77101496450 200 received one packet from 128
+path 45  idx 0
+77.2 128->200
+77201496455 200 received one packet from 128
+path 45  idx 0
+77.3 128->200
+77301496459 200 received one packet from 128
+path 45  idx 0
+77.4 128->200
+77401496464 200 received one packet from 128
+path 45  idx 0
+77.5 128->200
+77501496468 200 received one packet from 128
+path 45  idx 0
+77.6 128->200
+77601496473 200 received one packet from 128
+path 45  idx 0
+77.7 128->200
+77701496478 200 received one packet from 128
+path 45  idx 0
+77.8 128->126
+path 45  idx 0
+77.8103 126->0
+s 77.8103 /NodeList/126/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 26
+path 45  idx 0
+77.8451 126->200
+77846768941 200 received one packet from 128
+path 45  idx 0
+77.9 128->200
+77901496487 200 received one packet from 128
+path 45  idx 0
+78 128->200
+78001496492 200 received one packet from 128
+path 45  idx 0
+78.1 128->200
+78101496496 200 received one packet from 128
+path 45  idx 0
+78.2 84->200
+78211317394 200 received one packet from 84
+path 45  idx 0
+78.3 84->200
+78301496794 200 received one packet from 84
+path 45  idx 0
+78.4 84->200
+78401496789 200 received one packet from 84
+path 45  idx 0
+78.5 84->200
+78501496785 200 received one packet from 84
+path 45  idx 0
+78.6 84->200
+78601496780 200 received one packet from 84
+path 45  idx 0
+78.7 84->200
+78701496776 200 received one packet from 84
+path 45  idx 0
+78.8 84->200
+78801496772 200 received one packet from 84
+path 45  idx 0
+78.9 84->200
+78901496767 200 received one packet from 84
+path 45  idx 0
+79 84->200
+79001496763 200 received one packet from 84
+path 45  idx 0
+79.1 84->200
+79101496758 200 received one packet from 84
+path 45  idx 0
+79.2 84->200
+79201496754 200 received one packet from 84
+path 45  idx 0
+79.3 84->200
+79301496749 200 received one packet from 84
+s 79.4 /NodeList/66/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.67 > 10.1.0.201 id 4
+path 45  idx 0
+79.5 84->200
+79501496740 200 received one packet from 84
+s 79.6 /NodeList/136/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.137 > 10.1.0.201 id 0
+s 79.7 /NodeList/136/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.137 > 10.1.0.201 id 1
+s 79.8 /NodeList/136/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.137 > 10.1.0.201 id 2
+s 79.9 /NodeList/136/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.137 > 10.1.0.201 id 3
+s 80 /NodeList/136/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.137 > 10.1.0.201 id 4
+s 80.1 /NodeList/136/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.137 > 10.1.0.201 id 5
+s 80.2 /NodeList/136/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.137 > 10.1.0.201 id 6
+s 80.3 /NodeList/136/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.137 > 10.1.0.201 id 7
+s 80.4 /NodeList/136/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.137 > 10.1.0.201 id 8
+s 80.5 /NodeList/136/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.137 > 10.1.0.201 id 9
+s 80.6 /NodeList/136/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.137 > 10.1.0.201 id 10
+s 80.7 /NodeList/136/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.137 > 10.1.0.201 id 11
+s 80.8 /NodeList/136/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.137 > 10.1.0.201 id 12
+path 45  idx 0
+80.9 126->200
+80901496208 200 received one packet from 126
+path 45  idx 0
+81 126->200
+81001496213 200 received one packet from 126
+path 45  idx 0
+81.1 126->200
+81101496217 200 received one packet from 126
+path 45  idx 0
+81.2 126->200
+81201496221 200 received one packet from 126
+path 45  idx 0
+81.3 126->200
+81301496226 200 received one packet from 126
+path 45  idx 0
+81.4 126->200
+81401496230 200 received one packet from 126
+path 45  idx 0
+81.5 126->200
+81501496234 200 received one packet from 126
+path 45  idx 0
+81.6 126->200
+81601496239 200 received one packet from 126
+path 45  idx 0
+81.7 126->200
+81701496243 200 received one packet from 126
+path 45  idx 0
+81.8 126->200
+81801496247 200 received one packet from 126
+s 81.9 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 10
+path 45  idx 0
+82 126->200
+82001496256 200 received one packet from 126
+path 45  idx 0
+82.1 126->200
+82101496260 200 received one packet from 126
+path 45  idx 0
+82.2 126->200
+82201496264 200 received one packet from 126
+s 82.3 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 21
+s 82.4 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 22
+s 82.5 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 23
+s 82.6 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 24
+s 82.7 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 25
+s 82.8 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 26
+s 82.9 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 27
+Store time more than: 20s.
+d 82.9701 /NodeList/152/$ns3::grp::RoutingProtocol/DropPacket 152 > 200 id 8
+s 83 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 28
+s 83.1 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 29
+s 83.2 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 30
+s 83.3 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 31
+s 83.4 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 32
+s 83.5 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 12
+s 83.6 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 33
+s 83.7 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 34
+s 83.8 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 35
+s 83.9 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 36
+s 84 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 2
+s 84.1 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 3
+s 84.2 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 4
+s 84.3 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 5
+s 84.4 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 16
+s 84.5 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 6
+s 84.6 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 7
+s 84.7 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 17
+s 84.8 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 8
+s 84.9 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 18
+s 85 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 15
+s 85.1 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 4
+s 85.2 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 9
+s 85.3 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 10
+s 85.4 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 19
+s 85.5 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 16
+s 85.6 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 5
+path 45  idx 0
+85.7 128->200
+85701496828 200 received one packet from 128
+path 45  idx 0
+85.8 128->200
+85801496833 200 received one packet from 128
+path 45  idx 0
+85.9 128->200
+85901496837 200 received one packet from 128
+path 45  idx 0
+86 47->119
+path 45  idx 0
+86.0092 119->200
+86010936406 200 received one packet from 47
+s 86.1 /NodeList/112/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.113 > 10.1.0.201 id 16
+path 45  idx 0
+86.2 128->200
+path 45  idx 0
+86.3 47->84
+path 45  idx 0
+86.3034 84->200
+86305170135 200 received one packet from 47
+path 45  idx 0
+86.4 128->200
+path 45  idx 0
+86.5 47->119
+path 45  idx 0
+86.5015 119->200
+86503337011 200 received one packet from 47
+s 86.6 /NodeList/112/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.113 > 10.1.0.201 id 17
+path 45  idx 0
+86.7 128->200
+path 45  idx 0
+86.8 128->126
+path 45  idx 0
+86.8015 126->200
+86803349878 200 received one packet from 128
+Store time more than: 20s.
+d 86.8244 /NodeList/193/$ns3::grp::RoutingProtocol/DropPacket 193 > 200 id 33
+path 45  idx 0
+86.9 128->126
+path 45  idx 0
+86.9015 126->200
+86903232882 200 received one packet from 128
+Store time more than: 20s.
+d 86.9038 /NodeList/185/$ns3::grp::RoutingProtocol/DropPacket 185 > 200 id 22
+path 45  idx 0
+87 47->119
+path 45  idx 0
+87.0015 119->200
+87003220032 200 received one packet from 47
+s 87.1 /NodeList/112/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.113 > 10.1.0.201 id 18
+s 87.2 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 37
+s 87.3 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 38
+s 87.4 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 11
+s 87.5 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 39
+s 87.6 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 12
+s 87.7 /NodeList/175/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.176 > 10.1.0.201 id 0
+path 45  idx 0
+87.8 27->200
+87801496710 200 received one packet from 27
+path 45  idx 0
+87.9 84->200
+87901496368 200 received one packet from 84
+s 88 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 40
+s 88.1 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 41
+s 88.2 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 13
+s 88.3 /NodeList/175/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.176 > 10.1.0.201 id 1
+s 88.4 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 42
+s 88.5 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 14
+s 88.6 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 43
+s 88.7 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 15
+s 88.8 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 44
+s 88.9 /NodeList/152/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.153 > 10.1.0.201 id 16
+s 89 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 6
+s 89.1 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 7
+s 89.2 /NodeList/175/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.176 > 10.1.0.201 id 2
+s 89.3 /NodeList/96/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.97 > 10.1.0.201 id 0
+s 89.4 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 45
+s 89.5 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 6
+s 89.6 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 17
+s 89.7 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 8
+s 89.8 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 9
+s 89.9 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 10
+s 90 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 11
+s 90.1 /NodeList/175/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.176 > 10.1.0.201 id 3
+s 90.2 /NodeList/96/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.97 > 10.1.0.201 id 1
+s 90.3 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 46
+s 90.4 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 7
+s 90.5 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 18
+s 90.6 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 12
+Store time more than: 20s.
+d 90.6882 /NodeList/173/$ns3::grp::RoutingProtocol/DropPacket 173 > 200 id 18
+s 90.7 /NodeList/175/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.176 > 10.1.0.201 id 4
+s 90.8 /NodeList/96/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.97 > 10.1.0.201 id 2
+s 90.9 /NodeList/192/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.193 > 10.1.0.201 id 47
+s 91 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 8
+s 91.1 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 19
+path 44 45  idx 0
+91.2 163->0
+s 91.2 /NodeList/163/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.164 > 10.1.0.201 id 0
+s 91.3 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 25
+s 91.4 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 26
+s 91.5 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 27
+s 91.6 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 28
+s 91.7 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 29
+s 91.8 /NodeList/175/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.176 > 10.1.0.201 id 5
+Store time more than: 20s.
+d 91.807 /NodeList/3/$ns3::grp::RoutingProtocol/DropPacket 3 > 200 id 27
+path 44 45  idx 0
+91.9 163->0
+s 91.9 /NodeList/163/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.164 > 10.1.0.201 id 1
+s 92 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 20
+s 92.1 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 21
+s 92.2 /NodeList/1/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.2 > 10.1.0.201 id 30
+s 92.3 /NodeList/175/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.176 > 10.1.0.201 id 6
+path 44 45  idx 0
+92.4 163->0
+s 92.4 /NodeList/163/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.164 > 10.1.0.201 id 2
+s 92.5 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 22
+s 92.6 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 23
+s 92.7 /NodeList/151/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.152 > 10.1.0.201 id 4
+path 44 45  idx 0
+92.8 163->0
+s 92.8 /NodeList/163/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.164 > 10.1.0.201 id 3
+s 92.9 /NodeList/108/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.109 > 10.1.0.201 id 12
+s 93 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 30
+s 93.1 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 13
+s 93.2 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 31
+s 93.3 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 32
+s 93.4 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 33
+s 93.5 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 34
+s 93.6 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 35
+Store time more than: 20s.
+d 93.6817 /NodeList/31/$ns3::grp::RoutingProtocol/DropPacket 31 > 200 id 8
+s 93.7 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 14
+s 93.8 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 36
+s 93.9 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 37
+s 94 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 38
+s 94.1 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.4 > 10.1.0.201 id 39
+s 94.2 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 15
+s 94.3 /NodeList/96/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.97 > 10.1.0.201 id 3
+s 94.4 /NodeList/172/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.173 > 10.1.0.201 id 7
+s 94.5 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 16
+s 94.6 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 13
+s 94.7 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 0
+s 94.8 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 1
+s 94.9 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 2
+s 95 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 14
+s 95.1 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 3
+Store time more than: 20s.
+d 95.1067 /NodeList/108/$ns3::grp::RoutingProtocol/DropPacket 108 > 200 id 7
+s 95.2 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 4
+s 95.3 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 5
+s 95.4 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 15
+s 95.5 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 6
+s 95.6 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 16
+s 95.7 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 7
+s 95.8 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 17
+s 95.9 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 14
+s 96 /NodeList/112/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.113 > 10.1.0.201 id 19
+s 96.1 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 8
+s 96.2 /NodeList/15/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.16 > 10.1.0.201 id 18
+s 96.3 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 9
+s 96.4 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 10
+s 96.5 /NodeList/85/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.86 > 10.1.0.201 id 0
+s 96.6 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 11
+s 96.7 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 12
+s 96.8 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 13
+s 96.9 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 14
+s 97 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 15
+s 97.1 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 16
+s 97.2 /NodeList/85/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.86 > 10.1.0.201 id 1
+s 97.3 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 17
+Store time more than: 20s.
+d 97.3559 /NodeList/113/$ns3::grp::RoutingProtocol/DropPacket 113 > 200 id 31
+s 97.4 /NodeList/85/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.86 > 10.1.0.201 id 2
+s 97.5 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 18
+s 97.6 /NodeList/85/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.86 > 10.1.0.201 id 3
+s 97.7 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 19
+s 97.8 /NodeList/85/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.86 > 10.1.0.201 id 4
+path 45  idx 0
+97.9 126->0
+s 97.9 /NodeList/126/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.127 > 10.1.0.201 id 24
+s 98 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 20
+s 98.1 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 21
+s 98.2 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 22
+s 98.3 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 23
+path 45  idx 0
+98.3537 126->84
+path 45  idx 0
+98.3599 84->200
+98361602220 200 received one packet from 126
+path 45  idx 0
+98.4 128->0
+s 98.4 /NodeList/128/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 38
+path 45  idx 0
+98.4084 128->126
+path 45  idx 0
+98.41 126->84
+path 45  idx 0
+98.4117 84->200
+98413408418 200 received one packet from 128
+s 98.5 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 24
+s 98.6 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 25
+s 98.7 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 26
+Store time more than: 20s.
+d 98.7791 /NodeList/129/$ns3::grp::RoutingProtocol/DropPacket 129 > 200 id 26
+s 98.8 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 27
+s 98.9 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 28
+s 99 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 29
+s 99.1 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 30
+s 99.2 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 31
+path 45  idx 0
+99.3 128->126
+path 45  idx 0
+99.3015 126->0
+s 99.3015 /NodeList/126/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 39
+s 99.4 /NodeList/193/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.194 > 10.1.0.201 id 37
+s 99.5 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 17
+Store time more than: 20s.
+d 99.5722 /NodeList/66/$ns3::grp::RoutingProtocol/DropPacket 66 > 200 id 4
+s 99.6 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 32
+path 45  idx 0
+99.7 128->126
+path 45  idx 0
+99.7015 126->0
+s 99.7015 /NodeList/126/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.129 > 10.1.0.201 id 40
+Store time more than: 20s.
+d 99.7319 /NodeList/192/$ns3::grp::RoutingProtocol/DropPacket 192 > 200 id 47
+s 99.8 /NodeList/8/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.9 > 10.1.0.201 id 0
+Store time more than: 20s.
+d 99.8595 /NodeList/136/$ns3::grp::RoutingProtocol/DropPacket 136 > 200 id 12
+path 45  idx 0
+99.8852 126->84
+path 45  idx 0
+99.8869 84->200
+99888599849 200 received one packet from 128
+path 45  idx 0
+99.8952 126->84
+path 45  idx 0
+99.8967 84->200
+99898489850 200 received one packet from 128
+s 99.9 /NodeList/90/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.91 > 10.1.0.201 id 9
+s 100 /NodeList/8/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.9 > 10.1.0.201 id 1
+s 100.1 /NodeList/8/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.9 > 10.1.0.201 id 2
+s 100.2 /NodeList/8/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.9 > 10.1.0.201 id 3
+s 100.3 /NodeList/8/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.9 > 10.1.0.201 id 4
+s 100.4 /NodeList/8/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.9 > 10.1.0.201 id 5
+s 100.5 /NodeList/8/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.9 > 10.1.0.201 id 6
+s 100.6 /NodeList/8/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.9 > 10.1.0.201 id 7
+s 100.7 /NodeList/8/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.9 > 10.1.0.201 id 8
+s 100.8 /NodeList/8/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.9 > 10.1.0.201 id 9
+s 100.9 /NodeList/90/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.91 > 10.1.0.201 id 10
+s 101 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 7
+s 101.1 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 11
+s 101.2 /NodeList/8/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.9 > 10.1.0.201 id 10
+s 101.3 /NodeList/8/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.9 > 10.1.0.201 id 11
+s 101.4 /NodeList/8/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.9 > 10.1.0.201 id 12
+path 45  idx 0
+101.5 84->200
+101501496275 200 received one packet from 84
+path 45  idx 0
+101.6 84->200
+101601496279 200 received one packet from 84
+path 45  idx 0
+101.7 84->200
+101701496284 200 received one packet from 84
+path 45  idx 0
+101.8 84->200
+101801496289 200 received one packet from 84
+path 45  idx 0
+101.9 84->200
+101901496293 200 received one packet from 84
+path 45  idx 0
+102 84->200
+102001496298 200 received one packet from 84
+path 45  idx 0
+102.1 84->200
+102101496302 200 received one packet from 84
+path 45  idx 0
+102.2 84->200
+102201496306 200 received one packet from 84
+s 102.3 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 20
+path 45  idx 0
+102.4 84->200
+102401496315 200 received one packet from 84
+path 45  idx 0
+102.5 84->200
+102501496319 200 received one packet from 84
+path 45  idx 0
+102.6 84->200
+102601496324 200 received one packet from 84
+path 45  idx 0
+102.7 84->200
+102701496328 200 received one packet from 84
+path 45  idx 0
+102.8 84->200
+102801496332 200 received one packet from 84
+path 45  idx 0
+102.9 84->200
+102901496337 200 received one packet from 84
+s 103 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 18
+s 103.1 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 19
+s 103.2 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 20
+s 103.3 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 21
+s 103.4 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 22
+s 103.5 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 23
+s 103.6 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 24
+s 103.7 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 25
+s 103.8 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 26
+Store time more than: 20s.
+d 103.887 /NodeList/15/$ns3::grp::RoutingProtocol/DropPacket 15 > 200 id 10
+s 103.9 /NodeList/24/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.25 > 10.1.0.201 id 3
+s 104 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 27
+s 104.1 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 28
+s 104.2 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 29
+s 104.3 /NodeList/24/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.25 > 10.1.0.201 id 4
+s 104.4 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 30
+path 45  idx 0
+104.5 119->0
+s 104.5 /NodeList/119/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.120 > 10.1.0.201 id 3
+path 45  idx 0
+104.6 119->0
+s 104.6 /NodeList/119/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.120 > 10.1.0.201 id 4
+Store time more than: 20s.
+d 104.614 /NodeList/110/$ns3::grp::RoutingProtocol/DropPacket 110 > 200 id 11
+path 45  idx 0
+104.7 119->0
+s 104.7 /NodeList/119/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.120 > 10.1.0.201 id 5
+path 45  idx 0
+104.8 119->0
+s 104.8 /NodeList/119/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.120 > 10.1.0.201 id 6
+Store time more than: 20s.
+d 104.809 /NodeList/39/$ns3::grp::RoutingProtocol/DropPacket 39 > 200 id 21
+path 45  idx 0
+104.9 119->0
+s 104.9 /NodeList/119/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.120 > 10.1.0.201 id 7
+path 45  idx 0
+105 119->0
+s 105 /NodeList/119/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.120 > 10.1.0.201 id 8
+path 45  idx 0
+105.1 119->0
+s 105.1 /NodeList/119/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.120 > 10.1.0.201 id 9
+path 45  idx 0
+105.174 119->46
+path 45  idx 0
+105.179 46->200
+105181314543 200 received one packet from 119
+path 45  idx 0
+105.184 119->46
+path 45  idx 0
+105.186 46->200
+105187505268 200 received one packet from 119
+path 45  idx 0
+105.194 119->46
+path 45  idx 0
+105.196 46->200
+105197609268 200 received one packet from 119
+path 45  idx 0
+105.2 119->46
+path 45  idx 0
+105.202 46->200
+105203259139 200 received one packet from 119
+path 45  idx 0
+105.204 119->46
+path 45  idx 0
+105.206 46->200
+105207453269 200 received one packet from 119
+path 45  idx 0
+105.214 119->46
+path 45  idx 0
+105.216 46->200
+105217492268 200 received one packet from 119
+path 45  idx 0
+105.224 119->46
+path 45  idx 0
+105.226 46->200
+105227596269 200 received one packet from 119
+path 45  idx 0
+105.234 119->46
+path 45  idx 0
+105.236 46->200
+105237531270 200 received one packet from 119
+path 45  idx 0
+105.3 119->46
+path 45  idx 0
+105.302 46->200
+105303246144 200 received one packet from 119
+path 45  idx 0
+105.4 119->46
+path 45  idx 0
+105.402 46->200
+105403350149 200 received one packet from 119
+s 105.5 /NodeList/47/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.48 > 10.1.0.201 id 18
+path 45  idx 0
+105.6 119->46
+path 45  idx 0
+105.602 46->200
+105603337157 200 received one packet from 119
+path 45  idx 0
+105.7 119->46
+path 45  idx 0
+105.702 46->200
+105703350162 200 received one packet from 119
+path 45  idx 0
+105.8 119->0
+s 105.8 /NodeList/119/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.120 > 10.1.0.201 id 15
+s 105.9 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 21
+s 106 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 22
+s 106.1 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 23
+Store time more than: 20s.
+d 106.155 /NodeList/112/$ns3::grp::RoutingProtocol/DropPacket 112 > 200 id 19
+s 106.2 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 24
+s 106.3 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 25
+s 106.4 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 26
+s 106.5 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 27
+s 106.6 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 28
+s 106.7 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 29
+s 106.8 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 30
+s 106.9 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 31
+s 107 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 32
+s 107.1 /NodeList/113/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.114 > 10.1.0.201 id 40
+path 44 45  idx 0
+107.2 163->0
+s 107.2 /NodeList/163/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.164 > 10.1.0.201 id 4
+s 107.3 /NodeList/173/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.174 > 10.1.0.201 id 33
+s 107.4 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 8
+s 107.5 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 9
+s 107.6 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 10
+s 107.7 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 11
+Store time more than: 20s.
+d 107.71 /NodeList/152/$ns3::grp::RoutingProtocol/DropPacket 152 > 200 id 14
+s 107.8 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 12
+s 107.9 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 13
+s 108 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 14
+s 108.1 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 15
+s 108.2 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 16
+s 108.3 /NodeList/172/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.173 > 10.1.0.201 id 8
+s 108.4 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 17
+s 108.5 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 18
+Store time more than: 20s.
+d 108.504 /NodeList/175/$ns3::grp::RoutingProtocol/DropPacket 175 > 200 id 5
+s 108.6 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 19
+s 108.7 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 20
+s 108.8 /NodeList/172/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.173 > 10.1.0.201 id 9
+s 108.9 /NodeList/199/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.200 > 10.1.0.201 id 21
+s 109 /NodeList/172/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.173 > 10.1.0.201 id 10
+s 109.1 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 24
+s 109.2 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 25
+s 109.3 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 26
+Store time more than: 20s.
+d 109.304 /NodeList/137/$ns3::grp::RoutingProtocol/DropPacket 137 > 200 id 28
+s 109.4 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 27
+Store time more than: 20s.
+d 109.438 /NodeList/96/$ns3::grp::RoutingProtocol/DropPacket 96 > 200 id 0
+s 109.5 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 28
+s 109.6 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 29
+s 109.7 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 30
+s 109.8 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 31
+s 109.9 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 32
+s 110 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 33
+s 110.1 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 34
+s 110.2 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 35
+s 110.3 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 36
+s 110.4 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 37
+s 110.5 /NodeList/39/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.40 > 10.1.0.201 id 38
+s 110.6 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 33
+s 110.7 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 34
+s 110.8 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 35
+s 110.9 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 12
+s 111 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 36
+s 111.1 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 13
+s 111.2 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 37
+Store time more than: 20s.
+d 111.228 /NodeList/163/$ns3::grp::RoutingProtocol/DropPacket 163 > 200 id 3
+s 111.3 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 38
+s 111.4 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 39
+s 111.5 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 40
+Store time more than: 20s.
+d 111.539 /NodeList/173/$ns3::grp::RoutingProtocol/DropPacket 173 > 200 id 33
+Store time more than: 20s.
+d 111.581 /NodeList/1/$ns3::grp::RoutingProtocol/DropPacket 1 > 200 id 30
+s 111.6 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 14
+s 111.7 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 41
+s 111.8 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 42
+s 111.9 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 43
+s 112 /NodeList/30/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.31 > 10.1.0.201 id 44
+s 112.1 /NodeList/110/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.111 > 10.1.0.201 id 15
+path 44 45  idx 0
+112.134 163->31
+path 44 45  idx 0
+112.137 31->163
+path 44 45  idx 0
+112.144 163->31
+path 44 45  idx 0
+112.145 31->163
+path 44 45  idx 0
+112.148 163->31
+path 44 45  idx 0
+112.15 31->163
+path 44 45  idx 0
+112.152 163->31
+path 44 45  idx 0
+112.154 163->31
+path 44 45  idx 0
+112.154 163->31
+path 44 45  idx 0
+112.155 31->163
+path 44 45  idx 0
+112.157 163->31
+path 44 45  idx 0
+112.159 31->163
+path 44 45  idx 0
+112.161 163->31
+path 44 45  idx 0
+112.162 31->163
+path 44 45  idx 0
+112.164 163->31
+path 44 45  idx 0
+112.164 163->31
+path 44 45  idx 0
+112.166 31->163
+path 44 45  idx 0
+112.167 163->31
+path 44 45  idx 0
+112.169 31->163
+path 44 45  idx 0
+112.171 31->163
+path 44 45  idx 0
+112.173 163->31
+path 44 45  idx 0
+112.174 163->31
+path 44 45  idx 0
+112.176 31->163
+path 44 45  idx 0
+112.178 31->163
+path 44 45  idx 0
+112.18 163->31
+path 44 45  idx 0
+112.181 31->163
+path 44 45  idx 0
+112.183 31->163
+path 44 45  idx 0
+112.185 163->31
+path 44 45  idx 0
+112.186 163->31
+path 44 45  idx 0
+112.188 31->163
+path 44 45  idx 0
+112.19 31->163
+path 44 45  idx 0
+112.192 31->163
+path 44 45  idx 0
+112.193 163->31
+path 44 45  idx 0
+112.195 163->31
+path 44 45  idx 0
+112.197 31->163
+path 44 45  idx 0
+112.198 163->31
+s 112.2 /NodeList/24/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.25 > 10.1.0.201 id 5
+path 44 45  idx 0
+112.2 163->31
+path 44 45  idx 0
+112.202 31->163
+path 44 45  idx 0
+112.204 163->31
+path 44 45  idx 0
+112.205 31->163
+path 44 45  idx 0
+112.207 163->31
+path 44 45  idx 0
+112.209 163->31
+path 44 45  idx 0
+112.21 31->163
+path 44 45  idx 0
+112.212 31->163
+path 44 45  idx 0
+112.214 163->31
+path 44 45  idx 0
+112.216 163->31
+path 44 45  idx 0
+112.217 31->163
+path 44 45  idx 0
+112.219 31->163
+path 44 45  idx 0
+112.221 31->163
+path 44 45  idx 0
+112.222 163->31
+path 44 45  idx 0
+112.224 31->163
+path 44 45  idx 0
+112.226 163->31
+path 44 45  idx 0
+112.228 163->31
+path 44 45  idx 0
+112.229 31->163
+path 44 45  idx 0
+112.231 163->31
+path 44 45  idx 0
+112.233 31->163
+path 44 45  idx 0
+112.235 163->31
+path 44 45  idx 0
+112.236 31->163
+path 44 45  idx 0
+112.238 163->31
+path 44 45  idx 0
+112.24 163->31
+path 44 45  idx 0
+112.242 31->163
+path 44 45  idx 0
+112.243 31->163
+path 44 45  idx 0
+112.245 163->31
+path 44 45  idx 0
+112.247 31->163
+path 44 45  idx 0
+112.248 163->31
+path 44 45  idx 0
+112.25 31->163
+path 44 45  idx 0
+112.252 31->163
+path 44 45  idx 0
+112.254 163->31
+path 44 45  idx 0
+112.255 31->163
+path 44 45  idx 0
+112.257 31->163
+path 44 45  idx 0
+112.259 163->31
+path 44 45  idx 0
+112.26 31->163
+path 44 45  idx 0
+112.262 163->31
+path 44 45  idx 0
+112.266 31->163
+path 44 45  idx 0
+112.268 163->31
+path 44 45  idx 0
+112.269 163->31
+path 44 45  idx 0
+112.271 163->31
+path 44 45  idx 0
+112.273 31->163
+path 44 45  idx 0
+112.274 163->31
+path 44 45  idx 0
+112.276 31->163
+path 44 45  idx 0
+112.278 163->31
+path 44 45  idx 0
+112.28 31->163
+path 44 45  idx 0
+112.281 31->163
+path 44 45  idx 0
+112.283 31->163
+path 44 45  idx 0
+112.285 163->31
+path 44 45  idx 0
+112.287 31->163
+path 44 45  idx 0
+112.289 163->31
+path 44 45  idx 0
+112.29 31->163
+path 44 45  idx 0
+112.292 163->31
+path 44 45  idx 0
+112.294 31->163
+path 44 45  idx 0
+112.296 163->31
+path 44 45  idx 0
+112.297 163->31
+path 44 45  idx 0
+112.299 31->163
+s 112.3 /NodeList/24/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.25 > 10.1.0.201 id 6
+path 44 45  idx 0
+112.301 31->163
+path 44 45  idx 0
+112.303 163->31
+path 44 45  idx 0
+112.304 31->163
+path 44 45  idx 0
+112.306 163->31
+path 44 45  idx 0
+112.308 31->163
+path 44 45  idx 0
+112.309 163->31
+path 44 45  idx 0
+112.311 31->163
+path 44 45  idx 0
+112.313 163->31
+path 44 45  idx 0
+112.315 163->31
+path 44 45  idx 0
+112.316 163->31
+path 44 45  idx 0
+112.318 31->163
+path 44 45  idx 0
+112.32 31->163
+path 44 45  idx 0
+112.322 163->31
+path 44 45  idx 0
+112.325 31->163
+path 44 45  idx 0
+112.327 163->31
+path 44 45  idx 0
+112.329 31->163
+path 44 45  idx 0
+112.33 31->163
+path 44 45  idx 0
+112.332 163->31
+path 44 45  idx 0
+112.334 31->163
+path 44 45  idx 0
+112.336 163->31
+path 44 45  idx 0
+112.337 163->31
+path 44 45  idx 0
+112.339 163->31
+path 44 45  idx 0
+112.341 31->163
+path 44 45  idx 0
+112.342 163->31
+path 44 45  idx 0
+112.344 163->31
+path 44 45  idx 0
+112.346 31->163
+path 44 45  idx 0
+112.348 31->163
+path 44 45  idx 0
+112.349 163->31
+path 44 45  idx 0
+112.351 163->31
+path 44 45  idx 0
+112.353 31->163
+path 44 45  idx 0
+112.355 163->31
+path 44 45  idx 0
+112.356 31->163
+path 44 45  idx 0
+112.358 163->31
+path 44 45  idx 0
+112.36 31->163
+path 44 45  idx 0
+112.361 163->31
+path 44 45  idx 0
+112.363 31->163
+path 44 45  idx 0
+112.365 163->31
+path 44 45  idx 0
+112.367 31->163
+path 44 45  idx 0
+112.368 163->31
+path 44 45  idx 0
+112.37 31->163
+path 44 45  idx 0
+112.372 31->163
+path 44 45  idx 0
+112.374 31->163
+path 44 45  idx 0
+112.375 163->31
+path 44 45  idx 0
+112.377 31->163
+path 44 45  idx 0
+112.379 163->31
+path 44 45  idx 0
+112.38 163->31
+path 44 45  idx 0
+112.382 163->31
+path 44 45  idx 0
+112.384 31->163
+path 44 45  idx 0
+112.388 163->31
+path 44 45  idx 0
+112.389 31->163
+path 44 45  idx 0
+112.391 31->163
+path 44 45  idx 0
+112.393 31->163
+path 44 45  idx 0
+112.394 163->31
+path 44 45  idx 0
+112.396 31->163
+path 44 45  idx 0
+112.398 163->31
+path 44 45  idx 0
+112.4 163->31
+s 112.4 /NodeList/24/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.25 > 10.1.0.201 id 7
+path 44 45  idx 0
+112.401 31->163
+path 44 45  idx 0
+112.403 163->31
+path 44 45  idx 0
+112.405 31->163
+path 44 45  idx 0
+112.406 163->31
+path 44 45  idx 0
+112.408 163->31
+path 44 45  idx 0
+112.41 31->163
+path 44 45  idx 0
+112.412 31->163
+path 44 45  idx 0
+112.413 163->31
+path 44 45  idx 0
+112.415 163->31
+path 44 45  idx 0
+112.417 31->163
+path 44 45  idx 0
+112.418 163->31
+path 44 45  idx 0
+112.42 31->163
+path 44 45  idx 0
+112.422 163->31
+path 44 45  idx 0
+112.424 31->163
+path 44 45  idx 0
+112.425 31->163
+path 44 45  idx 0
+112.427 31->163
+path 44 45  idx 0
+112.429 31->163
+path 44 45  idx 0
+112.431 163->31
+path 44 45  idx 0
+112.432 163->31
+path 44 45  idx 0
+112.434 31->163
+path 44 45  idx 0
+112.436 163->31
+path 44 45  idx 0
+112.437 31->163
+path 44 45  idx 0
+112.439 163->31
+path 44 45  idx 0
+112.443 31->163
+path 44 45  idx 0
+112.445 31->163
+path 44 45  idx 0
+112.446 163->31
+path 44 45  idx 0
+112.448 163->31
+path 44 45  idx 0
+112.45 31->163
+path 44 45  idx 0
+112.451 31->163
+path 44 45  idx 0
+112.453 163->31
+path 44 45  idx 0
+112.455 163->31
+path 44 45  idx 0
+112.457 31->163
+path 44 45  idx 0
+112.458 163->31
+path 44 45  idx 0
+112.46 31->163
+path 44 45  idx 0
+112.464 31->163
+path 44 45  idx 0
+112.466 163->31
+path 44 45  idx 0
+112.467 31->163
+path 44 45  idx 0
+112.469 163->31
+path 44 45  idx 0
+112.471 163->31
+path 44 45  idx 0
+112.472 163->31
+path 44 45  idx 0
+112.474 31->163
+path 44 45  idx 0
+112.476 31->163
+path 44 45  idx 0
+112.481 163->31
+path 44 45  idx 0
+112.483 163->31
+path 44 45  idx 0
+112.485 163->31
+path 44 45  idx 0
+112.487 31->163
+path 44 45  idx 0
+112.489 163->31
+path 44 45  idx 0
+112.49 31->163
+path 44 45  idx 0
+112.492 163->31
+path 44 45  idx 0
+112.494 31->163
+path 44 45  idx 0
+112.496 163->31
+path 44 45  idx 0
+112.497 31->163
+path 44 45  idx 0
+112.499 31->163
+s 112.5 /NodeList/24/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.25 > 10.1.0.201 id 8
+path 44 45  idx 0
+112.501 163->31
+path 44 45  idx 0
+112.502 163->31
+path 44 45  idx 0
+112.504 31->163
+path 44 45  idx 0
+112.506 163->31
+path 44 45  idx 0
+112.508 31->163
+path 44 45  idx 0
+112.509 31->163
+path 44 45  idx 0
+112.511 31->163
+path 44 45  idx 0
+112.513 31->163
+path 44 45  idx 0
+112.514 163->31
+path 44 45  idx 0
+112.516 163->31
+path 44 45  idx 0
+112.518 31->163
+path 44 45  idx 0
+112.52 163->31
+path 44 45  idx 0
+112.521 31->163
+path 44 45  idx 0
+112.523 163->31
+path 44 45  idx 0
+112.525 31->163
+path 44 45  idx 0
+112.526 163->31
+path 44 45  idx 0
+112.528 163->31
+path 44 45  idx 0
+112.53 31->163
+path 44 45  idx 0
+112.532 163->31
+path 44 45  idx 0
+112.533 31->163
+path 44 45  idx 0
+112.535 163->31
+path 44 45  idx 0
+112.539 163->31
+path 44 45  idx 0
+112.54 31->163
+path 44 45  idx 0
+112.542 31->163
+path 44 45  idx 0
+112.544 163->31
+path 44 45  idx 0
+112.546 31->163
+path 44 45  idx 0
+112.547 163->31
+path 44 45  idx 0
+112.549 31->163
+path 44 45  idx 0
+112.551 163->31
+path 44 45  idx 0
+112.553 31->163
+path 44 45  idx 0
+112.554 163->31
+path 44 45  idx 0
+112.556 163->31
+path 44 45  idx 0
+112.558 31->163
+TTL < 0
+d 112.559 /NodeList/163/$ns3::grp::RoutingProtocol/DropPacket 163 > 200 id 2
+path 44 45  idx 0
+112.561 31->163
+path 44 45  idx 0
+112.563 31->163
+path 44 45  idx 0
+112.565 163->31
+path 44 45  idx 0
+112.566 31->163
+path 44 45  idx 0
+112.568 163->31
+path 44 45  idx 0
+112.57 31->163
+TTL < 0
+d 112.571 /NodeList/163/$ns3::grp::RoutingProtocol/DropPacket 163 > 200 id 1
+path 44 45  idx 0
+112.573 31->163
+path 44 45  idx 0
+112.575 163->31
+path 44 45  idx 0
+112.577 31->163
+path 44 45  idx 0
+112.579 163->31
+path 44 45  idx 0
+112.58 163->31
+path 44 45  idx 0
+112.582 31->163
+TTL < 0
+d 112.584 /NodeList/163/$ns3::grp::RoutingProtocol/DropPacket 163 > 200 id 0
+path 44 45  idx 0
+112.586 31->163
+TTL < 0
+d 112.587 /NodeList/163/$ns3::grp::RoutingProtocol/DropPacket 163 > 200 id 4
+s 112.6 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 15
+s 112.7 /NodeList/137/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 31
+s 112.8 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 16
+s 112.9 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 17
+s 113 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 18
+s 113.1 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 19
+Store time more than: 20s.
+d 113.168 /NodeList/151/$ns3::grp::RoutingProtocol/DropPacket 151 > 200 id 1
+s 113.2 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 20
+Store time more than: 20s.
+d 113.223 /NodeList/3/$ns3::grp::RoutingProtocol/DropPacket 3 > 200 id 36
+s 113.3 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 21
+s 113.4 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 22
+s 113.5 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 23
+s 113.6 /NodeList/14/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.15 > 10.1.0.201 id 24
+s 113.7 /NodeList/124/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.125 > 10.1.0.201 id 0
+s 113.8 /NodeList/124/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.125 > 10.1.0.201 id 1
+s 113.9 /NodeList/124/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.125 > 10.1.0.201 id 2
+s 114 /NodeList/124/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.125 > 10.1.0.201 id 3
+s 114.1 /NodeList/124/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.125 > 10.1.0.201 id 4
+s 114.2 /NodeList/124/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.125 > 10.1.0.201 id 5
+s 114.3 /NodeList/124/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.125 > 10.1.0.201 id 6
+s 114.4 /NodeList/124/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.125 > 10.1.0.201 id 7
+Store time more than: 20s.
+d 114.421 /NodeList/172/$ns3::grp::RoutingProtocol/DropPacket 172 > 200 id 10
+s 114.5 /NodeList/124/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.125 > 10.1.0.201 id 8
+s 114.6 /NodeList/124/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.125 > 10.1.0.201 id 9
+s 114.7 /NodeList/124/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.125 > 10.1.0.201 id 10
+s 114.8 /NodeList/124/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.125 > 10.1.0.201 id 11
+Store time more than: 20s.
+d 114.833 /NodeList/30/$ns3::grp::RoutingProtocol/DropPacket 30 > 200 id 42
+s 114.9 /NodeList/124/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.125 > 10.1.0.201 id 12
+s 115 /NodeList/124/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.125 > 10.1.0.201 id 13
+s 115.1 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 0
+s 115.2 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 1
+s 115.3 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 2
+s 115.4 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 3
+s 115.5 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 4
+s 115.6 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 5
+s 115.7 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 6
+s 115.8 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 7
+s 115.9 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 8
+s 116 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 9
+s 116.1 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 10
+s 116.2 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 11
+s 116.3 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 12
+Store time more than: 20s.
+d 116.395 /NodeList/14/$ns3::grp::RoutingProtocol/DropPacket 14 > 200 id 24
+s 116.4 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 13
+s 116.5 /NodeList/94/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.95 > 10.1.0.201 id 14
+s 116.6 /NodeList/117/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.118 > 10.1.0.201 id 0
+s 116.7 /NodeList/117/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.118 > 10.1.0.201 id 1
+s 116.8 /NodeList/117/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.118 > 10.1.0.201 id 2
+s 116.9 /NodeList/117/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.118 > 10.1.0.201 id 3
+Store time more than: 20s.
+d 116.926 /NodeList/85/$ns3::grp::RoutingProtocol/DropPacket 85 > 200 id 4
+s 117 /NodeList/117/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.118 > 10.1.0.201 id 4
+s 117.1 /NodeList/117/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.118 > 10.1.0.201 id 5
+s 117.2 /NodeList/117/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.118 > 10.1.0.201 id 6
+s 117.3 /NodeList/117/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.118 > 10.1.0.201 id 7
+s 117.4 /NodeList/117/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.118 > 10.1.0.201 id 8
+s 117.5 /NodeList/117/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.118 > 10.1.0.201 id 9
+s 117.6 /NodeList/117/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.118 > 10.1.0.201 id 10
+s 117.7 /NodeList/117/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.118 > 10.1.0.201 id 11
+s 117.8 /NodeList/117/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.118 > 10.1.0.201 id 12
+s 117.9 /NodeList/117/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.118 > 10.1.0.201 id 13
+s 118 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 19
+s 118.1 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 20
+s 118.2 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 21
+s 118.3 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 22
+s 118.4 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 23
+s 118.5 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 24
+s 118.6 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 25
+s 118.7 /NodeList/162/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.163 > 10.1.0.201 id 0
+s 118.8 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 26
+s 118.9 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 27
+s 119 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 28
+s 119.1 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 29
+s 119.2 /NodeList/27/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.28 > 10.1.0.201 id 30
+s 119.3 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 9
+s 119.4 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 10
+s 119.5 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 11
+Store time more than: 20s.
+d 119.505 /NodeList/193/$ns3::grp::RoutingProtocol/DropPacket 193 > 200 id 37
+s 119.6 /NodeList/85/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.86 > 10.1.0.201 id 5
+s 119.7 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 12
+s 119.8 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 13
+s 119.9 /NodeList/31/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.32 > 10.1.0.201 id 14
+Store time more than: 20s.
+d 120.175 /NodeList/8/$ns3::grp::RoutingProtocol/DropPacket 8 > 200 id 12
+Store time more than: 20s.
+d 120.746 /NodeList/90/$ns3::grp::RoutingProtocol/DropPacket 90 > 200 id 9
+Store time more than: 20s.
+d 121.583 /NodeList/199/$ns3::grp::RoutingProtocol/DropPacket 199 > 200 id 4
+Store time more than: 20s.
+d 124.247 /NodeList/24/$ns3::grp::RoutingProtocol/DropPacket 24 > 200 id 8
+Store time more than: 20s.
+d 125.938 /NodeList/119/$ns3::grp::RoutingProtocol/DropPacket 119 > 200 id 15
+Store time more than: 20s.
+d 126.409 /NodeList/47/$ns3::grp::RoutingProtocol/DropPacket 47 > 200 id 18
+Store time more than: 20s.
+d 127.282 /NodeList/113/$ns3::grp::RoutingProtocol/DropPacket 113 > 200 id 40
+Store time more than: 20s.
+d 129.381 /NodeList/39/$ns3::grp::RoutingProtocol/DropPacket 39 > 200 id 20
+Store time more than: 20s.
+d 130.994 /NodeList/110/$ns3::grp::RoutingProtocol/DropPacket 110 > 200 id 14
+Store time more than: 20s.
+d 136.621 /NodeList/117/$ns3::grp::RoutingProtocol/DropPacket 117 > 200 id 13
+Store time more than: 20s.
+d 138.284 /NodeList/94/$ns3::grp::RoutingProtocol/DropPacket 94 > 200 id 7
+Store time more than: 20s.
+d 138.767 /NodeList/27/$ns3::grp::RoutingProtocol/DropPacket 27 > 200 id 28
+Store time more than: 20s.
+d 139.606 /NodeList/162/$ns3::grp::RoutingProtocol/DropPacket 162 > 200 id 0
+Store time more than: 20s.
+d 139.992 /NodeList/85/$ns3::grp::RoutingProtocol/DropPacket 85 > 200 id 0
+Store time more than: 20s.
+d 140.484 /NodeList/137/$ns3::grp::RoutingProtocol/DropPacket 137 > 200 id 31
+Store time more than: 20s.
+d 141.419 /NodeList/31/$ns3::grp::RoutingProtocol/DropPacket 31 > 200 id 12
+Store time more than: 20s.
+d 157.104 /NodeList/124/$ns3::grp::RoutingProtocol/DropPacket 124 > 200 id 2
+path 45  idx 0
+159.77 137->3
+path 45  idx 0
+159.78 137->3
+path 45  idx 0
+159.782 3->0
+s 159.782 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 26
+path 45  idx 0
+159.784 3->0
+s 159.784 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 21
+path 45  idx 0
+159.79 137->3
+path 45  idx 0
+159.792 3->0
+s 159.792 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 20
+path 45  idx 0
+159.8 137->3
+path 45  idx 0
+159.802 3->0
+s 159.802 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 19
+path 45  idx 0
+159.81 137->3
+path 45  idx 0
+159.812 3->0
+s 159.812 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 18
+path 45  idx 0
+159.82 137->3
+path 45  idx 0
+159.822 3->0
+s 159.822 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 16
+path 45  idx 0
+159.83 137->3
+path 45  idx 0
+159.832 3->0
+s 159.832 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 15
+path 45  idx 0
+159.84 137->3
+path 45  idx 0
+159.842 3->0
+s 159.842 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 13
+path 45  idx 0
+159.85 137->3
+path 45  idx 0
+159.852 3->0
+s 159.852 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 12
+path 45  idx 0
+159.86 137->3
+path 45  idx 0
+159.862 3->0
+s 159.862 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 11
+path 45  idx 0
+159.87 137->3
+path 45  idx 0
+159.872 3->0
+s 159.872 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 10
+path 45  idx 0
+159.88 137->3
+path 45  idx 0
+159.882 3->0
+s 159.882 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 9
+path 45  idx 0
+159.89 137->3
+path 45  idx 0
+159.892 3->0
+s 159.892 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 3
+path 45  idx 0
+159.9 137->3
+path 45  idx 0
+159.902 3->0
+s 159.902 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 1
+path 45  idx 0
+159.91 137->3
+path 45  idx 0
+159.912 3->0
+s 159.912 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 0
+path 45  idx 0
+159.92 137->3
+path 45  idx 0
+159.922 3->0
+s 159.922 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 2
+path 45  idx 0
+159.93 137->3
+path 45  idx 0
+159.932 3->0
+s 159.932 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 5
+path 45  idx 0
+159.94 137->3
+path 45  idx 0
+159.942 3->0
+s 159.942 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 6
+path 45  idx 0
+159.95 137->3
+path 45  idx 0
+159.952 3->0
+s 159.952 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 7
+path 45  idx 0
+159.96 137->3
+path 45  idx 0
+159.962 3->0
+s 159.962 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 8
+path 45  idx 0
+159.97 137->3
+path 45  idx 0
+159.972 3->0
+s 159.972 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 14
+path 45  idx 0
+159.98 137->3
+path 45  idx 0
+159.982 3->0
+s 159.982 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 17
+path 45  idx 0
+159.99 137->3
+path 45  idx 0
+159.992 3->0
+s 159.992 /NodeList/3/$ns3::grp::RoutingProtocol/StorePacket 10.1.0.138 > 10.1.0.201 id 22
+
+27.9 1->200
+28 1->200
+28.1 1->200
+28.2 1->200
+28.3 1->200
+28.4 1->200
+28.5 1->200
+28.6 1->200
+28.7 1->200
+29 1->200
+29.1 1->200
+29.2 1->200
+36 1->200
+36.2 1->200
+36.3 1->200
+36.5 1->200
+36.6 1->200
+36.7 1->200
+36.8 1->200
+36.9 1->200
+37 1->200
+37.1 1->200
+37.2 1->200
+37.3 1->200
+47.6 1->200
+91.3 1->200
+91.4 1->200
+91.5 1->200
+91.6 1->200
+91.7 1->200
+92.2 1->200
+28.8 3->200
+42.5 3->200
+42.9 3->200
+44.9 3->200
+45.1 3->200
+45.2 3->200
+45.3 3->200
+45.4 3->200
+45.5 3->200
+45.6 3->200
+45.7 3->200
+52.4 3->200
+52.7 3->200
+52.9 3->200
+55.1 3->200
+55.2 3->200
+55.4 3->200
+55.5 3->200
+55.7 3->200
+55.8 3->200
+56 3->200
+56.1 3->200
+56.3 3->200
+56.4 3->200
+56.5 3->200
+56.7 3->200
+71.6 3->200
+71.9 3->200
+72.7 3->200
+73 3->200
+93 3->200
+93.2 3->200
+93.3 3->200
+93.4 3->200
+93.5 3->200
+93.6 3->200
+93.8 3->200
+93.9 3->200
+94 3->200
+94.1 3->200
+26.7 4->200
+27.2 4->200
+32.4 4->200
+32.6 4->200
+32.8 4->200
+32.9 4->200
+33 4->200
+33.1 4->200
+33.3 4->200
+33.4 4->200
+33.5 4->200
+33.7 4->200
+33.9 4->200
+34.1 4->200
+99.8 8->200
+100 8->200
+100.1 8->200
+100.2 8->200
+100.3 8->200
+100.4 8->200
+100.5 8->200
+100.6 8->200
+100.7 8->200
+100.8 8->200
+101.2 8->200
+101.3 8->200
+101.4 8->200
+32.1 14->200
+43.2 14->200
+43.3 14->200
+43.4 14->200
+43.5 14->200
+43.6 14->200
+43.7 14->200
+43.8 14->200
+43.9 14->200
+44 14->200
+44.1 14->200
+44.4 14->200
+44.8 14->200
+51.3 14->200
+95.9 14->200
+112.6 14->200
+112.8 14->200
+112.9 14->200
+113 14->200
+113.1 14->200
+113.2 14->200
+113.3 14->200
+113.4 14->200
+113.5 14->200
+113.6 14->200
+51.1 15->200
+54.3 15->200
+83.5 15->200
+94.6 15->200
+95 15->200
+95.4 15->200
+95.6 15->200
+95.8 15->200
+96.2 15->200
+36.1 24->200
+36.4 24->200
+46.1 24->200
+103.9 24->200
+104.3 24->200
+112.2 24->200
+112.3 24->200
+112.4 24->200
+112.5 24->200
+39.7 27->200
+118 27->200
+118.1 27->200
+118.2 27->200
+118.3 27->200
+118.4 27->200
+118.5 27->200
+118.6 27->200
+118.8 27->200
+118.9 27->200
+119 27->200
+119.1 27->200
+119.2 27->200
+94.7 30->200
+94.8 30->200
+94.9 30->200
+95.1 30->200
+95.2 30->200
+95.3 30->200
+95.5 30->200
+95.7 30->200
+96.1 30->200
+96.3 30->200
+96.4 30->200
+96.6 30->200
+96.7 30->200
+96.8 30->200
+96.9 30->200
+97 30->200
+97.1 30->200
+97.3 30->200
+97.5 30->200
+97.7 30->200
+98 30->200
+98.1 30->200
+98.2 30->200
+98.3 30->200
+98.5 30->200
+98.6 30->200
+98.7 30->200
+98.8 30->200
+98.9 30->200
+99 30->200
+99.1 30->200
+99.2 30->200
+99.6 30->200
+110.6 30->200
+110.7 30->200
+110.8 30->200
+111 30->200
+111.2 30->200
+111.3 30->200
+111.4 30->200
+111.5 30->200
+111.7 30->200
+111.8 30->200
+111.9 30->200
+112 30->200
+48.1 31->200
+62 31->200
+73.2 31->200
+73.5 31->200
+85.1 31->200
+85.6 31->200
+89.5 31->200
+90.4 31->200
+91 31->200
+119.3 31->200
+119.4 31->200
+119.5 31->200
+119.7 31->200
+119.8 31->200
+119.9 31->200
+51.6 34->200
+26.2 39->200
+26.3 39->200
+26.4 39->200
+26.5 39->200
+26.8 39->200
+26.9 39->200
+27 39->200
+27.4 39->200
+27.5 39->200
+27.6 39->200
+27.7 39->200
+27.8 39->200
+47.7 39->200
+49.5 39->200
+50.1 39->200
+50.3 39->200
+84.4 39->200
+84.7 39->200
+84.9 39->200
+85.4 39->200
+92 39->200
+92.1 39->200
+92.5 39->200
+92.6 39->200
+109.1 39->200
+109.2 39->200
+109.3 39->200
+109.4 39->200
+109.5 39->200
+109.6 39->200
+109.7 39->200
+109.8 39->200
+109.9 39->200
+110 39->200
+110.1 39->200
+110.2 39->200
+110.3 39->200
+110.4 39->200
+110.5 39->200
+30.8 45->200
+31 45->200
+31.1 45->200
+31.2 45->200
+31.3 45->200
+31.4 45->200
+31.5 45->200
+31.6 45->200
+31.7 45->200
+31.8 45->200
+31.9 45->200
+32.2 45->200
+32.3 45->200
+60.4 46->200
+105.5 47->200
+44.2 52->200
+44.5 52->200
+44.7 52->200
+47.4 52->200
+51.9 52->200
+53.5 52->200
+54.2 52->200
+54.8 52->200
+20.7 66->200
+51.5 66->200
+67 66->200
+67.7 66->200
+79.4 66->200
+49.9 84->200
+96.5 85->200
+97.2 85->200
+97.4 85->200
+97.6 85->200
+97.8 85->200
+119.6 85->200
+21 90->200
+22.3 90->200
+22.5 90->200
+35.9 90->200
+45.9 90->200
+49.6 90->200
+53.1 90->200
+60.9 90->200
+61.9 90->200
+99.9 90->200
+100.9 90->200
+115.1 94->200
+115.2 94->200
+115.3 94->200
+115.4 94->200
+115.5 94->200
+115.6 94->200
+115.7 94->200
+115.8 94->200
+115.9 94->200
+116 94->200
+116.1 94->200
+116.2 94->200
+116.3 94->200
+116.4 94->200
+116.5 94->200
+89.3 96->200
+90.2 96->200
+90.8 96->200
+94.3 96->200
+24.3 106->200
+60.8 106->200
+50.2 108->200
+53.3 108->200
+53.7 108->200
+54 108->200
+54.6 108->200
+55 108->200
+74.7 108->200
+74.8 108->200
+74.9 108->200
+75 108->200
+75.1 108->200
+75.2 108->200
+92.9 108->200
+46 110->200
+51.4 110->200
+84 110->200
+84.1 110->200
+84.2 110->200
+84.3 110->200
+84.5 110->200
+84.6 110->200
+84.8 110->200
+85.2 110->200
+85.3 110->200
+101.1 110->200
+110.9 110->200
+111.1 110->200
+111.6 110->200
+112.1 110->200
+30.5 112->200
+30.6 112->200
+48 112->200
+52.1 112->200
+68.4 112->200
+68.9 112->200
+69.5 112->200
+86.1 112->200
+86.6 112->200
+87.1 112->200
+96 112->200
+48.2 113->200
+62.1 113->200
+62.2 113->200
+62.3 113->200
+62.4 113->200
+62.6 113->200
+62.7 113->200
+62.8 113->200
+62.9 113->200
+63 113->200
+63.1 113->200
+63.2 113->200
+63.3 113->200
+63.5 113->200
+65.3 113->200
+65.4 113->200
+65.5 113->200
+65.6 113->200
+65.7 113->200
+65.8 113->200
+65.9 113->200
+66 113->200
+66.2 113->200
+66.3 113->200
+66.4 113->200
+66.5 113->200
+66.6 113->200
+73.1 113->200
+73.4 113->200
+73.6 113->200
+73.7 113->200
+73.8 113->200
+73.9 113->200
+74 113->200
+74.1 113->200
+74.2 113->200
+74.3 113->200
+74.4 113->200
+74.5 113->200
+74.6 113->200
+107.1 113->200
+116.6 117->200
+116.7 117->200
+116.8 117->200
+116.9 117->200
+117 117->200
+117.1 117->200
+117.2 117->200
+117.3 117->200
+117.4 117->200
+117.5 117->200
+117.6 117->200
+117.7 117->200
+117.8 117->200
+117.9 117->200
+105.8 119->200
+113.7 124->200
+113.8 124->200
+113.9 124->200
+114 124->200
+114.1 124->200
+114.2 124->200
+114.3 124->200
+114.4 124->200
+114.5 124->200
+114.6 124->200
+114.7 124->200
+114.8 124->200
+114.9 124->200
+115 124->200
+20 125->200
+20.1 125->200
+20.2 125->200
+20.3 125->200
+20.4 125->200
+20.5 125->200
+20.8 125->200
+46.4 125->200
+47.5 125->200
+86.2 128->200
+86.4 128->200
+86.7 128->200
+71.4 129->200
+71.5 129->200
+71.8 129->200
+72 129->200
+72.1 129->200
+72.2 129->200
+72.3 129->200
+72.4 129->200
+72.5 129->200
+72.6 129->200
+72.9 129->200
+73.3 129->200
+75.3 129->200
+75.4 129->200
+75.5 129->200
+75.6 129->200
+75.7 129->200
+75.8 129->200
+75.9 129->200
+76 129->200
+76.1 129->200
+76.2 129->200
+76.3 129->200
+76.4 129->200
+76.5 129->200
+76.6 129->200
+76.7 129->200
+79.6 136->200
+79.7 136->200
+79.8 136->200
+79.9 136->200
+80 136->200
+80.1 136->200
+80.2 136->200
+80.3 136->200
+80.4 136->200
+80.5 136->200
+80.6 136->200
+80.7 136->200
+80.8 136->200
+55.3 137->200
+55.6 137->200
+55.9 137->200
+56.2 137->200
+56.6 137->200
+56.8 137->200
+89 137->200
+89.1 137->200
+89.7 137->200
+89.8 137->200
+89.9 137->200
+90 137->200
+90.6 137->200
+93.1 137->200
+93.7 137->200
+94.2 137->200
+94.5 137->200
+99.5 137->200
+103 137->200
+103.1 137->200
+103.2 137->200
+103.3 137->200
+103.4 137->200
+103.5 137->200
+103.6 137->200
+103.7 137->200
+103.8 137->200
+104 137->200
+104.1 137->200
+104.2 137->200
+104.4 137->200
+112.7 137->200
+48.6 151->200
+49.4 151->200
+52.5 151->200
+53 151->200
+92.7 151->200
+26.6 152->200
+27.1 152->200
+30.4 152->200
+45 152->200
+45.8 152->200
+62.5 152->200
+63.4 152->200
+63.6 152->200
+71.7 152->200
+72.8 152->200
+81.9 152->200
+87.4 152->200
+87.6 152->200
+88.2 152->200
+88.5 152->200
+88.7 152->200
+88.9 152->200
+46.2 153->200
+46.3 153->200
+46.7 153->200
+46.8 153->200
+46.9 153->200
+47 153->200
+47.1 153->200
+47.2 153->200
+47.3 153->200
+49.7 153->200
+29.8 158->200
+30.3 158->200
+30.7 158->200
+38.1 158->200
+38.6 158->200
+118.7 162->200
+91.2 163->200
+91.9 163->200
+92.4 163->200
+92.8 163->200
+107.2 163->200
+46.6 172->200
+47.9 172->200
+57.2 172->200
+57.5 172->200
+57.6 172->200
+58.2 172->200
+58.4 172->200
+94.4 172->200
+108.3 172->200
+108.8 172->200
+109 172->200
+41.8 173->200
+41.9 173->200
+42 173->200
+42.1 173->200
+42.2 173->200
+42.3 173->200
+42.4 173->200
+42.6 173->200
+42.7 173->200
+42.8 173->200
+43 173->200
+43.1 173->200
+70.1 173->200
+70.3 173->200
+71.1 173->200
+85 173->200
+85.5 173->200
+89.6 173->200
+90.5 173->200
+91.1 173->200
+102.3 173->200
+105.9 173->200
+106 173->200
+106.1 173->200
+106.2 173->200
+106.3 173->200
+106.4 173->200
+106.5 173->200
+106.6 173->200
+106.7 173->200
+106.8 173->200
+106.9 173->200
+107 173->200
+107.3 173->200
+87.7 175->200
+88.3 175->200
+89.2 175->200
+90.1 175->200
+90.7 175->200
+91.8 175->200
+92.3 175->200
+22.9 179->200
+46.5 179->200
+51.2 179->200
+53.4 179->200
+53.8 179->200
+54.1 179->200
+54.7 179->200
+39 185->200
+39.1 185->200
+39.2 185->200
+39.3 185->200
+39.4 185->200
+39.5 185->200
+39.6 185->200
+39.8 185->200
+39.9 185->200
+40 185->200
+40.2 185->200
+40.3 185->200
+40.4 185->200
+44.3 185->200
+44.6 185->200
+51.8 185->200
+53.2 185->200
+53.6 185->200
+53.9 185->200
+54.4 185->200
+54.5 185->200
+54.9 185->200
+64 185->200
+64.4 185->200
+41.3 192->200
+50.9 192->200
+52 192->200
+52.2 192->200
+52.3 192->200
+52.6 192->200
+52.8 192->200
+63.7 192->200
+63.8 192->200
+63.9 192->200
+64.1 192->200
+64.2 192->200
+64.3 192->200
+64.5 192->200
+64.6 192->200
+64.7 192->200
+64.8 192->200
+64.9 192->200
+65 192->200
+65.1 192->200
+65.2 192->200
+82.3 192->200
+82.4 192->200
+82.5 192->200
+82.6 192->200
+82.7 192->200
+82.8 192->200
+82.9 192->200
+83 192->200
+83.1 192->200
+83.2 192->200
+83.3 192->200
+83.4 192->200
+83.6 192->200
+83.7 192->200
+83.8 192->200
+83.9 192->200
+87.2 192->200
+87.3 192->200
+87.5 192->200
+88 192->200
+88.1 192->200
+88.4 192->200
+88.6 192->200
+88.8 192->200
+89.4 192->200
+90.3 192->200
+90.9 192->200
+34.8 193->200
+35.2 193->200
+35.5 193->200
+35.7 193->200
+37.4 193->200
+37.5 193->200
+37.6 193->200
+37.7 193->200
+37.8 193->200
+37.9 193->200
+38 193->200
+38.2 193->200
+38.3 193->200
+38.4 193->200
+38.5 193->200
+38.7 193->200
+38.8 193->200
+38.9 193->200
+48.3 193->200
+48.7 193->200
+48.8 193->200
+48.9 193->200
+49 193->200
+49.1 193->200
+66.8 193->200
+66.9 193->200
+67.1 193->200
+67.2 193->200
+67.3 193->200
+67.4 193->200
+67.5 193->200
+67.6 193->200
+67.8 193->200
+67.9 193->200
+68 193->200
+68.1 193->200
+68.2 193->200
+99.4 193->200
+20.6 198->200
+20.9 198->200
+21.2 198->200
+21.3 198->200
+21.4 198->200
+21.5 198->200
+21.6 198->200
+21.7 198->200
+21.8 198->200
+21.9 198->200
+22 198->200
+22.1 198->200
+22.2 198->200
+22.4 198->200
+22.8 198->200
+24.5 198->200
+24.6 198->200
+24.7 198->200
+24.8 198->200
+24.9 198->200
+25 198->200
+25.1 198->200
+25.2 198->200
+25.3 198->200
+25.5 198->200
+25.6 198->200
+25.7 198->200
+25.8 198->200
+25.9 198->200
+26 198->200
+26.1 198->200
+32.5 198->200
+32.7 198->200
+33.2 198->200
+33.6 198->200
+33.8 198->200
+34 198->200
+34.2 198->200
+48.5 199->200
+49.3 199->200
+49.8 199->200
+58.8 199->200
+59.1 199->200
+59.9 199->200
+60.3 199->200
+101 199->200
+107.4 199->200
+107.5 199->200
+107.6 199->200
+107.7 199->200
+107.8 199->200
+107.9 199->200
+108 199->200
+108.1 199->200
+108.2 199->200
+108.4 199->200
+108.5 199->200
+108.6 199->200
+108.7 199->200
+108.9 199->200
+Simulation results
+Sent:1000 Received:213 Drop:92 delay:6145.09ms
+Store Error: 695
