@@ -721,7 +721,7 @@ RoutingProtocol::ProcessAnt (const grp::MessageHeader &msg,
         }
     }
     grp::MessageHeader::Ant ant = msg.GetAnt();
-    NS_LOG_DEBUG("receive a ant to " << ant.next_junction_id<< " juns " << ant.sequence_of_junctions.size());
+    // NS_LOG_DEBUG("receive a ant to " << ant.next_junction_id<< " juns " << ant.sequence_of_junctions.size());
 
     auto it = m_received_last_ant.find({ant.sender_addr,ant.seq_num});
 
@@ -737,7 +737,7 @@ RoutingProtocol::ProcessAnt (const grp::MessageHeader &msg,
                         ant.s_delay.push_back(now);
 
                         auto forwarder = GetNextForwarderInAnchor(ant.jun_from,ant.next_junction_id);
-                        NS_LOG_DEBUG( now.GetSeconds() << " in jun " <<  m_mainAddress << " next forward in jun" << forwarder.second);
+                        // NS_LOG_DEBUG( now.GetSeconds() << " in jun " <<  m_mainAddress << " next forward in jun" << forwarder.second);
                         ant.version++;
                         ant.jun_from = m_currentJID;
                         ant.next_junction_id = forwarder.first;
@@ -747,7 +747,7 @@ RoutingProtocol::ProcessAnt (const grp::MessageHeader &msg,
             }else{
                 auto forwarder = GetNextForwarderInSegment(ant.next_junction_id);
 
-                NS_LOG_DEBUG(now.GetSeconds() << " in seg " << m_mainAddress << " next forward" << forwarder);
+                // NS_LOG_DEBUG(now.GetSeconds() << " in seg " << m_mainAddress << " next forward" << forwarder);
                 ant.next_forwarder = forwarder;
             }
 
@@ -832,7 +832,7 @@ void RoutingProtocol::update_matrix(const grp::MessageHeader& msg){
         m_received_last_ant[ip_seq] = ant.version;
     }
 
-    NS_LOG_DEBUG("update matrix delay " << ant.s_delay.size()<< " " << num << " items " );
+    // NS_LOG_DEBUG("update matrix delay " << ant.s_delay.size()<< " " << num << " items " );
     // if(len > 1){
     //     for(auto x : ant.sequence_of_junctions){
     //         std::cerr << x <<" ";
@@ -1089,7 +1089,6 @@ RoutingProtocol::AntTimerExpire()
 {
     NS_LOG_FUNCTION (this);
     num_ant++;
-    NS_LOG_DEBUG("Ant Timer expired");
 	grp::MessageHeader msg(MessageHeader::ANT_MESSAGE);
 	Time now = Simulator::Now ();
 
@@ -1125,7 +1124,7 @@ RoutingProtocol::AntTimerExpire()
     
     // have forwarders
     if(next_jid != -1){
-        NS_LOG_DEBUG(AddrToID(m_mainAddress) <<" " << m_currentJID << " to " << next_jid <<" next forward " << AddrToID(addr));
+        // NS_LOG_DEBUG(AddrToID(m_mainAddress) <<" " << m_currentJID << " to " << next_jid <<" next forward " << AddrToID(addr));
         ant.seq_num = GetAntSeqNum();
         ant.next_junction_id = next_jid;
         ant.next_forwarder = addr;
@@ -1616,22 +1615,76 @@ bool RoutingProtocol::RouteInput  (Ptr<const Packet> p,
         DataPacketHeader.next_jid_idx = 0;
     }
 
-
+    auto get_dist = [](double a,double b,double c,double d){
+        return sqrt((a - c) * (a - c) + (b - d)*(b - d));
+    };
     if(DataPacketHeader.path.size() == 0){
 
-  		packet->AddHeader(DataPacketHeader);		
+  		Ipv4Address nextHop("127.0.0.1");
+        double min_dist = 1e9;
+        for(auto& [addr,entry] : m_neiTable){
+            if(addr == dest){
+                nextHop = addr;
+                break;
+            }
+            auto dest_pos = GetPosition(dest);
+            if(get_dist(dest_pos.x,dest_pos.y,entry.N_location_x,entry.N_location_y) < min_dist){
+                min_dist = get_dist(dest_pos.x,dest_pos.y,entry.N_location_x,entry.N_location_y);
+                nextHop = addr;
+            }
+        }
 
-    	QPacketInfo pInfo(origin, dest);		
-  		QMap::const_iterator pItr = m_wTimeCache.find(pInfo);		
-  		if(pItr == m_wTimeCache.end())		
-  		{		
-  			Time &pTime = m_wTimeCache[pInfo];		
-  			pTime = Simulator::Now();		
-  		}		
+        if (nextHop != loopback)
+        {
+            //若返回了下一跳的地址，则将该数据包转发给该下一跳节点
+            rtentry = Create<Ipv4Route> ();
+            rtentry->SetDestination (header.GetDestination ());
+            Ipv4Address receiverIfaceAddr = m_neiTable.find(nextHop)->second.receiverIfaceAddr;
 
-    	PacketQueueEntry qentry(packet, header, ucb);		
-  		m_pwaitqueue.push_back(qentry);		
-  		m_StorePacketTrace(header);
+            if(nextHop == dest)
+                receiverIfaceAddr = m_mainAddress;
+
+            rtentry->SetSource (receiverIfaceAddr);
+            rtentry->SetGateway (nextHop);
+
+            for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i++)
+            {
+                for (uint32_t j = 0; j < m_ipv4->GetNAddresses (i); j++)
+                {
+                    if (m_ipv4->GetAddress (i,j).GetLocal () == receiverIfaceAddr)
+                    {
+                        rtentry->SetOutputDevice (m_ipv4->GetNetDevice (i));
+                        break;
+                    }
+                }
+            }
+
+            if(nextHop != header.GetDestination())
+            {
+                packet->AddHeader(DataPacketHeader);
+            }
+
+            ucb (rtentry, packet, header);
+        }
+        else
+        {
+            //如果返回的IPv4地址为127.0.0.1，则说明当前时刻没有合适的下一跳节点
+            //节点启用Carry_and_forward机制，将数据包暂时缓存起来，直到有可用下一跳节点或信息过期为止
+            // grp::DataPacketHeader DHeader;
+            packet->AddHeader(DataPacketHeader);		
+
+            QPacketInfo pInfo(origin, dest);		
+            QMap::const_iterator pItr = m_wTimeCache.find(pInfo);		
+            if(pItr == m_wTimeCache.end())		
+            {		
+                Time &pTime = m_wTimeCache[pInfo];		
+                pTime = Simulator::Now();		
+            }		
+
+            PacketQueueEntry qentry(packet, header, ucb);		
+            m_pwaitqueue.push_back(qentry);		
+            m_StorePacketTrace(header);
+        }
         return true;
     }
 
@@ -1664,11 +1717,11 @@ bool RoutingProtocol::RouteInput  (Ptr<const Packet> p,
             break;
         }
     }
-    NS_LOG_DEBUG("next jid " << nextjid);
+    // NS_LOG_DEBUG("next jid " << nextjid);
     if(nextHop.IsLocalhost())
         nextHop = GetNextForwarderInSegment(nextjid);
 
-	NS_LOG_UNCOND("" << Simulator::Now().GetSeconds() << " " << m_id << "->" << AddrToID(nextHop));
+	// NS_LOG_UNCOND("" << Simulator::Now().GetSeconds() << " " << m_id << "->" << AddrToID(nextHop));
 
 	if (nextHop != loopback)
 	{
