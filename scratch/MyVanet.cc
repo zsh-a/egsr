@@ -218,7 +218,6 @@ void SendTestPacketToLC_DIS()
 	Time &ltime = PLog[log];
 	ltime = Simulator::Now();
 	SendCount++;
-
 	if(SendCount < MaxPacketsNumber)
 		Simulator::Schedule(Seconds(0.1), &SendTestPacketToLC_DIS);
 }
@@ -416,10 +415,12 @@ void ReadConfiguration()
 
     }
 }
-
+using namespace std;
+extern long num_ant;
 int main (int argc, char *argv[])
 {
-    // LogComponentEnable("GrpRoutingProtocol",LOG_LEVEL_DEBUG);
+    LogComponentEnable("GrpRoutingProtocol",LOG_LEVEL_DEBUG);
+    // LogComponentEnable("DefaultSimulatorImpl",LOG_LEVEL_LOGIC);
     // LogComponentEnable("GrpHeader",LOG_LEVEL_DEBUG);
 	CommandLine cmd;
 	cmd.Parse (argc, argv);
@@ -569,11 +570,11 @@ int main (int argc, char *argv[])
 	}
 
     //打印统计数据
-    NS_LOG_UNCOND("Simulation results");
-    NS_LOG_UNCOND("Sent:"<< SendCount << " Received:" << recount 
-		<< " Drop:" << DropCount << " delay:" << (double)allTime/recount/1000000 << "ms");
-    NS_LOG_UNCOND("Store Error: " << lc - DropCount);
-
+    cout << "Simulation results";
+    cout << "Sent:"<< SendCount << " Received:" << recount 
+		<< " Drop:" << DropCount << " delay:" << (double)allTime/recount/1000000 << "ms";
+    cout << "Store Error: " << lc - DropCount << endl;
+    cout << num_ant << endl;
     //将统计数据输出到文件中
     std::ofstream fout("scratch/data.csv", std::ios::app);
 	fout << nNodes << "," << DistanceRange << "," << hops << "," << CarryTimeThreshold << ",";

@@ -32,8 +32,8 @@
 #define GRP_MAXJITTER          (m_helloInterval.GetSeconds () / 10)
 #define JITTER (Seconds (m_uniformRandomVariable->GetValue (0, GRP_MAXJITTER)))
 
+long num_ant = 0;
 namespace ns3 {
-
 NS_LOG_COMPONENT_DEFINE ("GrpRoutingProtocol");
 
 namespace grp
@@ -442,9 +442,9 @@ RoutingProtocol::RecvGrp (Ptr<Socket> socket)
 			ProcessHello (messageHeader, receiverIfaceAddr, senderIfaceAddr);
 			break;
         case grp::MessageHeader::ANT_MESSAGE:
-            NS_LOG_DEBUG (Simulator::Now ().GetSeconds ()
-                            << "s EGSR node " << m_mainAddress
-							<< " received Ant message of size " << messageHeader.GetSerializedSize () <<" from " << senderIfaceAddr);
+            // NS_LOG_DEBUG (Simulator::Now ().GetSeconds ()
+            //                 << "s EGSR node " << m_mainAddress
+			// 				<< " received Ant message of size " << messageHeader.GetSerializedSize () <<" from " << senderIfaceAddr);
             ProcessAnt(messageHeader,receiverIfaceAddr,senderIfaceAddr);
             break;
 		default:
@@ -737,7 +737,7 @@ RoutingProtocol::ProcessAnt (const grp::MessageHeader &msg,
                         ant.s_delay.push_back(now);
 
                         auto forwarder = GetNextForwarderInAnchor(ant.jun_from,ant.next_junction_id);
-                        NS_LOG_DEBUG( m_mainAddress << " next forward in jun" << forwarder.second);
+                        NS_LOG_DEBUG( now.GetSeconds() << " in jun " <<  m_mainAddress << " next forward in jun" << forwarder.second);
                         ant.version++;
                         ant.jun_from = m_currentJID;
                         ant.next_junction_id = forwarder.first;
@@ -747,7 +747,7 @@ RoutingProtocol::ProcessAnt (const grp::MessageHeader &msg,
             }else{
                 auto forwarder = GetNextForwarderInSegment(ant.next_junction_id);
 
-                NS_LOG_DEBUG( m_mainAddress << " next forward" << forwarder);
+                NS_LOG_DEBUG(now.GetSeconds() << " in seg " << m_mainAddress << " next forward" << forwarder);
                 ant.next_forwarder = forwarder;
             }
 
@@ -806,7 +806,7 @@ RoutingProtocol::ProcessAnt (const grp::MessageHeader &msg,
             m_helloTimer.Cancel();
             m_helloTimer.Schedule(m_helloInterval);
         }
-
+        num_ant++;
     }
 
     if(m_pwaitqueue.empty() == false)
@@ -860,6 +860,7 @@ void RoutingProtocol::update_matrix(const grp::MessageHeader& msg){
         P[x][y] = P[y][x] = (P[x][y] + delta) / (1 + P[x][y]);
 
         Graph[x][y] = Graph[y][x] = length[x][y] / P[x][y];
+        // NS_LOG_DEBUG("x "<< x << " y " << y <<" " << Graph[x][y]);
     }
 
 }
@@ -1045,18 +1046,18 @@ RoutingProtocol::GetNextForwarderInAnchor(int from,int to){
     int R = rand() % neis;
     int sum = 0;
     
-    int selected = -1;
-    for(auto& [e,q]:num_of_nei){
-        sum += q.size();
-        if(sum > R){
-            selected = e;
-            break;
-        }
-    }
-    // int selected = -1, m = 0;
+    // int selected = -1;
     // for(auto& [e,q]:num_of_nei){
-    //     if(selected == -1 || q.size() > num_of_nei[selected].size()) selected = e,m = q.size();
+    //     sum += q.size();
+    //     if(sum > R){
+    //         selected = e;
+    //         break;
+    //     }
     // }
+    int selected = -1, m = 0;
+    for(auto& [e,q]:num_of_nei){
+        if(selected == -1 || q.size() > num_of_nei[selected].size()) selected = e,m = q.size();
+    }
     if(num_of_nei[selected].size() < 1) return {-1,Ipv4Address::GetLoopback()};
     return {selected,num_of_nei[selected].top().second};
 }
@@ -1082,11 +1083,12 @@ uint16_t RoutingProtocol::GetAntSeqNum(){
     return m_antSeqNum = (m_antSeqNum + 1) % (1 << 16);
 }
 
+
 void
 RoutingProtocol::AntTimerExpire()
 {
     NS_LOG_FUNCTION (this);
-
+    num_ant++;
     NS_LOG_DEBUG("Ant Timer expired");
 	grp::MessageHeader msg(MessageHeader::ANT_MESSAGE);
 	Time now = Simulator::Now ();
@@ -1123,7 +1125,7 @@ RoutingProtocol::AntTimerExpire()
     
     // have forwarders
     if(next_jid != -1){
-        NS_LOG_DEBUG(m_mainAddress <<" " << m_currentJID << " to " << next_jid <<" next forward " << addr);
+        NS_LOG_DEBUG(AddrToID(m_mainAddress) <<" " << m_currentJID << " to " << next_jid <<" next forward " << AddrToID(addr));
         ant.seq_num = GetAntSeqNum();
         ant.next_junction_id = next_jid;
         ant.next_forwarder = addr;
@@ -1438,11 +1440,11 @@ RoutingProtocol::RouteOutput (Ptr<Packet> p, const Ipv4Header &header, Ptr<NetDe
     }
     else
     {
-        // std::cerr << "send path ";
-        // for(int i = 0;i < dheader.path.size();i++){
-        //     std::cerr << dheader.path[i] <<" ";
-        // }
-        // std::cerr << "\n";
+        std::cout << "send path ";
+        for(int i = 0;i < dheader.path.size();i++){
+            std::cout << dheader.path[i] <<" ";
+        }
+        std::cout << "\n";
 
         rtentry = Create<Ipv4Route> ();
         rtentry->SetDestination (header.GetDestination ());
@@ -1557,6 +1559,9 @@ bool RoutingProtocol::RouteInput  (Ptr<const Packet> p,
 	NS_LOG_FUNCTION (this << " " << m_ipv4->GetObject<Node> ()->GetId () << " " << header.GetDestination ());
 
 	Ipv4Address dest = header.GetDestination ();
+
+
+    
     Ipv4Address origin = header.GetSource ();
     // NS_LOG_DEBUG("input to " << header.GetDestination());
 	NS_ASSERT (m_ipv4->GetInterfaceForDevice (idev) >= 0);
@@ -1589,7 +1594,6 @@ bool RoutingProtocol::RouteInput  (Ptr<const Packet> p,
 	grp::DataPacketHeader DataPacketHeader;
 	packet->RemoveHeader (DataPacketHeader);
     
-
     if(DataPacketHeader.path.size() == 0){
 
         Ptr<MobilityModel> MM = m_ipv4->GetObject<MobilityModel> ();
@@ -1631,11 +1635,11 @@ bool RoutingProtocol::RouteInput  (Ptr<const Packet> p,
         return true;
     }
 
-    std::cerr << "path ";
-    for(int i = 0;i < DataPacketHeader.path.size();i++){
-        std::cerr << DataPacketHeader.path[i] <<" ";
-    }
-    std::cerr << " idx " << DataPacketHeader.next_jid_idx << '\n';
+    // std::cerr << "path ";
+    // for(int i = 0;i < DataPacketHeader.path.size();i++){
+    //     std::cerr << DataPacketHeader.path[i] <<" ";
+    // }
+    // std::cerr << " idx " << DataPacketHeader.next_jid_idx << '\n';
 
     int nextjid_idx = DataPacketHeader.next_jid_idx;
 	int nextjid = DataPacketHeader.path[nextjid_idx];
@@ -1656,6 +1660,7 @@ bool RoutingProtocol::RouteInput  (Ptr<const Packet> p,
     for(auto& [addr,entry] : m_neiTable){
         if(addr == dest){
             nextHop = addr;
+        NS_LOG_DEBUG("recv path " << DataPacketHeader.path.size());
             break;
         }
     }
