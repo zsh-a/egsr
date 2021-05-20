@@ -1415,6 +1415,62 @@ RoutingProtocol::RouteOutput (Ptr<Packet> p, const Ipv4Header &header, Ptr<NetDe
         rtentry->SetGateway (loopback);
         rtentry->SetOutputDevice (m_ipv4->GetNetDevice (0));
         sockerr = Socket::ERROR_NOTERROR;
+
+
+        auto get_dist = [](double a,double b,double c,double d){
+            return sqrt((a - c) * (a - c) + (b - d)*(b - d));
+        };
+  		Ipv4Address nextHop("127.0.0.1");
+        double min_dist = 1e9;
+        for(auto& [addr,entry] : m_neiTable){
+            if(addr == dest){
+                nextHop = addr;
+                break;
+            }
+            auto dest_pos = GetPosition(dest);
+            if(get_dist(dest_pos.x,dest_pos.y,entry.N_location_x,entry.N_location_y) < min_dist){
+                min_dist = get_dist(dest_pos.x,dest_pos.y,entry.N_location_x,entry.N_location_y);
+                nextHop = addr;
+            }
+        }
+        if(nextHop == loopback || nextHop == dest)
+        {
+            rtentry = Create<Ipv4Route> ();
+            rtentry->SetDestination (header.GetDestination ());
+            rtentry->SetSource (m_ipv4->GetAddress (1, 0).GetLocal ());
+            rtentry->SetGateway (loopback);
+            rtentry->SetOutputDevice (m_ipv4->GetNetDevice (0));
+            sockerr = Socket::ERROR_NOTERROR;
+        }
+        else
+        {
+            // std::cout << "send path ";
+            // for(int i = 0;i < dheader.path.size();i++){
+            //     std::cout << dheader.path[i] <<" ";
+            // }
+            // std::cout << "\n";
+
+            rtentry = Create<Ipv4Route> ();
+            rtentry->SetDestination (header.GetDestination ());
+            Ipv4Address receiverIfaceAddr = m_neiTable.find(nextHop)->second.receiverIfaceAddr;
+                
+            rtentry->SetSource (receiverIfaceAddr);
+            rtentry->SetGateway (nextHop);
+            for (uint32_t i = 0; i < m_ipv4->GetNInterfaces (); i++)
+            {
+                for (uint32_t j = 0; j < m_ipv4->GetNAddresses (i); j++)
+                {
+                    if (m_ipv4->GetAddress (i,j).GetLocal () == receiverIfaceAddr)
+                    {
+                        rtentry->SetOutputDevice (m_ipv4->GetNetDevice (i));
+                        break;
+                    }
+                }
+            }
+
+            sockerr = Socket::ERROR_NOTERROR;
+
+        }
         return rtentry;
     }
 
