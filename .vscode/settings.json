@@ -63,7 +63,12 @@
         "random": "cpp",
         "future": "cpp",
         "mutex": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "unordered_set": "cpp",
+        "ranges": "cpp",
+        "stop_token": "cpp"
     },
     "editor.detectIndentation": false,
     "python.pythonPath": "/bin/python3"
