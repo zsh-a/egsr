@@ -161,6 +161,7 @@ public:
   DataPacketHeader ();
   virtual ~DataPacketHeader ();
   uint16_t next_jid_idx = 0;
+  uint16_t next_jid;
   std::vector<uint16_t> path;
 
 

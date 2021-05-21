@@ -195,6 +195,7 @@ private:
     TracedCallback <const Ipv4Header &> m_DropPacketTrace;
     TracedCallback <const Ipv4Header &> m_StorePacketTrace;
 
+    int DijkstraAlgorithm2(int srcjid, int dstjid);
 
     inline uint16_t GetPacketSequenceNumber ();
     inline uint16_t GetMessageSequenceNumber ();
@@ -224,6 +225,7 @@ private:
     bool m_JunAreaTag = false;
 
     std::vector<std::vector<double>> Graph; // Adjacency matrix
+    std::vector<std::vector<double>> Graph2;
     std::vector<std::vector<double>> length;
     std::vector<std::vector<double>> P;
 

@@ -261,7 +261,7 @@ DataPacketHeader::GetSerializedSize (void) const
 {
   uint32_t size = 4;
   size += path.size()* 2;
-  return size;
+  return size + 2;
 }
 
 void
@@ -274,6 +274,7 @@ DataPacketHeader::Serialize (Buffer::Iterator start) const
 {
   Buffer::Iterator i = start;
   i.WriteU16(next_jid_idx);
+  i.WriteU16(next_jid);
   i.WriteU16(path.size());
   for(auto x : path)
     i.WriteU16(x);
@@ -284,6 +285,7 @@ DataPacketHeader::Deserialize (Buffer::Iterator start)
 {
   Buffer::Iterator i = start;
   next_jid_idx = i.ReadU16();
+  next_jid = i.ReadU16();
   int size = i.ReadU16();
   path = std::vector<uint16_t>(size);
   for(int j = 0;j < size;j++)
