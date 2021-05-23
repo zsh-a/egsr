@@ -565,7 +565,7 @@ int main (int argc, char *argv[])
     int lc = 0;
 	for(std::map<PacketLog, Time>::iterator itr = PLog.begin(); itr != PLog.end(); itr ++)
 	{
-		NS_LOG_UNCOND(itr->second.GetSeconds() << " " << itr->first.src << "->" << itr->first.dst);
+		std::cout << itr->second.GetSeconds() << " " << itr->first.src << "->" << itr->first.dst << "\n";
 		lc++;
 	}
 

@@ -264,7 +264,7 @@ private:
     Time m_evaporateInterval = Seconds(5); 
     double m_evaporateAlpha = 0.92;
 
-    size_t max_path_length = 30;
+    size_t max_path_length = 100;
     static double A;
 
 /*------------------------------------------------------------------------------------------*/
