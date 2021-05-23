@@ -261,10 +261,10 @@ private:
 
     // egsr parameters
     Time m_antInterval = Seconds(1.5);
-    Time m_evaporateInterval = Seconds(5); 
+    Time m_evaporateInterval = Seconds(7); 
     double m_evaporateAlpha = 0.92;
 
-    size_t max_path_length = 100;
+    size_t max_path_length = 80;
     static double A;
 
 /*------------------------------------------------------------------------------------------*/
