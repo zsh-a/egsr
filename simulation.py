@@ -54,9 +54,9 @@ for i in range(testnum):
         c += 1
     k += steplen
 
-sfile = open("scratch/conf.txt",'w')
-sfile.write("idx=0\r\nvnum=600\r\nrange=250\r\nseghop=2\r\nenable-etar=false\r\nCarryTimeThreshold=20\r\nDistanceRange=1000")
-sfile.close()
+# sfile = open("scratch/conf.txt",'w')
+# sfile.write("idx=0\r\nvnum=600\r\nrange=250\r\nseghop=2\r\nenable-etar=false\r\nCarryTimeThreshold=20\r\nDistanceRange=1000")
+# sfile.close()
 
 
 

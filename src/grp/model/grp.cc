@@ -265,8 +265,8 @@ void RoutingProtocol::DoInitialize ()
     P = std::vector<std::vector<double>>(m_JuncNum,std::vector<double>(m_JuncNum,0.5));
 
     DigitalMap map;
-	std::string mapfile = "TestScenaries/" + std::to_string(vnum) + "/6x6_map.csv";
-    std::string tracefile = "TestScenaries/" + std::to_string(vnum) + "/6x6_vtrace.csv";
+	std::string mapfile = "TestScenaries/hefei/hefei_map.csv";
+    std::string tracefile = "TestScenaries/hefei/hefei_vtrace.csv";
 	map.setMapFilePath(mapfile);
 	map.readMapFromCsv(m_map);
 	map.readTraceCsv(tracefile, m_tracelist);
@@ -1124,7 +1124,7 @@ RoutingProtocol::GetNextForwarderInAnchor(int from,int to){
         }
     }
 
-    srand(time(0));
+    // srand(time(0));
     // lottery schedule 
     int R = rand() % neis;
     int sum = 0;
@@ -1378,6 +1378,7 @@ RoutingProtocol::AddHeader (Ptr<Packet> p, Ipv4Address source, Ipv4Address desti
             Time lut = Simulator::Now();
             Dheader.next_jid = nextjid;
             Dheader.next_jid_idx = m_id;
+            Dheader.path = {};
             p->AddHeader (Dheader);
 
         }else{
@@ -1545,7 +1546,7 @@ RoutingProtocol::RouteOutput (Ptr<Packet> p, const Ipv4Header &header, Ptr<NetDe
 
     }
 
-    if(path.size() == 0) {
+    if(path.size() == 0 || m_currentJID == m_rsujid) {
         int dstjid;
         if(m_JunAreaTag == false)
         {
@@ -1824,7 +1825,7 @@ RoutingProtocol::GetPacketNextJID(bool tag)
             }
             else
             {
-                Graph2[i][j] = Graph2[j][i] = 1;
+                Graph2[i][j] = Graph2[j][i] = m_map[i].outedge[j][1];
             }
         }
     }
@@ -1901,15 +1902,15 @@ bool RoutingProtocol::RouteInput  (Ptr<const Packet> p,
     }
 
     
-    std::cout << Simulator::Now().GetSeconds()<< " " << DataPacketHeader.path.size() <<" " << m_id <<" " << AddrToID(dest) << " ";
-    for(auto x : DataPacketHeader.path){
-        std::cout << x <<" ";
-    }
-    std:: cout << "\n";
+    // std::cout << Simulator::Now().GetSeconds()<< " " << DataPacketHeader.path.size() <<" " << m_id <<" " << AddrToID(dest) << " ";
+    // for(auto x : DataPacketHeader.path){
+    //     std::cout << x <<" ";
+    // }
+    // std:: cout << "\n";
 
     Ipv4Address nextHop = Ipv4Address::GetLoopback();
 
-    if(DataPacketHeader.path.size() == 0)
+    if(DataPacketHeader.path.size() == 0 || m_currentJID ==  m_rsujid)
     {
         int senderID = DataPacketHeader.next_jid_idx;
         int nextjid = DataPacketHeader.next_jid;

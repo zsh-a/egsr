@@ -447,11 +447,12 @@ int main (int argc, char *argv[])
 
 /*---------------------------------为节点配置移动性----------------------------------*/
     //根据配置参数设置车辆数据
-    std::string m_traceFile = "TestScenaries/" + std::to_string(nNodes) + "/6x6_" + std::to_string(nNodes) + ".tcl";
-    std::string mapfile = "TestScenaries/" + std::to_string(nNodes) + "/6x6_map.csv";
+    std::string m_traceFile = "TestScenaries/hefei/hefei.tcl";
+    std::string mapfile = "TestScenaries/hefei/hefei_map.csv";
+
     
     //设置Sink的位置
-    Vector ServerPos(1900, 600, 0);
+    Vector ServerPos(1931.07, 1759.21, 0);
 
     //configure vehicle's mobility
     Ns2MobilityHelper ns2 = Ns2MobilityHelper (m_traceFile);
@@ -502,16 +503,16 @@ int main (int argc, char *argv[])
 	InternetStackHelper stack;
 	list.Add (grp, 100);
 	stack.SetRoutingHelper (list);
-	stack.Install (Nodes);
-	grp.Install(Nodes);
+	stack.Install (Vehicles);
+	grp.Install(Vehicles);
 
-	// MyServerHelper myserver;
-	// Ipv4ListRoutingHelper serverlist;
-	// InternetStackHelper serverStack;
-	// serverlist.Add(myserver, 100);
-	// serverStack.SetRoutingHelper(serverlist);
-	// serverStack.Install(Server);
-	// myserver.Install(Server);
+	MyServerHelper myserver;
+	Ipv4ListRoutingHelper serverlist;
+	InternetStackHelper serverStack;
+	serverlist.Add(myserver, 100);
+	serverStack.SetRoutingHelper(serverlist);
+	serverStack.Install(Server);
+	myserver.Install(Server);
 
 
 	// IP Addressing
@@ -574,11 +575,11 @@ int main (int argc, char *argv[])
     cout << "Sent:"<< SendCount << " Received:" << recount 
 		<< " Drop:" << DropCount << " delay:" << (double)allTime/recount/1000000 << "ms";
     cout << "Store Error: " << lc - DropCount << endl;
-    cout << num_ant << endl;
+    // cout << num_ant << endl;
     //将统计数据输出到文件中
     std::ofstream fout("scratch/data.csv", std::ios::app);
 	fout << nNodes << "," << DistanceRange << "," << hops << "," << CarryTimeThreshold << ",";
-    fout << (recount * 1.0 / SendCount) << "," << (double)allTime/recount/1000000;
+    fout << (recount * 1.0 / SendCount) << "," << (double)allTime/recount/1000000 << "," << num_ant;
 
     fout << std::endl;
     fout.close();

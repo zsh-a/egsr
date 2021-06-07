@@ -202,10 +202,10 @@ private:
 
 /*------------------------------------------------------------------------------------------*/
     //以下参数需要根据实际运行情况调整
-    bool m_jqueuetag[49];
-    int m_JuncNum=49;
-    int m_rsujid = 45;
-    double startTime = 5;
+    bool m_jqueuetag[54];
+    int m_JuncNum=54;
+    int m_rsujid = 36;
+    double startTime = 0;
     double OutsightTransRange = 100;
     double RoadLength = 500;
     double turnLightRange = 50;
@@ -264,7 +264,7 @@ private:
     Time m_evaporateInterval = Seconds(5); 
     double m_evaporateAlpha = 0.92;
 
-    size_t max_path_length = 100;
+    size_t max_path_length = 50;
     static double A;
 
 /*------------------------------------------------------------------------------------------*/
