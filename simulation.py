@@ -59,7 +59,7 @@ import os
 #     sfile.write("idx=" + str(i) + "\r\nvnum=600\r\nrange=250\r\nseghop=2\r\nenable-etar=false\r\nCarryTimeThreshold=20\r\nDistanceRange=" + str(6000))
 #     sfile.close()
 #     os.system("./waf --run scratch/MyVanet")
-for k in range(1250, 3250, 250):
+for k in range(3250, 4500, 250):
     for i in range(10):
         sfile = open("scratch/conf.txt",'w')
         sfile.write("idx=" + str(i) + "\r\nvnum=600\r\nrange=250\r\nseghop=2\r\nenable-etar=false\r\nCarryTimeThreshold=20\r\nDistanceRange=" + str(k))
