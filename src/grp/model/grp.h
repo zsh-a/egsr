@@ -204,7 +204,7 @@ private:
     //以下参数需要根据实际运行情况调整
     bool m_jqueuetag[54];
     int m_JuncNum=54;
-    int m_rsujid = 36;
+    int m_rsujid = 52;
     double startTime = 0;
     double OutsightTransRange = 100;
     double RoadLength = 500;
