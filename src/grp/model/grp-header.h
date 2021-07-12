@@ -383,8 +383,8 @@ public:
         uint16_t version;
         uint16_t jun_from;
         uint16_t next_junction_id;
-        std::vector<uint16_t> sequence_of_junctions;
-        std::vector<Time> s_delay;
+        std::vector<uint16_t> sequence_of_junctions; // Ant 通过的junctions
+        std::vector<Time> s_delay; 
         Ipv4Address next_forwarder;
         Ipv4Address last_sender;
         float last_sender_position_x;
@@ -398,6 +398,7 @@ public:
     };
 
 private:
+  // 发送Ant包时会同时携带hello消息
   struct
   {
     Hello hello;

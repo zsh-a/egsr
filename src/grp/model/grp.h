@@ -242,7 +242,7 @@ private:
     // min delay
     std::vector<std::vector<Time>> m_min_delay;
 
-    uint16_t m_antSeqNum = 0;
+    uint16_t m_antSeqNum = 0; // Ant 序号
     double m_speed = 1;
     double RSSIDistanceThreshold = 0;
     double m_last_x = 0, m_last_y = 0;
@@ -260,12 +260,12 @@ private:
     std::vector<DigitalMapEntry> m_map;
 
     // egsr parameters
-    Time m_antInterval = Seconds(1.5);
-    Time m_evaporateInterval = Seconds(5); 
-    double m_evaporateAlpha = 0.92;
+    Time m_antInterval = Seconds(1.5); // Ant 间隔
+    Time m_evaporateInterval = Seconds(5); // 权值矩阵蒸发间隔
+    double m_evaporateAlpha = 0.92; // 蒸发系数
 
-    size_t max_path_length = 50;
-    static double A;
+    size_t max_path_length = 50; // Ant 通过的最大junction
+    static double A; // 参数
 
 /*------------------------------------------------------------------------------------------*/
     //从配置文件读取实验运行参数
